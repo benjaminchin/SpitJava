@@ -1,22 +1,21 @@
 
 /**
- * Write a description of class Player here.
+ * Write a description of class Player2 here.
  *
- * @author (your name)
+ * @author Dhruv Gupta
  * @version (a version number or a date)
  */
-public class Player
+public class Player2
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class Player
+     * Constructor for objects of class Player2
      */
-    public Player()
+    public Player2()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
 
     /**
