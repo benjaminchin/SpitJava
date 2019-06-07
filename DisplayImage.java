@@ -7,7 +7,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class DisplayImage {
+public class DisplayImage
+{
 
     public static void main(String avg[]) throws IOException
     {
@@ -17,9 +18,9 @@ public class DisplayImage {
     public DisplayImage() throws IOException
     {
         BufferedImage img = ImageIO.read(new File("cards.png"));
-        BufferedImage aceClubs = img.getSubimage(0, 0, 74, 99);
-        
-        ImageIcon icon = new ImageIcon(aceClubs);
+        BufferedImage aceClubs = img.getSubimage(0, 0, 73, 99);
+        BufferedImage Clubs2 = img.getSubimage(74, 0, 73, 99);
+        ImageIcon icon = new ImageIcon(Clubs2);
         JFrame frame = new JFrame();
         frame.setLayout(new FlowLayout());
         frame.setSize(200, 200);
