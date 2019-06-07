@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.Color;
-import java.awt.event.*;
+
 public class GUI extends JFrame 
 {
     private static  JButton start = new JButton("Start"); 
@@ -20,25 +20,30 @@ public class GUI extends JFrame
     private static JLabel spit = new JLabel("SPIT");
     public  static void Start()
     {
+       
+        
+        
+        spit.setFont(new Font("Courier New",Font.BOLD,30));
+        frame.add(panel);
+        panel.add(start); 
 
+        panel.add(instructions);
+        panel.add(spit);
         frame.setVisible(true);
+        panel.setLayout(null);
+        start.setLayout(null);
+        instructions.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.setSize(400,300);
         start.setPreferredSize(new Dimension(80,35));
         instructions.setPreferredSize(new Dimension(105,35));
         panel.setBackground(Color.ORANGE);
-        spit.setFont(new Font("Courier New",Font.BOLD,30));
-        panel.add(start); 
-        panel.add(instructions);
-        panel.add(spit);
-        frame.add(panel);
+
         start.addActionListener(new Action());
         instructions.addActionListener(new Action());
-        panel.setLayout(null);
-        start.setLayout(null);
-        instructions.setLayout(null);
         start.setLocation(50,150);
         instructions.setLocation(150,150);
+        
         spit.setLocation(110,90);
 
     }  
