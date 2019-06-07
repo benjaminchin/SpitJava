@@ -29,7 +29,6 @@ public class GUI extends JFrame
         panel.setBackground(Color.ORANGE);
         spit.setFont(new Font("Courier New",Font.BOLD,30));
         panel.add(start); 
-
         panel.add(instructions);
         panel.add(spit);
         frame.add(panel);
