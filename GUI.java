@@ -20,13 +20,10 @@ public class GUI extends JFrame
     private static JLabel spit = new JLabel("SPIT");
     public  static void Start()
     {
-       
-        
-        
+      
         spit.setFont(new Font("Courier New",Font.BOLD,30));
         frame.add(panel);
         panel.add(start); 
-
         panel.add(instructions);
         panel.add(spit);
         frame.setVisible(true);
@@ -38,12 +35,10 @@ public class GUI extends JFrame
         start.setPreferredSize(new Dimension(80,35));
         instructions.setPreferredSize(new Dimension(105,35));
         panel.setBackground(Color.ORANGE);
-
         start.addActionListener(new Action());
         instructions.addActionListener(new Action());
         start.setLocation(50,150);
         instructions.setLocation(150,150);
-        
         spit.setLocation(110,90);
 
     }  
