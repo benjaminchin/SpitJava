@@ -14,13 +14,14 @@ import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 
-public class GUI extends JFrame
+public class GUI extends JPanel
 {
     private static  JButton start = new JButton("Start"); 
     private  static JFrame frame= new JFrame("Spit");
     private  static JButton instructions = new JButton("Instructions");  
     private static JPanel panel = new JPanel();
     private static JLabel spit = new JLabel("SPIT");
+
     public  static void Start()
     {
 
@@ -63,22 +64,29 @@ public class GUI extends JFrame
             }
             else // if start button is pressed, display table and start playing game.
             {
-
+                Rectangle table = new Rectangle();
+                JFrame.setDefaultLookAndFeelDecorated(true);
                 JFrame tableFrame = new JFrame("Spit");
-                tableFrame.setVisible(true); tableFrame.setSize(700,700);
-                JPanel table = new JPanel();
+                tableFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                tableFrame.setSize(700,700);
                 table.setSize(750,750);
-                table.setBackground(Color.GREEN);
                 tableFrame.add(table);
-
+                tableFrame.setVisible(true); 
             }
         }
     }
+     static class Rectangle extends JPanel 
+    {
+        public void draw(Graphics g) 
+        {
+            g.drawRect(10,10,73,99);
+        }
+    }
 
-    
     public static void main(String args[])
     {
         Start();
 
     }
 }
+
