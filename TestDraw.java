@@ -4,7 +4,7 @@ import javax.swing.*;
  
 public class TestDraw {
  
-  public static void main(String[] arguments) {
+  public static void main(String args[]) {
  
     MyPanel panel = new MyPanel();
  
