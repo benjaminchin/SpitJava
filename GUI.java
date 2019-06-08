@@ -13,7 +13,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
-    
 
 public class GUI extends JFrame
 {
@@ -75,17 +74,7 @@ public class GUI extends JFrame
             }
         }
     }
-   
-    public void draw(int x, int y)
-    {
-        
-       
-        
-        drawRect(x,y,73,99);
-        
-    }
-    
-    
+
     
     public static void main(String args[])
     {
