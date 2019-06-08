@@ -10,8 +10,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+    
 
-public class GUI extends JFrame 
+public class GUI extends JFrame
 {
     private static  JButton start = new JButton("Start"); 
     private  static JFrame frame= new JFrame("Spit");
@@ -20,7 +24,7 @@ public class GUI extends JFrame
     private static JLabel spit = new JLabel("SPIT");
     public  static void Start()
     {
-      
+
         spit.setFont(new Font("Courier New",Font.BOLD,30));
         frame.add(panel);
         panel.add(start); 
@@ -64,14 +68,25 @@ public class GUI extends JFrame
                 JFrame tableFrame = new JFrame("Spit");
                 tableFrame.setVisible(true); tableFrame.setSize(700,700);
                 JPanel table = new JPanel();
-                table.setSize(730,730);
+                table.setSize(750,750);
                 table.setBackground(Color.GREEN);
                 tableFrame.add(table);
 
             }
         }
     }
-
+   
+    public void draw(int x, int y)
+    {
+        
+       
+        
+        drawRect(x,y,73,99);
+        
+    }
+    
+    
+    
     public static void main(String args[])
     {
         Start();
