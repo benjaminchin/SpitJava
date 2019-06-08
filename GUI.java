@@ -64,24 +64,13 @@ public class GUI extends JPanel
             }
             else // if start button is pressed, display table and start playing game.
             {
-                /*Rectangle table = new Rectangle();
-                JFrame.setDefaultLookAndFeelDecorated(true);
-
-                JFrame tableFrame = new JFrame("Spit");
-                tableFrame.setSize(750,750);
-                tableFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-
-                table.setBackground(Color.GREEN);
-                tableFrame.add(table);
-                tableFrame.setVisible(true);*/
-
                 MyPanel panel = new MyPanel();
                 // create a basic JFrame
                 JFrame.setDefaultLookAndFeelDecorated(true);
                 JFrame frame = new JFrame("JFrame Color Example");
                 frame.setSize(750,750);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.setBackground(Color.GREEN);
                 // add panel to main frame
                 frame.add(panel);
 
@@ -100,6 +89,7 @@ public class GUI extends JPanel
 class MyPanel extends JPanel {
     public void paint(Graphics g) {
 
-        g.drawRect(10,10,73,99);
+        g.drawRect(340,10,73,99);
+        g.drawRect(20,80,73,99);
     }
 }
