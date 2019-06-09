@@ -6,4 +6,9 @@ public class PlayGame
         deck.shuffle();
         deck.printDeck();
     }
+
+    public static void makePlay()
+    {
+        
+    }
 }
