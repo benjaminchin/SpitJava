@@ -14,8 +14,15 @@ import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 
-
-public class GUI extends JPanel
+import java.awt.FlowLayout;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+public class TestGUI extends JPanel
 {
     private static  JButton start = new JButton("Start"); 
     private  static JFrame frame= new JFrame("Start Menu");
@@ -88,9 +95,17 @@ public class GUI extends JPanel
     }
 }
 class MyPanel extends JPanel {
-
-    public void paint(Graphics g) {
-
+    //does not work
+    
+    
+    public void paint(BufferedImage g) throws IOException{
+        BufferedImage img = ImageIO.read(new File("cards.png"));
+        
+        BufferedImage clubs1 = img.getSubimage(0, 0, 73, 99);
+        JLabel lbl = new JLabel();
+        lbl.setLocation(320, 10);
+        ImageIcon icon = new ImageIcon(clubs1);
+        lbl.setIcon(icon);
         /*
         g.drawRect(320,10,73,99); //Player 1 Pile
         g.drawRect(80,130,73,99); //Player 1 stockpile 1
