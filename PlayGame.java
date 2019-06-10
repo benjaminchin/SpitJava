@@ -14,6 +14,8 @@ public class PlayGame
     
     public static boolean gameIsOver()
     {
-        
+        return true;
     }
 }
+
+
