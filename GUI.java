@@ -14,6 +14,14 @@ import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 
+import java.awt.FlowLayout;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 public class GUI extends JPanel
 {
     private static  JButton start = new JButton("Start"); 
@@ -87,8 +95,19 @@ public class GUI extends JPanel
     }
 }
 class MyPanel extends JPanel {
+    //does not work
+    public void drawCards() throws IOException
+    {
+        BufferedImage img = ImageIO.read(new File("cards.png"));
+        BufferedImage clubs1 = img.getSubimage(0, 0, 73, 99);
+        
+        ImageIcon icon = new ImageIcon(clubs1);
+        
+    }
+
     public void paint(Graphics g) {
 
+        /*
         g.drawRect(320,10,73,99); //Player 1 Pile
         g.drawRect(80,130,73,99); //Player 1 stockpile 1
         g.drawRect(200,130,73,99); //player 1 stockpile 2
@@ -103,5 +122,6 @@ class MyPanel extends JPanel {
         g.drawRect(320,450,73,99);//Player 2 stockpile 3
         g.drawRect(440,450,73,99);//Player 2 stockpile 4
         g.drawRect(560,450,73,99);//Player 2 stockpile 5
+         */
     }
 }
