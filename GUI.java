@@ -106,6 +106,6 @@ class MyPanel extends JPanel {
         g.drawRect(320,450,73,99);//Player 2 stockpile 3
         g.drawRect(440,450,73,99);//Player 2 stockpile 4
         g.drawRect(560,450,73,99);//Player 2 stockpile 5
-         */
+        */
     }
 }
