@@ -98,7 +98,7 @@ class MyPanel extends JPanel {
     //does not work
     
     
-    public void paint(BufferedImage g) throws IOException{
+    public void paint() throws IOException{
         BufferedImage img = ImageIO.read(new File("cards.png"));
         
         BufferedImage clubs1 = img.getSubimage(0, 0, 73, 99);
