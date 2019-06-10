@@ -95,32 +95,43 @@ public class TestGUI extends JPanel
     }
 }
 class MyPanel extends JPanel {
-    //does not work
-    
-    
-    public void paint() throws IOException{
-        BufferedImage img = ImageIO.read(new File("cards.png"));
+     //does not work
+     BufferedImage img = null;
+     BufferedImage club1 = null;
+     
+     MyPanel()
+     {
+         super(true);
+         try
+         {
+             img = ImageIO.read(new File("cards.png"));
+         }
+         catch(Exception e)
+         {
+             e.printStackTrace();
+         }
+     }
+     
+     public void paint(Graphics g){
+     
+        //g.drawRect(320,10,73,99); //Player 1 Pile
+         g.drawRect(80,130,73,99); //Player 1 stockpile 1
+         g.drawRect(200,130,73,99); //player 1 stockpile 2
+         g.drawRect(320,130,73,99); //player 1 stockpile 3
+         g.drawRect(440,130,73,99); //player 1 stockpile 4
+         g.drawRect(560,130,73,99); // Player 1 stockpile 5
+         g.drawRect(200,270,73,99); //Left spit pile
+         g.drawRect(440,270,73,99); //Right spit pile
+         g.drawRect(320,590,73,99); //Player 2 pile
+         g.drawRect(80,450,73,99); //Player 2 stockpile 1
+         g.drawRect(200,450,73,99); //Player 2 stockpile 2
+         g.drawRect(320,450,73,99);//Player 2 stockpile 3
+         g.drawRect(440,450,73,99);//Player 2 stockpile 4
+         g.drawRect(560,450,73,99);//Player 2 stockpile 5
+     }
+     public void paintComponenet(Graphics g){
+        club1 = img.getSubimage(0, 0, 73, 99);
+        g.drawImage(club1, 320, 10, 73, 99, null);
         
-        BufferedImage clubs1 = img.getSubimage(0, 0, 73, 99);
-        JLabel lbl = new JLabel();
-        lbl.setLocation(320, 10);
-        ImageIcon icon = new ImageIcon(clubs1);
-        lbl.setIcon(icon);
-        /*
-        g.drawRect(320,10,73,99); //Player 1 Pile
-        g.drawRect(80,130,73,99); //Player 1 stockpile 1
-        g.drawRect(200,130,73,99); //player 1 stockpile 2
-        g.drawRect(320,130,73,99); //player 1 stockpile 3
-        g.drawRect(440,130,73,99); //player 1 stockpile 4
-        g.drawRect(560,130,73,99); // Player 1 stockpile 5
-        g.drawRect(200,270,73,99); //Left spit pile
-        g.drawRect(440,270,73,99); //Right spit pile
-        g.drawRect(320,590,73,99); //Player 2 pile
-        g.drawRect(80,450,73,99); //Player 2 stockpile 1
-        g.drawRect(200,450,73,99); //Player 2 stockpile 2
-        g.drawRect(320,450,73,99);//Player 2 stockpile 3
-        g.drawRect(440,450,73,99);//Player 2 stockpile 4
-        g.drawRect(560,450,73,99);//Player 2 stockpile 5
-         */
     }
 }
