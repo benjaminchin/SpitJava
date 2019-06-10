@@ -18,7 +18,7 @@ public class Deck
     public ArrayList<Card> TwoStockThree = new ArrayList<Card>();
     public ArrayList<Card> TwoStockFour = new ArrayList<Card>();
     public ArrayList<Card> TwoStockFive = new ArrayList<Card>();
- 
+
     public Deck()
     {
         //Create deck of 52 cards
@@ -46,29 +46,76 @@ public class Deck
 
     public void deal()
     {
-     ArrayList<Card> temp = new ArrayList<Card>();
-     temp = InitialDeck;
-     int count = 0;
-     for(int i = 0; i<=InitialDeck.size()/2; i++)
-     {
-         player1Cards.add(i, temp.get(i));
+        ArrayList<Card> temp = new ArrayList<Card>();
+        temp = InitialDeck;
+        int count = 0;
+        for(int i = 0; i<=temp.size()/2; i++)
+        {
+            player1Cards.add(i, temp.get(i));
         }
-     for (int k = 27; k<=52; k++)
-     {
-         player2Cards.add(count, temp.get(k));
-         count++;
+        for (int k = 27; k<=52; k++)
+        {
+            player2Cards.add(count, temp.get(k));
+            count++;
         }
-        
-     OneStockOne.add(0,player1Cards.get(0));
-     player1Cards.remove(0);
-     
-     for (int x = 0; x<=2; x++)
-     {
-         OneStockTwo.add(x, player1Cards.get(x));
-         
-         
-         
+        {
+            OneStockOne.add(0,player1Cards.get(0));
+            player1Cards.remove(0);
         }
-     
+        {
+            OneStockTwo.add(0, player1Cards.get(0));
+            player1Cards.remove(0);
+            OneStockTwo.add(1, player1Cards.get(0));
+            player1Cards.remove(0);
+        }
+        {
+            OneStockThree.add(0, player1Cards.remove(0));
+            OneStockThree.add(1,player1Cards.remove(0));
+            OneStockThree.add(2,player1Cards.remove(0));
+        }
+        {
+            OneStockFour.add(0,player1Cards.remove(0));
+            OneStockFour.add(1,player1Cards.remove(0));
+            OneStockFour.add(2,player1Cards.remove(0));
+            OneStockFour.add(3,player1Cards.remove(0));
+        }
+        {
+            OneStockFive.add(0,player1Cards.remove(0));
+            OneStockFive.add(1,player1Cards.remove(0));
+            OneStockFive.add(2,player1Cards.remove(0));
+            OneStockFive.add(3,player1Cards.remove(0));
+            OneStockFive.add(4,player1Cards.remove(0));
+        }
+        {
+            LeftSpit.add(0,player1Cards.remove(0));
+        }
+        {
+            TwoStockOne.add(0,player2Cards.remove(0));
+        }
+        {
+            TwoStockTwo.add(0, player2Cards.remove(0));
+            TwoStockTwo.add(1, player2Cards.remove(0));
+        }
+        {
+            TwoStockThree.add(0, player2Cards.remove(0));
+            TwoStockThree.add(1,player2Cards.remove(0));
+            TwoStockThree.add(2,player2Cards.remove(0));
+        }
+        {
+            TwoStockFour.add(0,player2Cards.remove(0));
+            TwoStockFour.add(1,player2Cards.remove(0));
+            TwoStockFour.add(2,player2Cards.remove(0));
+            TwoStockFour.add(3,player2Cards.remove(0));
+        }
+        {
+            TwoStockFive.add(0,player2Cards.remove(0));
+            TwoStockFive.add(1,player2Cards.remove(0));
+            TwoStockFive.add(2,player2Cards.remove(0));
+            TwoStockFive.add(3,player2Cards.remove(0));
+            TwoStockFive.add(4,player2Cards.remove(0));  
+        }
+        {
+            RightSpit.add(0,player2Cards.remove(0));
+        }
     }
 }
