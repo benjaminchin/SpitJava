@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @author Dhruv Gupta
  * @version (a version number or a date)
  */
-public class Player1 implements KeyListener
+public class Player1 
 {
   public void keyPressed(KeyEvent e)
   {

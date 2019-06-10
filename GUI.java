@@ -17,7 +17,7 @@ import java.awt.Graphics2D;
 public class GUI extends JPanel
 {
     private static  JButton start = new JButton("Start"); 
-    private  static JFrame frame= new JFrame("Spit");
+    private  static JFrame frame= new JFrame("Start Menu");
     private  static JButton instructions = new JButton("Instructions");  
     private static JPanel panel = new JPanel();
     private static JLabel spit = new JLabel("SPIT");
@@ -67,7 +67,7 @@ public class GUI extends JPanel
                 MyPanel panel = new MyPanel();
                 // create a basic JFrame
                 JFrame.setDefaultLookAndFeelDecorated(true);
-                JFrame frame = new JFrame("JFrame Color Example");
+                JFrame frame = new JFrame("Spit");
                 frame.setSize(750,750);
                 frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 frame.setBackground(Color.GREEN);
@@ -89,7 +89,19 @@ public class GUI extends JPanel
 class MyPanel extends JPanel {
     public void paint(Graphics g) {
 
-        g.drawRect(340,10,73,99);
-        g.drawRect(20,80,73,99);
+        g.drawRect(320,10,73,99); //correct pos
+        g.drawRect(80,130,73,99); //correct pos
+        g.drawRect(200,130,73,99); //correct pos
+        g.drawRect(320,130,73,99); //correct pos
+        g.drawRect(440,130,73,99); //correct pos
+        g.drawRect(560,130,73,99); // correct pos
+        g.drawRect(200,270,73,99); //correct pos
+        g.drawRect(440,270,73,99); //correct pos
+        g.drawRect(320,590,73,99); //correct pos
+        g.drawRect(80,450,73,99);
+        g.drawRect(200,450,73,99);
+        g.drawRect(320,450,73,99);
+        g.drawRect(440,450,73,99);
+        g.drawRect(560,450,73,99);
     }
 }
