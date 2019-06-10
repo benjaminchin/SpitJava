@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class DisplayImage
+public class DisplayImage 
 {
 
     public static void main(String avg[]) throws IOException
