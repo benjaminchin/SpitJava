@@ -9,8 +9,21 @@ import java.util.Scanner;
  */
 public class Player1 
 {
-  public void keyPressed(KeyEvent e)
-  {
-    
-  }
+    static abstract class KeyAdapter implements KeyListener
+    {
+        public void keyPressed(KeyEvent e)
+        {
+            System.out.print(e.getKeyCode());
+        }
+        
+        public void keyReleased(KeyEvent e)
+        {
+            
+        }
+        
+        public void keyTyped(KeyEvent e)
+        {
+            
+        }
+    }
 }
