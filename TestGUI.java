@@ -65,6 +65,24 @@ public class TestGUI extends JPanel
         start.setLocation(50,150);
         instructions.setLocation(150,150);
         spit.setLocation(110,90);
+        
+        player1.setLocation(320, 10);
+        OneStockOne.setLocation(80, 130);
+        OneStockTwo.setLocation(200, 130);
+        OneStockThree.setLocation(320, 130);
+        OneStockFour.setLocation(440, 130);
+        OneStockFive.setLocation(560, 130);
+        
+        player2.setLocation(320, 590);
+        TwoStockOne.setLocation(80, 450);
+        TwoStockTwo.setLocation(200, 450);
+        TwoStockThree.setLocation(320, 450);
+        TwoStockFour.setLocation(440, 450);
+        TwoStockFive.setLocation(560, 450);
+        
+        LeftSpit.setLocation(200, 270);
+        RightSpit.setLocation(440, 270);
+        
         displayCards();
     }  
     static class Action extends JFrame implements ActionListener
@@ -109,22 +127,7 @@ public class TestGUI extends JPanel
     
     public static void displayCards()
     {
-        player1.setLocation(320, 10);
-        OneStockOne.setLocation(80, 130);
-        OneStockTwo.setLocation(200, 130);
-        OneStockThree.setLocation(320, 130);
-        OneStockFour.setLocation(440, 130);
-        OneStockFive.setLocation(560, 130);
         
-        player2.setLocation(320, 590);
-        TwoStockOne.setLocation(80, 450);
-        TwoStockTwo.setLocation(200, 450);
-        TwoStockThree.setLocation(320, 450);
-        TwoStockFour.setLocation(440, 450);
-        TwoStockFive.setLocation(560, 450);
-        
-        LeftSpit.setLocation(200, 270);
-        RightSpit.setLocation(440, 270);
         BufferedImage img = null;
         try
         {
