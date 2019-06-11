@@ -9,6 +9,7 @@ import java.util.Scanner;
  */
 public class Player1 extends Deck
 {
+    private int p1selected = 0;
     abstract class KeyAdapter implements KeyListener
     {
         public void keyPressed(KeyEvent e)
@@ -17,15 +18,15 @@ public class Player1 extends Deck
             switch(code)
             {
                 case 49:
-                    OneStockOne.isSelected() = true;
+                    p1selected = 1;
                 case 50:
-                    OneStockTwo.isSelected() = true;
+                    p1selected = 2;
                 case 51:
-                    OneStockThree.isSelected() = true;
+                    p1selected = 3;
                 case 52:
-                    OneStockFour.isSelected() = true;
+                    p1selected= 4;
                 case 53:
-                    OneStockFive.isSelected() = true;
+                    p1selected = 5;
             }
             
         }
@@ -40,4 +41,6 @@ public class Player1 extends Deck
             
         }
     }
+   
+   
 }
