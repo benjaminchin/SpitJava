@@ -65,7 +65,7 @@ public class TestGUI extends JPanel
         start.setLocation(50,150);
         instructions.setLocation(150,150);
         spit.setLocation(110,90);
-        
+        displayCards();
     }  
     static class Action extends JFrame implements ActionListener
     {  
@@ -107,7 +107,7 @@ public class TestGUI extends JPanel
         
     }
     
-    public static void displayCards() throws IOException
+    public static void displayCards()
     {
         player1.setLocation(320, 10);
         OneStockOne.setLocation(80, 130);
