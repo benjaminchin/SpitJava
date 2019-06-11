@@ -22,14 +22,16 @@ public class GUI2 extends JFrame
         frame.setDefaultLookAndFeelDecorated(true);
         
         frame.add(startMenu);//Add startMenu window to the frame
-        frame.setSize(750, 750);
-        spit.setLocation(325, 325); //Set locations of label and buttons
+        frame.setSize(400, 100);
+        spit.setLocation(200, 50); //Set locations of label and buttons
         start.setLocation(50, 150);
         instructions.setLocation(550, 150);
         spit.setFont(new Font("Courier New",Font.BOLD,30));
         startMenu.add(spit); //Add label and buttons to panel
         startMenu.add(start);
+        start.addActionListener(new Action());
         startMenu.add(instructions);
+        instructions.addActionListener(new Action());
         startMenu.setBackground(Color.ORANGE);
         startMenu.setVisible(true); //Make visible
         frame.setVisible(true);
@@ -40,27 +42,35 @@ public class GUI2 extends JFrame
         start();
     }
     static class Action extends JFrame implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
+    {  
+        public void actionPerformed (ActionEvent e)
         {
-            if(e.getSource() == instructions) //If instructions button
+            if (e.getSource() == instructions) //If "instructions" button is pressed, display how to play game.
             {
-                JFrame helpFrame = new JFrame();
-                JPanel help = new JPanel(new FlowLayout());
-                JLabel lbl= new JLabel("To play...");
-                
-                helpFrame.add(help);
-                helpFrame.setSize(750, 750);
-                lbl.setLocation(325, 325);
-                
-                help.add(lbl);
-                help.setBackground(Color.CYAN);
-                help.setVisible(true);
-                helpFrame.setVisible(true);
+               JFrame helpFrame = new JFrame(); //Create frame and panel
+               JPanel help = new JPanel(new FlowLayout());
+               helpFrame.add(help); //Add panel to window
+               helpFrame.setSize(750, 750);
+               
+               JLabel lbl = new JLabel("To play this game..."); //Label text
+               lbl.setFont(new Font("Courier New",Font.BOLD,30));
+               lbl.setLocation(325, 325);
+               
+               help.add(lbl); //Add label to panel
+               help.setBackground(Color.CYAN);
+               help.setVisible(true); //Display
+               helpFrame.setVisible(true);
             }
-            else //If Start button
+            else //If start button is pressed, display table and start playing game.
             {
-            
+                JFrame playGame = new JFrame();
+                JPanel game = new JPanel(new FlowLayout());
+                playGame.add(game);
+                playGame.setSize(750, 750);
+                
+                game.setBackground(Color.GREEN);
+                game.setVisible(true);
+                playGame.setVisible(true);
             }
         }
     }
