@@ -29,7 +29,20 @@ public class TestGUI extends JPanel
     private  static JButton instructions = new JButton("Instructions");  
     private static JPanel panel = new JPanel();
     private static JLabel spit = new JLabel("SPIT");
-
+    public static JLabel player1 = new JLabel();
+    public static JLabel OneStockOne = new JLabel();
+    public static JLabel OneStockTwo = new JLabel();
+    public static JLabel OneStockThree = new JLabel();
+    public static JLabel OneStockFour = new JLabel();
+    public static JLabel OneStockFive = new JLabel();
+    public static JLabel LeftSpit= new JLabel();
+    public static JLabel player2 = new JLabel();
+    public static JLabel TwoStockOne = new JLabel();
+    public static JLabel TwoStockTwo = new JLabel();
+    public static JLabel TwoStockThree = new JLabel();
+    public static JLabel TwoStockFour= new JLabel();
+    public static JLabel TwoStockFive= new JLabel();
+    public static JLabel RightSpit = new JLabel();
     public  static void Start()
     {
 
@@ -52,7 +65,7 @@ public class TestGUI extends JPanel
         start.setLocation(50,150);
         instructions.setLocation(150,150);
         spit.setLocation(110,90);
-
+        
     }  
     static class Action extends JFrame implements ActionListener
     {  
@@ -91,47 +104,46 @@ public class TestGUI extends JPanel
     public static void main(String args[])
     {
         Start();
-
-    }
-}
-class MyPanel extends JPanel {
-     //does not work
-     BufferedImage img = null;
-     BufferedImage club1 = null;
-     
-     MyPanel()
-     {
-         super(true);
-         try
-         {
-             img = ImageIO.read(new File("cards.png"));
-         }
-         catch(Exception e)
-         {
-             e.printStackTrace();
-         }
-     }
-     
-     public void paint(Graphics g){
-     
-         /*g.drawRect(320,10,73,99); //Player 1 Pile
-         g.drawRect(80,130,73,99); //Player 1 stockpile 1
-         g.drawRect(200,130,73,99); //player 1 stockpile 2
-         g.drawRect(320,130,73,99); //player 1 stockpile 3
-         g.drawRect(440,130,73,99); //player 1 stockpile 4
-         g.drawRect(560,130,73,99); // Player 1 stockpile 5
-         g.drawRect(200,270,73,99); //Left spit pile
-         g.drawRect(440,270,73,99); //Right spit pile
-         g.drawRect(320,590,73,99); //Player 2 pile
-         g.drawRect(80,450,73,99); //Player 2 stockpile 1
-         g.drawRect(200,450,73,99); //Player 2 stockpile 2
-         g.drawRect(320,450,73,99);//Player 2 stockpile 3
-         g.drawRect(440,450,73,99);//Player 2 stockpile 4
-         g.drawRect(560,450,73,99);//Player 2 stockpile 5 */
-     }
-     public void paintComponent(Graphics g){
-        club1 = img.getSubimage(0, 0, 73, 99);
-        g.drawImage(club1, 320, 10, 73, 99, null);
         
     }
+    
+    public static void displayCards() throws IOException
+    {
+        player1.setLocation(320, 10);
+        OneStockOne.setLocation(80, 130);
+        OneStockTwo.setLocation(200, 130);
+        OneStockThree.setLocation(320, 130);
+        OneStockFour.setLocation(440, 130);
+        OneStockFive.setLocation(560, 130);
+        
+        player2.setLocation(320, 590);
+        TwoStockOne.setLocation(80, 450);
+        TwoStockTwo.setLocation(200, 450);
+        TwoStockThree.setLocation(320, 450);
+        TwoStockFour.setLocation(440, 450);
+        TwoStockFive.setLocation(560, 450);
+        
+        LeftSpit.setLocation(200, 270);
+        RightSpit.setLocation(440, 270);
+        BufferedImage img = null;
+        try
+        {
+            img = ImageIO.read(new File("cards.png"));
+        }
+        catch(Exception e)
+        {
+            //Exception
+        }
+            
+        
+   
+        BufferedImage club1 = img.getSubimage(0, 0, 73, 99);
+        ImageIcon club1Icon = new ImageIcon(club1);
+        
+        player1.setIcon(club1Icon);
+    }
 }
+
+     
+     
+
