@@ -10,6 +10,45 @@ public class Card
         rank = r;
         suit = s;
         color = c;
+
+        //Calculate x and y coordinates for sprite
+        switch(rank)
+        {
+            case 1:
+                x = 0;
+            case 2:
+                x = 72;
+            case 3:
+                x = 144;
+            case 4:
+                x = 216;
+            case 5:
+                x = 288;
+            case 6:
+                x = 360;
+            case 7:
+                x = 432;
+            case 8:
+                x = 504;
+            case 9:
+                x = 576;
+            case 10:
+                x = 648;
+            case 11:
+                x = 720;
+            case 12:
+                x = 792;
+            case 13:    
+                x = 864;
+        }
+        if(suit == "HEART")
+            y = 192;
+        else if(suit == "DIAMOND")
+            y = 288;
+        else if(suit == "SPADE")
+            y = 96;
+        else // if suit == "CLUB"
+            y = 0;
     }
 
     public int getRank()
@@ -26,147 +65,20 @@ public class Card
     {
         return color;
     }
-    
+
+    public int getX()
+    {
+        return x;
+    }
+
+    public int getY()
+    {
+        return y;
+    }
+
     public String toString()
     {
         return rank + " " + suit + " " + color;
     }
-    //Calculate sprite coordinate x
-    public void getCoordinates()
-    {
-        if(color == "RED")
-        {
-            if(suit == "HEARTS")
-            {
-                switch(rank)
-                {
-                    case 1:
-                        x = 1;
-                    case 2:
-                        x = 2;
-                    case 3:
-                        x = 3;
-                    case 4:
-                        x = 4;
-                    case 5:
-                        x = 5;
-                    case 6:
-                        x = 6;
-                    case 7:
-                        x = 7;
-                    case 8:
-                        x = 8;
-                    case 9:
-                        x = 9;
-                    case 10:
-                        x = 10;
-                    case 11:
-                        x = 11;
-                    case 12:
-                        x = 12;
-                    case 13:    
-                        x = 13;
-                }
-            }
-            else if(suit == "DIAMOND")
-            {
-                switch(rank)
-                {
-                    case 1:
-                        x = 1;
-                    case 2:
-                        x = 2;
-                    case 3:
-                        x = 3;
-                    case 4:
-                        x = 4;
-                    case 5:
-                        x = 5;
-                    case 6:
-                        x = 6;
-                    case 7:
-                        x = 7;
-                    case 8:
-                        x = 8;
-                    case 9:
-                        x = 9;
-                    case 10:
-                        x = 10;
-                    case 11:
-                        x = 11;
-                    case 12:
-                        x = 12;
-                    case 13:    
-                        x = 13;
-                }
-            }
-        }
-        else if(color == "BLACK")
-        {
-            if(suit == "SPADES")
-            {
-                switch(rank)
-                {
-                    case 1:
-                        x = 1;
-                    case 2:
-                        x = 2;
-                    case 3:
-                        x = 3;
-                    case 4:
-                        x = 4;
-                    case 5:
-                        x = 5;
-                    case 6:
-                        x = 6;
-                    case 7:
-                        x = 7;
-                    case 8:
-                        x = 8;
-                    case 9:
-                        x = 9;
-                    case 10:
-                        x = 10;
-                    case 11:
-                        x = 11;
-                    case 12:
-                        x = 12;
-                    case 13:    
-                        x = 13;
-                }
-            }
-            else if(suit == "CLUBS")
-            {
-                switch(rank)
-                {
-                    case 1:
-                        x = 1;
-                    case 2:
-                        x = 2;
-                    case 3:
-                        x = 3;
-                    case 4:
-                        x = 4;
-                    case 5:
-                        x = 5;
-                    case 6:
-                        x = 6;
-                    case 7:
-                        x = 7;
-                    case 8:
-                        x = 8;
-                    case 9:
-                        x = 9;
-                    case 10:
-                        x = 10;
-                    case 11:
-                        x = 11;
-                    case 12:
-                        x = 12;
-                    case 13:    
-                        x = 13;
-                }
-            }
-        }
-    }
+
 }

@@ -20,8 +20,8 @@ public class DisplayImage
     {
         BufferedImage img = ImageIO.read(new File("cards.png"));
         BufferedImage aceClubs = img.getSubimage(0, 0, 72, 96);
-        BufferedImage Clubs2 = img.getSubimage(73, 0, 72, 96);
-        BufferedImage aceHearts = img.getSubimage(0 ,193, 72, 96);
+        BufferedImage Clubs2 = img.getSubimage(72, 0, 72, 96);
+        BufferedImage aceHearts = img.getSubimage(0 ,192, 72, 96);
         ImageIcon icon = new ImageIcon(aceClubs);
         ImageIcon icon2 = new ImageIcon(Clubs2);
         ImageIcon icon3 = new ImageIcon(aceHearts);
