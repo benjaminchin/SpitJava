@@ -1,8 +1,7 @@
 import java.awt.event.*;
 import java.awt.*;
-import java.util.Scanner;
 /**
- * Write a description of class Player1 here.
+ * Outlines the controls for Player 1.
  *
  * @author Dhruv Gupta
  * @version (a version number or a date)
@@ -32,20 +31,26 @@ public class Player1 extends Deck
             switch(code)
             {
                 case KeyEvent.VK_A:
-                    
+
                 case KeyEvent.VK_D:
-                    
+
             }
+            p1selection();
+        }
+
+        public int p1selection()
+        {
+            return p1selected;
         }
 
         public void keyReleased(KeyEvent e)
         {
-            p1selected = 0;
+
         }
 
         public void keyTyped(KeyEvent e)
         {
-            
+
         }
     }
 
