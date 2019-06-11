@@ -9,6 +9,7 @@ import java.awt.*;
 public class Player1 extends Deck
 {
     public int p1selected = 0;
+    public String p1pile;
     abstract class KeyAdapter implements KeyListener
     {
         public void keyPressed(KeyEvent e)
@@ -31,16 +32,22 @@ public class Player1 extends Deck
             switch(code)
             {
                 case KeyEvent.VK_A:
-
+                    p1pile = "a";
                 case KeyEvent.VK_D:
-
+                    p1pile = "d";
             }
             p1selection();
+            pileSelection();
         }
 
         public int p1selection()
         {
             return p1selected;
+        }
+        
+        public String pileSelection()
+        {
+            return p1pile;
         }
 
         public void keyReleased(KeyEvent e)
