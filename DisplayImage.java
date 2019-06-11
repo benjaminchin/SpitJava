@@ -6,11 +6,12 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-public class DisplayImage 
+import javax.swing.JPanel;
+import java.awt.Color;
+public class DisplayImage extends JPanel
 {
-
-    public static void main(String avg[]) throws IOException
+    
+    public static void main(String[] args) throws IOException
     {
         DisplayImage abc = new DisplayImage();
     }
@@ -21,14 +22,20 @@ public class DisplayImage
         BufferedImage aceClubs = img.getSubimage(0, 0, 73, 99);
         BufferedImage Clubs2 = img.getSubimage(74, 0, 73, 99);
         ImageIcon icon = new ImageIcon(Clubs2);
+        
         JFrame frame = new JFrame();
         frame.setLayout(new FlowLayout());
-        frame.setSize(200, 200);
+        frame.setSize(750, 750);
+        frame.getContentPane().setBackground(Color.GREEN);
+        
         JLabel lbl = new JLabel();
+        lbl.setLocation(320, 130);
         lbl.setIcon(icon);
+        
         frame.add(lbl);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         
     }
 }
