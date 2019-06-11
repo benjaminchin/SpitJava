@@ -10,18 +10,58 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-public class GUI2 extends Deck
+public class GUI2 extends JFrame
 {
-    private static FlowLayout layout = new FlowLayout();
-    private static JFrame frame = new JFrame();
-    private static ImageIcon icon = null;
+    private static JLabel spit = new JLabel("Spit");
     private static JButton start = new JButton("Start");
+    private static JButton instructions = new JButton("Instructions");
+    private static JFrame frame = new JFrame();
     public static void start()
     {
-        frame.setLayout(layout);
+        JPanel startMenu = new JPanel(new FlowLayout());
+        frame.setDefaultLookAndFeelDecorated(true);
+        
+        frame.add(startMenu);//Add startMenu window to the frame
         frame.setSize(750, 750);
-
-        frame.getContentPane().setBackground(Color.ORANGE);
-
+        spit.setLocation(325, 325); //Set locations of label and buttons
+        start.setLocation(50, 150);
+        instructions.setLocation(550, 150);
+        spit.setFont(new Font("Courier New",Font.BOLD,30));
+        startMenu.add(spit); //Add label and buttons to panel
+        startMenu.add(start);
+        startMenu.add(instructions);
+        startMenu.setBackground(Color.ORANGE);
+        startMenu.setVisible(true); //Make visible
+        frame.setVisible(true);
+    }
+    
+    public static void main(String[] args)
+    {
+        start();
+    }
+    static class Action extends JFrame implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            if(e.getSource() == instructions) //If instructions button
+            {
+                JFrame helpFrame = new JFrame();
+                JPanel help = new JPanel(new FlowLayout());
+                JLabel lbl= new JLabel("To play...");
+                
+                helpFrame.add(help);
+                helpFrame.setSize(750, 750);
+                lbl.setLocation(325, 325);
+                
+                help.add(lbl);
+                help.setBackground(Color.CYAN);
+                help.setVisible(true);
+                helpFrame.setVisible(true);
+            }
+            else //If Start button
+            {
+            
+            }
+        }
     }
 }
