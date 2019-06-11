@@ -34,7 +34,7 @@ public class DisplayImage extends Deck
         BufferedImage spades1 = img.getSubimage(0, 96, 72, 96);
         BufferedImage spades7 = img.getSubimage(432, 96, 72, 96);
         
-        BufferedImage diamonds10 = img.getSubimage(684, 288, 72, 96);
+        BufferedImage diamonds10 = img.getSubimage(648, 288, 72, 96);
         BufferedImage hearts6 = img.getSubimage(360, 288, 72, 96);
         
         JFrame frame = new JFrame();
