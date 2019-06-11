@@ -14,7 +14,6 @@ import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 
-
 public class GUI extends JPanel
 {
     private static  JButton start = new JButton("Start"); 
@@ -25,7 +24,7 @@ public class GUI extends JPanel
 
     public  static void Start()
     {
-
+        JFrame.setDefaultLookAndFeelDecorated(true);
         spit.setFont(new Font("Courier New",Font.BOLD,30));
         frame.add(panel);
         panel.add(start); 
@@ -91,7 +90,6 @@ class MyPanel extends JPanel {
 
     public void paint(Graphics g) {
 
-        
         g.drawRect(320,10,73,99); //Player 1 Pile
         g.drawRect(80,130,73,99); //Player 1 stockpile 1
         g.drawRect(200,130,73,99); //player 1 stockpile 2
@@ -106,6 +104,6 @@ class MyPanel extends JPanel {
         g.drawRect(320,450,73,99);//Player 2 stockpile 3
         g.drawRect(440,450,73,99);//Player 2 stockpile 4
         g.drawRect(560,450,73,99);//Player 2 stockpile 5
-        
+
     }
 }

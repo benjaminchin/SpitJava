@@ -58,61 +58,92 @@ public class Deck
             player2Cards.add(count, temp.get(k));
             count++;
         }
+
         {
-            OneStockOne.add(0,player1Cards.get(0));
-            player1Cards.remove(0);
+            if (player1Cards.size()>=2)
+            {
+                OneStockOne.add(0,player1Cards.get(0));
+                player1Cards.remove(0);
+            }
         }
         {
-            OneStockTwo.add(0, player1Cards.get(0));
-            player1Cards.remove(0);
-            OneStockTwo.add(1, player1Cards.get(0));
-            player1Cards.remove(0);
+            if (player1Cards.size()>=3)
+            {
+                OneStockTwo.add(0, player1Cards.get(0));
+                player1Cards.remove(0);
+                OneStockTwo.add(1, player1Cards.get(0));
+                player1Cards.remove(0);
+            }
         }
         {
-            OneStockThree.add(0, player1Cards.remove(0));
-            OneStockThree.add(1,player1Cards.remove(0));
-            OneStockThree.add(2,player1Cards.remove(0));
+            if (player1Cards.size()>=4)
+            {
+                OneStockThree.add(0, player1Cards.remove(0));
+                OneStockThree.add(1,player1Cards.remove(0));
+                OneStockThree.add(2,player1Cards.remove(0));
+            }
         }
         {
-            OneStockFour.add(0,player1Cards.remove(0));
-            OneStockFour.add(1,player1Cards.remove(0));
-            OneStockFour.add(2,player1Cards.remove(0));
-            OneStockFour.add(3,player1Cards.remove(0));
+            if (player1Cards.size()>=5)
+            {
+                OneStockFour.add(0,player1Cards.remove(0));
+                OneStockFour.add(1,player1Cards.remove(0));
+                OneStockFour.add(2,player1Cards.remove(0));
+                OneStockFour.add(3,player1Cards.remove(0));
+            }
         }
         {
-            OneStockFive.add(0,player1Cards.remove(0));
-            OneStockFive.add(1,player1Cards.remove(0));
-            OneStockFive.add(2,player1Cards.remove(0));
-            OneStockFive.add(3,player1Cards.remove(0));
-            OneStockFive.add(4,player1Cards.remove(0));
+            if (player1Cards.size()>=6)
+            {
+                OneStockFive.add(0,player1Cards.remove(0));
+                OneStockFive.add(1,player1Cards.remove(0));
+                OneStockFive.add(2,player1Cards.remove(0));
+                OneStockFive.add(3,player1Cards.remove(0));
+                OneStockFive.add(4,player1Cards.remove(0));
+            }
         }
         {
             LeftSpit.add(0,player1Cards.remove(0));
         }
         {
-            TwoStockOne.add(0,player2Cards.remove(0));
+            if(player2Cards.size()>=2)
+            {
+                TwoStockOne.add(0,player2Cards.remove(0));
+            }
         }
         {
-            TwoStockTwo.add(0, player2Cards.remove(0));
-            TwoStockTwo.add(1, player2Cards.remove(0));
+            if(player2Cards.size()>=3)
+            {
+                TwoStockTwo.add(0, player2Cards.remove(0));
+                TwoStockTwo.add(1, player2Cards.remove(0));
+            }
         }
         {
-            TwoStockThree.add(0, player2Cards.remove(0));
-            TwoStockThree.add(1,player2Cards.remove(0));
-            TwoStockThree.add(2,player2Cards.remove(0));
+            if(player2Cards.size()>=4)
+            {
+                TwoStockThree.add(0, player2Cards.remove(0));
+                TwoStockThree.add(1,player2Cards.remove(0));
+                TwoStockThree.add(2,player2Cards.remove(0));
+            }
         }
         {
-            TwoStockFour.add(0,player2Cards.remove(0));
-            TwoStockFour.add(1,player2Cards.remove(0));
-            TwoStockFour.add(2,player2Cards.remove(0));
-            TwoStockFour.add(3,player2Cards.remove(0));
+            if(player2Cards.size()>=5)
+            {
+                TwoStockFour.add(0,player2Cards.remove(0));
+                TwoStockFour.add(1,player2Cards.remove(0));
+                TwoStockFour.add(2,player2Cards.remove(0));
+                TwoStockFour.add(3,player2Cards.remove(0));
+            }
         }
         {
-            TwoStockFive.add(0,player2Cards.remove(0));
-            TwoStockFive.add(1,player2Cards.remove(0));
-            TwoStockFive.add(2,player2Cards.remove(0));
-            TwoStockFive.add(3,player2Cards.remove(0));
-            TwoStockFive.add(4,player2Cards.remove(0));  
+            if(player2Cards.size()>=5)
+            {
+                TwoStockFive.add(0,player2Cards.remove(0));
+                TwoStockFive.add(1,player2Cards.remove(0));
+                TwoStockFive.add(2,player2Cards.remove(0));
+                TwoStockFive.add(3,player2Cards.remove(0));
+                TwoStockFive.add(4,player2Cards.remove(0));  
+            }
         }
         {
             RightSpit.add(0,player2Cards.remove(0));
