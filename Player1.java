@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class Player1 extends Deck
 {
-    private int p1selected = 0;
+    public int p1selected = 0;
     abstract class KeyAdapter implements KeyListener
     {
         public void keyPressed(KeyEvent e)
@@ -17,30 +17,36 @@ public class Player1 extends Deck
             int code = e.getKeyCode();
             switch(code)
             {
-                case 49:
+                case KeyEvent.VK_1:
                     p1selected = 1;
-                case 50:
+                case KeyEvent.VK_2:
                     p1selected = 2;
-                case 51:
+                case KeyEvent.VK_3:
                     p1selected = 3;
-                case 52:
+                case KeyEvent.VK_4:
                     p1selected= 4;
-                case 53:
+                case KeyEvent.VK_5:
                     p1selected = 5;
             }
-            
+
+            switch(code)
+            {
+                case KeyEvent.VK_A:
+                    
+                case KeyEvent.VK_D:
+                    
+            }
         }
-        
+
         public void keyReleased(KeyEvent e)
         {
-            
+            p1selected = 0;
         }
-        
+
         public void keyTyped(KeyEvent e)
         {
             
         }
     }
-   
-   
+
 }
