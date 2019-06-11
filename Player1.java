@@ -49,16 +49,5 @@ public class Player1 extends Deck
         {
             return p1pile;
         }
-
-        public void keyReleased(KeyEvent e)
-        {
-
-        }
-
-        public void keyTyped(KeyEvent e)
-        {
-
-        }
     }
-
 }
