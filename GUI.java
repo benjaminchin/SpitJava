@@ -14,13 +14,27 @@ import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 
-public class GUI extends JPanel
+public class GUI extends Deck
 {
     private static  JButton start = new JButton("Start"); 
     private  static JFrame frame= new JFrame("Start Menu");
     private  static JButton instructions = new JButton("Instructions");  
     private static JPanel panel = new JPanel();
     private static JLabel spit = new JLabel("SPIT");
+    public static JLabel player1 = new JLabel();
+    public static JLabel OneStockOne = new JLabel();
+    public static JLabel OneStockTwo = new JLabel();
+    public static JLabel OneStockThree = new JLabel();
+    public static JLabel OneStockFour = new JLabel();
+    public static JLabel OneStockFive = new JLabel();
+    public static JLabel LeftSpit= new JLabel();
+    public static JLabel player2 = new JLabel();
+    public static JLabel TwoStockOne = new JLabel();
+    public static JLabel TwoStockTwo = new JLabel();
+    public static JLabel TwoStockThree = new JLabel();
+    public static JLabel TwoStockFour= new JLabel();
+    public static JLabel TwoStockFive= new JLabel();
+    public static JLabel RightSpit = new JLabel();
 
     public  static void Start()
     {
@@ -86,8 +100,9 @@ public class GUI extends JPanel
 
     }
 }
-class MyPanel extends JPanel {
-
+/*class MyPanel extends JPanel {
+   
+    
     public void paint(Graphics g) {
 
         g.drawRect(320,10,73,99); //Player 1 Pile
@@ -105,5 +120,6 @@ class MyPanel extends JPanel {
         g.drawRect(440,450,73,99);//Player 2 stockpile 4
         g.drawRect(560,450,73,99);//Player 2 stockpile 5
 
-    }
+      } */
+}
 }

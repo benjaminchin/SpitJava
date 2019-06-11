@@ -114,7 +114,7 @@ class MyPanel extends JPanel {
      
      public void paint(Graphics g){
      
-         g.drawRect(320,10,73,99); //Player 1 Pile
+         /*g.drawRect(320,10,73,99); //Player 1 Pile
          g.drawRect(80,130,73,99); //Player 1 stockpile 1
          g.drawRect(200,130,73,99); //player 1 stockpile 2
          g.drawRect(320,130,73,99); //player 1 stockpile 3
@@ -127,7 +127,7 @@ class MyPanel extends JPanel {
          g.drawRect(200,450,73,99); //Player 2 stockpile 2
          g.drawRect(320,450,73,99);//Player 2 stockpile 3
          g.drawRect(440,450,73,99);//Player 2 stockpile 4
-         g.drawRect(560,450,73,99);//Player 2 stockpile 5
+         g.drawRect(560,450,73,99);//Player 2 stockpile 5 */
      }
      public void paintComponent(Graphics g){
         club1 = img.getSubimage(0, 0, 73, 99);
