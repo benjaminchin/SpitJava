@@ -61,6 +61,24 @@ public class PlayGame
         return false;
     }
     
+    public static void p1MakePlay()
+    {
+        
+    }
     
+    public static void p2MakePlay()
+    {
+    
+    }
+    
+    public static boolean gameIsOver()
+    {
+    
+    }
+    
+    public static boolean roundisOver()
+    {
+    
+    }
 }
 
