@@ -62,6 +62,16 @@ public class PlayGame
     
     public static void p1MakePlay()
     {
+        if (canPlay()==true)
+        {
+            if(         
+            {
+                
+            }
+            
+            
+            
+        }
         
     }
     
