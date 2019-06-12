@@ -67,6 +67,7 @@ public class PlayGame
             Card temp = p1Selection.get(0);
             p1Selection.remove(0);
             p1SelectedPile.add(temp);
+            deck.set
         }
         
     }

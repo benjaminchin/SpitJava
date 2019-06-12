@@ -18,7 +18,10 @@ public class Deck
     public ArrayList<Card> TwoStockThree = new ArrayList<Card>();
     public ArrayList<Card> TwoStockFour = new ArrayList<Card>();
     public ArrayList<Card> TwoStockFive = new ArrayList<Card>();
-
+    
+    public ArrayList<ArrayList<Card>> player1Stocks = new ArrayList<ArrayList<Card>>();
+    public ArrayList<ArrayList<Card>> player2Stocks = new ArrayList<ArrayList<Card>>();
+    public ArrayList<ArrayList<Card>> spitPiles = new ArrayList<ArrayList<Card>>();
     public Deck()
     {
         //Create deck of 52 cards
@@ -29,6 +32,8 @@ public class Deck
             InitialDeck.add(new Card(i, "HEARTS", "RED"));
             InitialDeck.add(new Card(i, "DIAMONDS", "RED"));
         }
+        
+        player1Stocks.add(OneStockOne
     }
 
     public void shuffle()
