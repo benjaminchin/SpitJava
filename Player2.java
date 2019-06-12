@@ -6,7 +6,7 @@ import java.awt.*;
  * @author Dhruv Gupta
  * @version (a version number or a date)
  */
-public class Player2 extends Deck
+public class Player2 extends PlayGame
 {
     public int p2selected = 0;
     public String p2pile;
