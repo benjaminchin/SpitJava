@@ -6,7 +6,7 @@ import java.awt.*;
  * @author Dhruv Gupta
  * @version (a version number or a date)
  */
-public class Player1 extends Deck
+public class Player1 extends PlayGame
 {
     public int p1selected = 0;
     public String p1pile;
@@ -36,16 +36,16 @@ public class Player1 extends Deck
                 case KeyEvent.VK_D:
                     p1pile = "d";
             }
-            p1selection();
-            pileSelection();
+            getP1Selection();
+            getPileSelection();
         }
 
-        public int p1selection()
+        public int getP1Selection()
         {
             return p1selected;
         }
         
-        public String pileSelection()
+        public String getPileSelection()
         {
             return p1pile;
         }

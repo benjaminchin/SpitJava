@@ -36,16 +36,16 @@ public class Player2 extends Deck
                 case KeyEvent.VK_DELETE:
                     p2pile = "delete";
             }
-            p2selection();
-            pileSelected();
+            getP2Selection();
+            getPileSelected();
         }
         
-        public int p2selection()
+        public int getP2Selection()
         {
             return p2selected;
         }
         
-        public String pileSelected()
+        public String getPileSelected()
         {
             return p2pile;
         }
