@@ -149,4 +149,62 @@ public class Deck
             RightSpit.add(0,player2Cards.remove(0));
         }
     }
+    public void setPlayer1Cards(ArrayList<Card> c)
+    {
+        player1Cards = c;
+    }
+    public void setOneStockOne(ArrayList<Card> c)
+    {
+        OneStockOne = c;
+    }
+    public void setOneStockTwo(ArrayList<Card> c)
+    {
+        OneStockTwo = c;
+    }
+    public void setOneStockThree(ArrayList<Card> c)
+    {
+        OneStockThree = c;
+    }
+    public void setOneStockFour(ArrayList<Card> c)
+    {
+        OneStockFour = c;
+    }
+    public void setOneStockFive(ArrayList<Card> c)
+    {
+        OneStockFive = c;
+    }
+    
+    public void setPlayer2Cards(ArrayList<Card> c)
+    {
+        player2Cards = c;
+    }
+    public void setTwoStockOne(ArrayList<Card> c)
+    {
+        TwoStockOne = c;
+    }
+    public void setTwoStockTwo(ArrayList<Card> c)
+    {
+        TwoStockTwo = c;
+    }
+    public void setTwoStockThree(ArrayList<Card> c)
+    {
+        TwoStockThree = c;
+    }
+    public void setTwoStockFour(ArrayList<Card> c)
+    {
+        TwoStockFour = c;
+    }
+    public void setTwoStockFive(ArrayList<Card> c)
+    {
+        TwoStockFive = c;
+    }
+    
+    public void setRightSpit(ArrayList<Card> c)
+    {
+        RightSpit = c;
+    }
+    public void setLeftSpit(ArrayList<Card> c)
+    {
+        LeftSpit = c;
+    }
 }
