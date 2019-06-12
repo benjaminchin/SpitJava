@@ -40,6 +40,7 @@ public class Card
                 x = 792;
             case 13:    
                 x = 864;
+            default: x = 936;
         }
         if(suit == "HEART")
             y = 192;
