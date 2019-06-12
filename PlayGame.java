@@ -62,15 +62,11 @@ public class PlayGame
     
     public static void p1MakePlay()
     {
-        if (canPlay()==true)
+        if(canPlay() == true)
         {
-            if(         
-            {
-                
-            }
-            
-            
-            
+            Card temp = p1Selection.get(0);
+            p1Selection.remove(0);
+            p1SelectedPile.add(temp);
         }
         
     }

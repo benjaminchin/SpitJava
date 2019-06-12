@@ -16,6 +16,7 @@ public class GUI extends JFrame
     private static JButton start = new JButton("Start");
     private static JButton instructions = new JButton("Instructions");
     private static JFrame frame = new JFrame();
+    
     public static void start()
     {
         JPanel startMenu = new JPanel(new FlowLayout());
@@ -41,7 +42,8 @@ public class GUI extends JFrame
     {
         start();
     }
-    static class Action extends JFrame implements ActionListener
+    
+    static class Action extends JFrame implements ActionListener, KeyListener
     {  
         public void actionPerformed (ActionEvent e)
         {
@@ -71,7 +73,21 @@ public class GUI extends JFrame
                 game.setBackground(Color.GREEN);
                 game.setVisible(true);
                 playGame.setVisible(true);
+                
+                
             }
+        }
+        public void keyPressed(KeyEvent e)
+        {
+            int code = e.getKeyCode();
+            //
+            if(code == 
+        }
+        public void keyReleased(KeyEvent e)
+        {
+        }
+        public void keyTyped(KeyEvent e)
+        {
         }
     }
 }
