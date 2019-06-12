@@ -51,7 +51,7 @@ public class PlayGame
             p2SelectedPile = deck.RightSpit;
     }
 
-    public static boolean p1CanPlay()
+    public static boolean canPlay()
     {
         if((p1Selection.get(0).getRank() + 1 == p1SelectedPile.get(0).getRank() || p1Selection.get(0).getRank() - 1 == p1SelectedPile.get(0).getRank())
             || (p2Selection.get(0).getRank() + 1 == p2SelectedPile.get(0).getRank() || p2Selection.get(0).getRank() - 1 == p2SelectedPile.get(0).getRank()))
