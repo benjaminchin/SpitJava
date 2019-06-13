@@ -65,7 +65,7 @@ public class DisplayImage extends Deck
         oneStockFour.setIcon(new ImageIcon(swapOneStockFour));
         oneStockFive.setIcon(new ImageIcon(swapOneStockFive));
         
-        player2.setIcon(new ImageIcon(swapPlayer1));
+        player2.setIcon(new ImageIcon(swapPlayer2));
         twoStockOne.setIcon(new ImageIcon(swapTwoStockOne));
         twoStockTwo.setIcon(new ImageIcon(swapTwoStockTwo));
         twoStockThree.setIcon(new ImageIcon(swapTwoStockThree));
@@ -93,23 +93,23 @@ public class DisplayImage extends Deck
         BufferedImage hearts10 = img.getSubimage(648, 192, 72, 96);
         BufferedImage spades1 = img.getSubimage(0, 96, 72, 96);
         BufferedImage spades7 = img.getSubimage(432, 96, 72, 96);
-        
-        BufferedImage diamonds10 = img.getSubimage(648, 288, 72, 96);
-        BufferedImage hearts6 = img.getSubimage(360, 288, 72, 96);
         */
+        BufferedImage noFace1 = img.getSubimage(936, 0, 72, 96);
+        BufferedImage noFace2 = img.getSubimage(936, 0, 72, 96);
+        
         JFrame frame = new JFrame();
         frame.setLayout(null);
         frame.setSize(750, 750);
         frame.getContentPane().setBackground(Color.GREEN);
         
-        //JLabel player1 = new JLabel();
+        JLabel player1 = new JLabel();
         //JLabel oneStockOne = new JLabel();
         //JLabel oneStockTwo = new JLabel();
         //JLabel oneStockThree = new JLabel();
         //JLabel oneStockFour = new JLabel();
         //JLabel oneStockFive = new JLabel();
         
-        //JLabel player2 = new JLabel();
+        JLabel player2 = new JLabel();
         //JLabel twoStockOne = new JLabel();
         //JLabel twoStockTwo = new JLabel();
         //JLabel twoStockThree = new JLabel();
@@ -121,23 +121,23 @@ public class DisplayImage extends Deck
         
         
         
-        /*player1.setIcon(new ImageIcon(clubs1));
-        oneStockOne.setIcon(new ImageIcon(clubs2));
+        player1.setIcon(new ImageIcon(noFace1));
+        /*oneStockOne.setIcon(new ImageIcon(clubs2));
         oneStockTwo.setIcon(new ImageIcon(hearts1));
         oneStockThree.setIcon(new ImageIcon(hearts2));
         oneStockFour.setIcon(new ImageIcon(hearts3));
         oneStockFive.setIcon(new ImageIcon(spades13));
+        */
         
-        
-        player2.setIcon(new ImageIcon(clubs12));
-        twoStockOne.setIcon(new ImageIcon(diamonds3));
+        player2.setIcon(new ImageIcon(noFace2));
+        /*twoStockOne.setIcon(new ImageIcon(diamonds3));
         twoStockTwo.setIcon(new ImageIcon(hearts8));
         twoStockThree.setIcon(new ImageIcon(hearts10));
         twoStockFour.setIcon(new ImageIcon(spades1));
         twoStockFive.setIcon(new ImageIcon(spades7));
         
-        leftSpit.setIcon(new ImageIcon(diamonds10));
-        rightSpit.setIcon(new ImageIcon(hearts6));
+        leftSpit.setIcon(new ImageIcon(noFace1));
+        rightSpit.setIcon(new ImageIcon(noFace2));
         */
         frame.add(player1);
         frame.add(oneStockOne);
