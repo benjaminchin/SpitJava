@@ -1,6 +1,6 @@
 
 /**
- * Start GUi for Spit Game
+ * Start GUI for Spit Game
  *
  * @author Revanth Sudhireddy
  * @version (a version number or a date)
