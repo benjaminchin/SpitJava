@@ -92,7 +92,7 @@ public class GUI2 extends Deck
         leftSpit.setBounds(200, 270, 72, 96);
         rightSpit.setBounds(440, 270, 72, 96);
         
-        gamePanel.add(player1);
+        /*gamePanel.add(player1);
         gamePanel.add(oneStockOne);
         gamePanel.add(oneStockTwo);
         gamePanel.add(oneStockThree);
@@ -106,7 +106,21 @@ public class GUI2 extends Deck
         gamePanel.add(twoStockFive);
         gamePanel.add(leftSpit);
         gamePanel.add(rightSpit);
-
+        */
+        gameFrame.getContentPane().add(player1);
+        gameFrame.getContentPane().add(oneStockOne);
+        gameFrame.getContentPane().add(oneStockTwo);
+        gameFrame.getContentPane().add(oneStockThree);
+        gameFrame.getContentPane().add(oneStockFour);
+        gameFrame.getContentPane().add(oneStockFive);
+        gameFrame.getContentPane().add(player2);
+        gameFrame.getContentPane().add(twoStockOne);
+        gameFrame.getContentPane().add(twoStockTwo);
+        gameFrame.getContentPane().add(twoStockThree);
+        gameFrame.getContentPane().add(twoStockFour);
+        gameFrame.getContentPane().add(twoStockFive);
+        gameFrame.getContentPane().add(leftSpit);
+        gameFrame.getContentPane().add(rightSpit);
         //spit.setVisible(true);
         gameFrame.setVisible(true);
     }
