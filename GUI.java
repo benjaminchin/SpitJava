@@ -54,7 +54,7 @@ public class GUI extends JFrame
                 helpFrame.add(help); //Add panel to window
                 helpFrame.setSize(750, 750);
 
-                JLabel lbl = new JLabel("To play this game..."); //Label text
+                JLabel lbl = new JLabel("To play this game "); //Label text
                 lbl.setFont(new Font("Courier New",Font.BOLD,30));
                 lbl.setLocation(325, 325);
 
