@@ -51,7 +51,7 @@ public class GUI2 extends Deck
         gameFrame.setDefaultLookAndFeelDecorated(true);
         gameFrame.setLayout(null);
         gameFrame.add(gamePanel);
-        gameFrame.setSize(750, 750);
+        gameFrame.setSize(300, 200);
         gameFrame.getContentPane().setBackground(Color.ORANGE);
         
 
@@ -61,9 +61,9 @@ public class GUI2 extends Deck
         startSize = start.getPreferredSize();
         instructSize = instructions.getPreferredSize();
         
-        spit.setBounds(75, 0, spitSize.width, spitSize.height);
+        spit.setBounds(110, 0, spitSize.width, spitSize.height);
         start.setBounds(50, 50, startSize.width, startSize.height);
-        instructions.setBounds(100, 50, instructSize.width, instructSize.height);
+        instructions.setBounds(150, 50, instructSize.width, instructSize.height);
         
         gameFrame.getContentPane().add(spit);
         gameFrame.getContentPane().add(start);
@@ -134,7 +134,7 @@ public class GUI2 extends Deck
                 JFrame helpFrame = new JFrame(); //Create frame and panel
                 JPanel help = new JPanel(new FlowLayout());
                 helpFrame.add(help); //Add panel to window
-                helpFrame.setSize(1000, 750);
+                helpFrame.setSize(1000, 500);
 
                 JLabel lbl = new JLabel("<html>To play this game: <br/> Each Player starts with an evenly spit deck of cards." + 
                         "<br/>The cards are dealt into 5 stock piles, the first with 1 card, the second with 2, and so on. " +
@@ -162,7 +162,7 @@ public class GUI2 extends Deck
             else //Source == start
             {
                 
-                //gameFrame.setSize(750, 750);
+                gameFrame.setSize(750, 750);
                 //gameFrame.setLayout(null);
                 gameFrame.getContentPane().setBackground(Color.GREEN);
                 
