@@ -8,14 +8,24 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
-public class DisplayImage
+public class DisplayImage extends Deck
 {
-    
+    private static JLabel player1 = new JLabel();
     public static void main(String[] args) throws IOException
     {
+        Deck deck = new Deck();
+        deck.shuffle();
         DisplayImage abc = new DisplayImage();
+        repaintCard(deck.get(1).getX, );
     }
-
+    public static void repaintCard(int x, int y) throws IOException
+    {
+        BufferedImage img = ImageIO.read(new File("cards.png"));
+        BufferedImage swapCard = img.getSubimage(936, 0, 72, 96); //Closed face
+        
+        player1.setIcon(new ImageIcon(swapCard));
+        player1.setBounds(x, y, 72, 96);
+    }
     public DisplayImage() throws IOException
     {
         BufferedImage img = ImageIO.read(new File("cards.png"));
@@ -42,7 +52,7 @@ public class DisplayImage
         frame.setSize(750, 750);
         frame.getContentPane().setBackground(Color.GREEN);
         
-        JLabel player1 = new JLabel();
+        //JLabel player1 = new JLabel();
         JLabel oneStockOne = new JLabel();
         JLabel oneStockTwo = new JLabel();
         JLabel oneStockThree = new JLabel();
@@ -113,6 +123,7 @@ public class DisplayImage
         
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         
         
     }
