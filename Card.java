@@ -40,13 +40,13 @@ public class Card
                 x = 792;
             case 13:    
                 x = 864;
-            default: x = 936;
+            //default: x = 936;
         }
-        if(suit == "HEART")
+        if(suit == "HEARTS")
             y = 192;
-        else if(suit == "DIAMOND")
+        else if(suit == "DIAMONDS")
             y = 288;
-        else if(suit == "SPADE")
+        else if(suit == "SPADES")
             y = 96;
         else // if suit == "CLUB"
             y = 0;
