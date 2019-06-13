@@ -100,7 +100,8 @@ public class GUI2 extends Deck
                 helpFrame.add(help); //Add panel to window
                 helpFrame.setSize(750, 750);
 
-                JLabel lbl = new JLabel("To play this game "); //Label text
+                JLabel lbl = new JLabel("To play this game /n Each Player starts with an evenly spit deck of cards." + 
+                "The cards are dealt into 5 piles, the first with 1 card, the second with 2, and so on. ");
                 lbl.setFont(new Font("Courier New",Font.BOLD,30));
                 lbl.setLocation(325, 325);
 

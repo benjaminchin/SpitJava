@@ -2,10 +2,10 @@ import java.awt.event.*;
 import java.awt.*;
 import java.awt.event.*;
 /**
- * Write a description of class player here.
+ * Outlines the descriptions and controls for each of the players.
  *
  * @author Dhruv Gupta
- * @version (a version number or a date)
+ * @version 06.12.19
  */
 public class Player
 {
