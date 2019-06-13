@@ -54,11 +54,11 @@ public class Deck
         ArrayList<Card> temp = new ArrayList<Card>();
         temp = InitialDeck;
         int count = 0;
-        for(int i = 0; i<=temp.size()/2; i++)
+        for(int i = 0; i < temp.size()/2; i++)
         {
             player1Cards.add(i, temp.get(i));
         }
-        for (int k = 27; k<=52; k++)
+        for (int k = 27; k < 52; k++)
         {
             player2Cards.add(count, temp.get(k));
             count++;
