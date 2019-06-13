@@ -120,22 +120,23 @@ public class GUI2 extends Deck
                 JFrame helpFrame = new JFrame(); //Create frame and panel
                 JPanel help = new JPanel(new FlowLayout());
                 helpFrame.add(help); //Add panel to window
-                helpFrame.setSize(750, 750);
+                helpFrame.setSize(1600, 750);
 
-                JLabel lbl = new JLabel("To play this game: \n Each Player starts with an evenly spit deck of cards." + 
-                        "The cards are dealt into 5 stock piles, the first with 1 card, the second with 2, and so on. " +
-                        "\nThe moves you can make are one rank higher or lower (suit doesn't matter) on either spit pile. " + 
-                        "For Player 1 to make a move, they can use numbers 1-5 on the keyboard to select a stock pile to play from " +
+                JLabel lbl = new JLabel("<html>To play this game: <br/> Each Player starts with an evenly spit deck of cards." + 
+                        "<br/>The cards are dealt into 5 stock piles, the first with 1 card, the second with 2, and so on. " +
+                        "<br/>The moves you can make are one rank higher or lower (suit doesn't matter) on either spit pile. " + 
+                        "<br/>For Player 1 to make a move, they can use numbers 1-5 on the keyboard to select a stock pile to play from " +
                         "and A or D to play on the left or right spit pile, respectively. " +
-                        "For Player 2, they use numbers 1-5 on the number pad, and the 0 and Delete buttons to play on each spit pile." +
-                        "\nThere are no turns; if you see a move, make it as quick as possible! The other " +
-                        "player can make a move on either pile as well. \nWhen one player's stock piles are completely finished, both " +
-                        "players have to slap the table. \nPlayer 1 does this by pressing the left shift button, and Player 2 " + 
-                        "does this by pressing the Enter key. " + "Whoever slaps first gets the spit pile with less cards." + 
-                        "They then must add this number of cards to their original draw pile, reshuffle, and deal again. " +
-                        "\nThis is considered a round. The game keeps going until one player has gotten rid of all of their cards.");
-                lbl.setFont(new Font("Courier New",Font.BOLD,30));
-                lbl.setLocation(325, 325);
+                        "<br/>For Player 2, they use numbers 1-5 on the number pad, and the 0 and Delete buttons to play on each spit pile." +
+                        "<br/>There are no turns; if you see a move, make it as quick as possible! <br/>The other " +
+                        "player can make a move on either pile as well. <br/>When one player's stock piles are completely finished, both " +
+                        "players have to slap the table. <br/>Player 1 does this by pressing the left shift button, and Player 2 " + 
+                        "does this by pressing the Enter key. " + "<Whoever slaps first gets the spit pile with less cards." + 
+                        "<br/>They then must add this number of cards to their original draw pile, reshuffle, and deal again. " +
+                        "This is considered a round. <br/>The game keeps going until one player has gotten rid of all of their cards.</html>");
+                lbl.setFont(new Font("Courier New",Font.BOLD,15));
+                Dimension lblSize = lbl.getPreferredSize();
+                lbl.setBounds(0, 0, lblSize.width, lblSize.height);
 
                 help.add(lbl); //Add label to panel
                 help.setBackground(Color.CYAN);
