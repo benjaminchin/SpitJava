@@ -79,13 +79,13 @@ public class PlayGame extends Player
     {
         if (p1selected == 1)
         {
-            if(p1ile == "a")
+            if(p1pile == "a")
             if (OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1 )
             {
                 LeftSpit.add( OneStockOne.remove(OneStockOne.size()-1));
                 // display image code
             }
-            else if(p1pile = "d")
+            else if(p1pile == "d")
             if (OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1 )
             {
                 RightSpit.add( OneStockOne.remove(OneStockOne.size()-1));
@@ -242,7 +242,7 @@ public class PlayGame extends Player
 
         if (p2selected == 4)
         {
-            if(p2ile == "0")
+            if(p2pile == "0")
             if (TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
                 LeftSpit.add( TwoStockFour.remove(TwoStockFour.size()-1));
