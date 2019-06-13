@@ -126,35 +126,31 @@ public class PlayGame extends Player
         if (p1selected == 4)
         {
             if(p1pile == "a")
-            if (OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
-            {
-                LeftSpit.add(OneStockFour.remove(OneStockFour.size()-1));
+                if (OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    LeftSpit.add(OneStockFour.remove(OneStockFour.size()-1));
 
-            }
+                }
             if(p1pile == "d")
-            if (OneStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
-            {
-                RightSpit.add(OneStockFour.remove(OneStockFour.size()-1));
+                if (OneStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    RightSpit.add(OneStockFour.remove(OneStockFour.size()-1));
 
-            }
+                }
         }
 
         if (p1selected == 5)
         {
             if(p1pile == "a")
-            if (OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
-            {
-
-                LeftSpit.add(OneStockFive.remove(OneStockFive.size()-1))
-
-            }
+                if (OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    LeftSpit.add(OneStockFive.remove(OneStockFive.size()-1));
+                }
             else if(p1pile == "d")
-            if (OneStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
-            {
-
-                RightSpit.add(OneStockFive.remove(OneStockFive.size()-1))
-
-            }
+                if (OneStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    RightSpit.add(OneStockFive.remove(OneStockFive.size()-1));
+                }
         }
         
         
