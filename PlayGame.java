@@ -82,7 +82,7 @@ public class PlayGame extends Player
         {
             if (OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1 )
             {
-                LeftSpit.add(0, OneStockOne.remove(0));
+                LeftSpit.add( OneStockOne.remove(OneStockOne.size()-1));
                 // display image code
             }
         }
@@ -93,7 +93,7 @@ public class PlayGame extends Player
 
             {
 
-                LeftSpit.add(0, OneStockTwo.remove(0));
+                LeftSpit.add(OneStockTwo.remove(OneStockTwo.size()-1));
 
             }
 
@@ -102,7 +102,7 @@ public class PlayGame extends Player
         {
             if (OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(0, OneStockThree.remove(0));
+                LeftSpit.add( OneStockThree.remove(OneStockThree.size()-1));
 
             }
 
@@ -111,7 +111,7 @@ public class PlayGame extends Player
         {
             if (OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(0,OneStockFour.remove(0));
+                LeftSpit.add(OneStockFour.remove(OneStockFour.size()-1));
 
             }
         }
@@ -122,7 +122,7 @@ public class PlayGame extends Player
 
             {
 
-                LeftSpit.add(0,OneStockFive.remove(0));
+                LeftSpit.add(OneStockFive.remove(OneStockFive.size()-1));
 
             }
         }
@@ -130,7 +130,7 @@ public class PlayGame extends Player
         {
             if (OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
-                RightSpit.add(0, OneStockOne.remove(0));
+                RightSpit.add( OneStockOne.remove(OneStockOne.size()-1));
             }
         }
 
@@ -139,7 +139,7 @@ public class PlayGame extends Player
 
             if (OneStockTwo.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockTwo.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
-                RightSpit.add(0, OneStockTwo.remove(0));
+                RightSpit.add(OneStockTwo.remove(OneStockTwo.size()-1));
             }
 
         }
@@ -148,7 +148,7 @@ public class PlayGame extends Player
         {
             if (OneStockThree.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockThree.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
-                RightSpit.add(0, OneStockThree.remove(0));
+                RightSpit.add( OneStockThree.remove(OneStockThree.size()-1));
             }
 
         }
@@ -158,7 +158,7 @@ public class PlayGame extends Player
 
             if (OneStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
-                RightSpit.add(0, OneStockFour.remove(0));
+                RightSpit.add( OneStockFour.remove(OneStockFour.size()-1));
             }
         }
 
@@ -166,11 +166,22 @@ public class PlayGame extends Player
         {
             if (OneStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
-                RightSpit.add(0, OneStockFive.remove(0));
+                RightSpit.add( OneStockFive.remove(OneStockFive.size()-1));
             }
 
         }
 
+        
+        if (p1pile == "flip")
+        {
+            
+            LeftSpit.add(player1Cards.remove(player1Cards.size()-1));
+            
+        }
+        
+        
+        
+        
         if (p1pile == "+" && OneStockOne.size() ==0 && OneStockTwo.size() ==0 && OneStockThree.size() == 0 && OneStockFour.size() == 0
         && OneStockFive.size() == 0)
         {
@@ -198,6 +209,8 @@ public class PlayGame extends Player
             }
 
         }
+        
+        // code case to assign player bigger pile when slapped
 
     }
 
@@ -208,7 +221,7 @@ public class PlayGame extends Player
         {
             if (TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(0, TwoStockOne.remove(0));
+                LeftSpit.add(TwoStockOne.remove(TwoStockOne.size()-1));
 
             }
 
@@ -218,7 +231,7 @@ public class PlayGame extends Player
 
             if (TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(0, TwoStockTwo.remove(0));
+                LeftSpit.add(TwoStockTwo.remove(TwoStockTwo.size()-1));
 
             }
 
@@ -227,7 +240,7 @@ public class PlayGame extends Player
         {
             if (TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(0, TwoStockThree.remove(0));
+                LeftSpit.add( TwoStockThree.remove(TwoStockThree.size()-1));
 
             }
 
@@ -237,7 +250,7 @@ public class PlayGame extends Player
         {
             if (TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(0, TwoStockFour.remove(0));
+                LeftSpit.add( TwoStockFour.remove(TwoStockFour.size()-1));
 
             }
 
@@ -247,7 +260,7 @@ public class PlayGame extends Player
         {
             if (TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(0, TwoStockFive.remove(0));
+                LeftSpit.add(TwoStockFive.remove(TwoStockFive.size()-1));
 
             }
         }
@@ -326,6 +339,8 @@ public class PlayGame extends Player
             }
 
         }
+        
+       // code case to assign player bigger pile when slapped
 
     }
 
