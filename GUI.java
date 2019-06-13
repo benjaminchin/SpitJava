@@ -81,7 +81,7 @@ public class GUI extends JFrame
         {
             int code = e.getKeyCode();
             //
-            if(code == 
+            
         }
         public void keyReleased(KeyEvent e)
         {
