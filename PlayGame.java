@@ -192,7 +192,7 @@ public class PlayGame extends Player
 
         }
         
-        // code case to assign player bigger pile when slapped
+        // code case to assign player smaller pile when slapped
 
     }
 
@@ -279,22 +279,19 @@ public class PlayGame extends Player
 
                 }
                 LeftSpit.clear();
-
             }
             else
             {
                 for (int k = 0; k<=RightSpit.size(); k++)
                 {
                     player2Cards.add(RightSpit.get(k));
-
                 }
                 RightSpit.clear();
             }
-
         }
         
-       // code case to assign player bigger pile when slapped
-
+       // code case to assign player smaller pile when slapped
+       
     }
 
     public boolean gameIsOver()
