@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class PlayGame extends player
+public class PlayGame extends Player
 {
     private static Deck deck = new Deck();
     private static Player1 player1 = new Player1();
@@ -8,7 +8,7 @@ public class PlayGame extends player
     //private static ArrayList<Card> p2Selection;
     //private static ArrayList<Card> p1SelectedPile;
     //private static ArrayList<Card> p2SelectedPile;
-    public ArrayList<Card> InitialDeck = new ArrayList<Card>();
+    public  ArrayList<Card> InitialDeck = new ArrayList<Card>();
     public ArrayList<Card> player1Cards = new ArrayList<Card>();
     public ArrayList<Card> OneStockOne = new ArrayList<Card>();
     public ArrayList<Card> OneStockTwo = new ArrayList<Card>();
@@ -29,9 +29,8 @@ public class PlayGame extends player
         deck.printDeck();
     }
 
-    public static void selectedCards()
-    {
-
+    /*public static void selectedCards()
+    {  
         if(player1.p1selected == 1)
             p1Selection = deck.OneStockOne;
         else if(player1.p1selected == 2)
@@ -63,7 +62,7 @@ public class PlayGame extends player
             p2SelectedPile = deck.LeftSpit;
         else
             p2SelectedPile = deck.RightSpit;
-    }
+    } */
 
     //public static boolean canPlay()
     //{
@@ -75,7 +74,7 @@ public class PlayGame extends player
     //return false;
     //}
 
-    public static void p1MakePlay()
+    public void p1MakePlay()
     {
 
         if (p1selected == 1 && p1pile == "a")
@@ -109,7 +108,7 @@ public class PlayGame extends player
         }
         if (p1selected == 4 && p1pile == "a")
         {
-            if (OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+            if (OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
                 LeftSpit.add(0,OneStockFour.remove(0));
 
@@ -118,7 +117,7 @@ public class PlayGame extends player
 
         if (p1selected == 5 && p1pile == "a")
         {
-            if (OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank-1 || OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+            if (OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
 
             {
 
@@ -128,7 +127,7 @@ public class PlayGame extends player
         }
         if (p1selected == 1 && p1pile == "d")
         {
-            if (OneStockOne.get(0).getRank() == RightSpit.get(0).getRank-1 || OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()+1)
+            if (OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
                 RightSpit.add(0, OneStockOne.remove(0));
             }
@@ -137,7 +136,7 @@ public class PlayGame extends player
         if (p1selected ==2 && p1pile =="d")
         {
 
-            if (OneStockTwo.get(0).getRank() == RightSpit.get(0).getRank-1 || OneStockTwo.get(0).getRank() == RightSpit.get(0).getRank()+1)
+            if (OneStockTwo.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockTwo.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
                 RightSpit.add(0, OneStockTwo.remove(0));
             }
@@ -146,7 +145,7 @@ public class PlayGame extends player
 
         if (p1selected == 3 && p1pile =="d")
         {
-            if (OneStockThree.get(0).getRank() == RightSpit.get(0).getRank-1 || OneStockThree.get(0).getRank() == RightSpit.get(0).getRank()+1)
+            if (OneStockThree.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockThree.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
                 RightSpit.add(0, OneStockThree.remove(0));
             }
@@ -156,7 +155,7 @@ public class PlayGame extends player
         if (p1selected ==4 && p1pile == "d")
         {
 
-            if (OneStockFour.get(0).getRank() == RightSpit.get(0).getRank-1 || OneStockFour.get(0).getRank() == RightSpit.get(0).getRank()+1)
+            if (OneStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
                 RightSpit.add(0, OneStockFour.remove(0));
             }
@@ -164,7 +163,7 @@ public class PlayGame extends player
 
         if (p1selected == 5 && p1pile== "d")
         {
-            if (OneStockFive.get(0).getRank() == RightSpit.get(0).getRank-1 || OneStockFive.get(0).getRank() == RightSpit.get(0).getRank()+1)
+            if (OneStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
                 RightSpit.add(0, OneStockFive.remove(0));
             }
@@ -172,12 +171,12 @@ public class PlayGame extends player
         }
     }
 
-    public static void p2MakePlay()
+    public  void p2MakePlay()
     {
 
         if (p2selected ==1 && p2pile == "0")
         {
-            if (TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == LeftSpit(0).getRank()+1)
+            if (TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
                 LeftSpit.add(0, TwoStockOne.remove(0));
 
@@ -187,7 +186,7 @@ public class PlayGame extends player
         if (p2selected == 2 && p2pile == "0")
         {
 
-            if (TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit(0).getRank()+1)
+            if (TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
                 LeftSpit.add(0, TwoStockTwo.remove(0));
 
@@ -196,7 +195,7 @@ public class PlayGame extends player
         }
         if (p2selected ==3 && p2pile == "0")
         {
-            if (TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit(0).getRank()+1)
+            if (TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
                 LeftSpit.add(0, TwoStockThree.remove(0));
 
@@ -206,7 +205,7 @@ public class PlayGame extends player
 
         if (p2selected ==4 && p2pile == "0")
         {
-            if (TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == LeftSpit(0).getRank()+1)
+            if (TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
                 LeftSpit.add(0, TwoStockFour.remove(0));
 
@@ -214,46 +213,46 @@ public class PlayGame extends player
 
         }
 
-        if (p2selected ==5 && pile2 =="0")
+        if (p2selected ==5 && p2pile =="0")
         {
-            if (TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == LeftSpit(0).getRank()+1)
+            if (TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
                 LeftSpit.add(0, TwoStockFive.remove(0));
 
             }
         }
 
-        if (p2selected ==1 && pile2 = "delete")
+        if (p2selected ==1 && p2pile == "delete")
         {
-            if (TwoStockOne.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == RightSpit(0).getRank()+1)
+            if (TwoStockOne.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
                 RightSpit.add(0, TwoStockOne.remove(0));
 
             }
 
         }
-        if (p2selected ==2 && pile2 = "delete")
+        if (p2selected ==2 && p2pile == "delete")
         {
-            if (TwoStockTwo.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == RightSpit(0).getRank()+1)
+            if (TwoStockTwo.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
                 RightSpit.add(0, TwoStockTwo.remove(0));
 
             }
 
         }
-        if (p2selected ==3 && pile2 = "delete")
+        if (p2selected ==3 && p2pile == "delete")
         {
-            if (TwoStockThree.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockThree.get(0).getRank() == RightSpit(0).getRank()+1)
+            if (TwoStockThree.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockThree.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
                 RightSpit.add(0, TwoStockThree.remove(0));
 
             }
 
         }
-        if (p2selected ==4 && pile2 = "delete")
+        if (p2selected ==4 && p2pile == "delete")
         {
 
-            if (TwoStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == RightSpit(0).getRank()+1)
+            if (TwoStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
                 RightSpit.add(0, TwoStockFour.remove(0));
 
@@ -262,10 +261,10 @@ public class PlayGame extends player
         }
 
         
-        if (p2selected ==5 && pile2 = "delete")
+        if (p2selected ==5 && p2pile == "delete")
         {
 
-            if (TwoStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == RightSpit(0).getRank()+1)
+            if (TwoStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == RightSpit.get(0).getRank()+1)
             {
                 RightSpit.add(0, TwoStockFive.remove(0));
 
@@ -275,13 +274,19 @@ public class PlayGame extends player
         
     }
 
-    public static boolean gameIsOver()
+    public boolean gameIsOver()
     {
+        if (player1Cards.size() == 0 || player2Cards.size() == 0)
+        {
+            return true;
+        }
         return false;
     }
 
-    public static boolean roundisOver()
+    public boolean roundisOver()
     {
+        if (LeftSpit.size() == 0 || RightSpit.size() == 0)
+        return true;
         return false;
     }
 }
