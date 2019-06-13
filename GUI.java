@@ -39,7 +39,10 @@ public class GUI extends JFrame
         
     }
 
-    
+    public static void main(String[] args)
+    {
+        start();
+    }
 
     static class Action extends Deck implements ActionListener
     {  
@@ -65,13 +68,7 @@ public class GUI extends JFrame
         private static JLabel rightSpit = new JLabel();
         
         private static Deck deck = new Deck();
-        public static void main(String[] args)
-        {
-            start();
-            
-            deck.shuffle();
-            deck.deal();
-        }
+        
         public void actionPerformed (ActionEvent e)
         {
             if (e.getSource() == instructions) //If "instructions" button is pressed, display how to play game.
@@ -92,6 +89,11 @@ public class GUI extends JFrame
             }
             else //If start button is pressed, display table and start playing game.
             {
+                
+            
+                deck.shuffle();
+                deck.deal();
+                
                 playGame.add(game);
                 playGame.setSize(750, 750);
 
