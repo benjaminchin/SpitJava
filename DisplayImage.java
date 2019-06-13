@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Color;
-public class DisplayImage extends Deck
+public class DisplayImage
 {
     
     public static void main(String[] args) throws IOException
