@@ -9,6 +9,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import java.io.File;
+
+import java.awt.Dimension;
 public class GUI2 extends Deck
 {
     private static JFrame gameFrame = new JFrame();
@@ -36,6 +38,10 @@ public class GUI2 extends Deck
     private static JLabel rightSpit = new JLabel();
 
     private static Deck deck = new Deck();
+    
+    private static Dimension spitSize;
+    private static Dimension startSize;
+    private static Dimension instructSize;
     public static void main(String[] args)
     {
 
@@ -43,18 +49,31 @@ public class GUI2 extends Deck
         deck.deal();
 
         gameFrame.setDefaultLookAndFeelDecorated(true);
+        gameFrame.setLayout(null);
         gameFrame.add(gamePanel);
-        gameFrame.setSize(200, 200);
-        gamePanel.setBackground(Color.ORANGE);
+        gameFrame.setSize(750, 750);
+        gameFrame.getContentPane().setBackground(Color.ORANGE);
+        
 
         spit.setFont(new Font("Courier New",Font.BOLD,30));
-        gamePanel.add(spit);
-
+        
+        spitSize = spit.getPreferredSize();
+        startSize = start.getPreferredSize();
+        instructSize = instructions.getPreferredSize();
+        
+        spit.setBounds(75, 0, spitSize.width, spitSize.height);
+        start.setBounds(50, 50, startSize.width, startSize.height);
+        instructions.setBounds(100, 50, instructSize.width, instructSize.height);
+        
+        gameFrame.getContentPane().add(spit);
+        gameFrame.getContentPane().add(start);
+        gameFrame.getContentPane().add(instructions);
+        
         start.addActionListener(new Action());
         instructions.addActionListener(new Action());
-
-        gamePanel.add(start);
-        gamePanel.add(instructions);
+        //start.setBounds(20, 50, 100, 100);
+        //gamePanel.add(start);
+        //gamePanel.add(instructions);
 
         player1.setBounds(320,10, 72, 96);
         oneStockOne.setBounds(80,130, 72, 96);
@@ -72,7 +91,7 @@ public class GUI2 extends Deck
 
         leftSpit.setBounds(200, 270, 72, 96);
         rightSpit.setBounds(440, 270, 72, 96);
-
+        
         gamePanel.add(player1);
         gamePanel.add(oneStockOne);
         gamePanel.add(oneStockTwo);
@@ -88,45 +107,10 @@ public class GUI2 extends Deck
         gamePanel.add(leftSpit);
         gamePanel.add(rightSpit);
 
+        //spit.setVisible(true);
         gameFrame.setVisible(true);
     }
 
-    public static void repaintCards()
-    {
-        BufferedImage swapPlayer1 = img.getSubimage(deck.player1Cards.get(0).getX(), deck.player1Cards.get(0).getY(), 72, 96);
-        BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
-        BufferedImage swapOneStockTwo = img.getSubimage(deck.OneStockTwo.get(0).getX(), deck.OneStockTwo.get(0).getY(), 72, 96);
-        BufferedImage swapOneStockThree = img.getSubimage(deck.OneStockThree.get(0).getX(), deck.OneStockThree.get(0).getY(), 72, 96);
-        BufferedImage swapOneStockFour = img.getSubimage(deck.OneStockFour.get(0).getX(), deck.OneStockFour.get(0).getY(), 72, 96);
-        BufferedImage swapOneStockFive = img.getSubimage(deck.OneStockFive.get(0).getX(), deck.OneStockFive.get(0).getY(), 72, 96);
-
-        BufferedImage swapPlayer2 = img.getSubimage(deck.player2Cards.get(0).getX(), deck.player2Cards.get(0).getY(), 72, 96);
-        BufferedImage swapTwoStockOne = img.getSubimage(deck.TwoStockOne.get(0).getX(), deck.TwoStockOne.get(0).getY(), 72, 96);
-        BufferedImage swapTwoStockTwo = img.getSubimage(deck.TwoStockTwo.get(0).getX(), deck.TwoStockTwo.get(0).getY(), 72, 96);
-        BufferedImage swapTwoStockThree = img.getSubimage(deck.TwoStockThree.get(0).getX(), deck.TwoStockThree.get(0).getY(), 72, 96);
-        BufferedImage swapTwoStockFour = img.getSubimage(deck.TwoStockFour.get(0).getX(), deck.TwoStockFour.get(0).getY(), 72, 96);
-        BufferedImage swapTwoStockFive = img.getSubimage(deck.TwoStockFive.get(0).getX(), deck.TwoStockFive.get(0).getY(), 72, 96);
-
-        BufferedImage swapLeftSpit = img.getSubimage(deck.LeftSpit.get(0).getX(), deck.LeftSpit.get(0).getY(), 72, 96);
-        BufferedImage swapRightSpit = img.getSubimage(deck.RightSpit.get(0).getX(), deck.RightSpit.get(0).getY(), 72, 96);
-
-        player1.setIcon(new ImageIcon(swapPlayer1));
-        oneStockOne.setIcon(new ImageIcon(swapOneStockOne));
-        oneStockTwo.setIcon(new ImageIcon(swapOneStockTwo));
-        oneStockThree.setIcon(new ImageIcon(swapOneStockThree));
-        oneStockFour.setIcon(new ImageIcon(swapOneStockFour));
-        oneStockFive.setIcon(new ImageIcon(swapOneStockFive));
-
-        player2.setIcon(new ImageIcon(swapPlayer2));
-        twoStockOne.setIcon(new ImageIcon(swapTwoStockOne));
-        twoStockTwo.setIcon(new ImageIcon(swapTwoStockTwo));
-        twoStockThree.setIcon(new ImageIcon(swapTwoStockThree));
-        twoStockFour.setIcon(new ImageIcon(swapTwoStockFour));
-        twoStockFive.setIcon(new ImageIcon(swapTwoStockFive));
-
-        leftSpit.setIcon(new ImageIcon(swapLeftSpit));
-        rightSpit.setIcon(new ImageIcon(swapRightSpit));
-    }
     static class Action implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -150,17 +134,65 @@ public class GUI2 extends Deck
             }
             else //Source == start
             {
-                gameFrame.setSize(750, 750);
-                //gameFrame.setBackground(Color.GREEN);
-                gamePanel.setSize(750, 750);
-                gamePanel.setBackground(Color.GREEN);
+                
+                //gameFrame.setSize(750, 750);
+                //gameFrame.setLayout(null);
+                gameFrame.getContentPane().setBackground(Color.GREEN);
+                
+                //gamePanel.setBackground(Color.GREEN);
 
-                gamePanel.remove(start);
-                gamePanel.remove(spit);
+                gameFrame.getContentPane().remove(start);
+                gameFrame.getContentPane().remove(spit);
+                instructions.setBounds(0, 0, instructSize.width, instructSize.height);
                 //gamePanel.remove(instructions);
-                repaintCards();
+                try
+                {
+                    repaintCards();
+                }
+                catch(Exception ex)
+                {
+                    //Nothing
+                }
             }
         }
 
+        public static void repaintCards() throws IOException
+        {
+            img = ImageIO.read(new File("cards.png"));
+            
+            BufferedImage swapPlayer1 = img.getSubimage(deck.player1Cards.get(0).getX(), deck.player1Cards.get(0).getY(), 72, 96);
+            BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
+            BufferedImage swapOneStockTwo = img.getSubimage(deck.OneStockTwo.get(0).getX(), deck.OneStockTwo.get(0).getY(), 72, 96);
+            BufferedImage swapOneStockThree = img.getSubimage(deck.OneStockThree.get(0).getX(), deck.OneStockThree.get(0).getY(), 72, 96);
+            BufferedImage swapOneStockFour = img.getSubimage(deck.OneStockFour.get(0).getX(), deck.OneStockFour.get(0).getY(), 72, 96);
+            BufferedImage swapOneStockFive = img.getSubimage(deck.OneStockFive.get(0).getX(), deck.OneStockFive.get(0).getY(), 72, 96);
+
+            BufferedImage swapPlayer2 = img.getSubimage(deck.player2Cards.get(0).getX(), deck.player2Cards.get(0).getY(), 72, 96);
+            BufferedImage swapTwoStockOne = img.getSubimage(deck.TwoStockOne.get(0).getX(), deck.TwoStockOne.get(0).getY(), 72, 96);
+            BufferedImage swapTwoStockTwo = img.getSubimage(deck.TwoStockTwo.get(0).getX(), deck.TwoStockTwo.get(0).getY(), 72, 96);
+            BufferedImage swapTwoStockThree = img.getSubimage(deck.TwoStockThree.get(0).getX(), deck.TwoStockThree.get(0).getY(), 72, 96);
+            BufferedImage swapTwoStockFour = img.getSubimage(deck.TwoStockFour.get(0).getX(), deck.TwoStockFour.get(0).getY(), 72, 96);
+            BufferedImage swapTwoStockFive = img.getSubimage(deck.TwoStockFive.get(0).getX(), deck.TwoStockFive.get(0).getY(), 72, 96);
+
+            BufferedImage swapLeftSpit = img.getSubimage(deck.LeftSpit.get(0).getX(), deck.LeftSpit.get(0).getY(), 72, 96);
+            BufferedImage swapRightSpit = img.getSubimage(deck.RightSpit.get(0).getX(), deck.RightSpit.get(0).getY(), 72, 96);
+
+            player1.setIcon(new ImageIcon(swapPlayer1));
+            oneStockOne.setIcon(new ImageIcon(swapOneStockOne));
+            oneStockTwo.setIcon(new ImageIcon(swapOneStockTwo));
+            oneStockThree.setIcon(new ImageIcon(swapOneStockThree));
+            oneStockFour.setIcon(new ImageIcon(swapOneStockFour));
+            oneStockFive.setIcon(new ImageIcon(swapOneStockFive));
+
+            player2.setIcon(new ImageIcon(swapPlayer2));
+            twoStockOne.setIcon(new ImageIcon(swapTwoStockOne));
+            twoStockTwo.setIcon(new ImageIcon(swapTwoStockTwo));
+            twoStockThree.setIcon(new ImageIcon(swapTwoStockThree));
+            twoStockFour.setIcon(new ImageIcon(swapTwoStockFour));
+            twoStockFive.setIcon(new ImageIcon(swapTwoStockFive));
+
+            leftSpit.setIcon(new ImageIcon(swapLeftSpit));
+            rightSpit.setIcon(new ImageIcon(swapRightSpit));
+        }
     }
 }
