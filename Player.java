@@ -1,6 +1,7 @@
 import java.awt.event.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 /**
  * Write a description of class player here.
  *
@@ -13,6 +14,21 @@ public class Player
     public String p2pile;
     public int p1selected = 0;
     public String p1pile;
+    public  ArrayList<Card> InitialDeck = new ArrayList<Card>();
+    public ArrayList<Card> player1Cards = new ArrayList<Card>();
+    public ArrayList<Card> OneStockOne = new ArrayList<Card>();
+    public ArrayList<Card> OneStockTwo = new ArrayList<Card>();
+    public ArrayList<Card> OneStockThree = new ArrayList<Card>();
+    public ArrayList<Card> OneStockFour = new ArrayList<Card>();
+    public ArrayList<Card> OneStockFive = new ArrayList<Card>();
+    public ArrayList<Card> LeftSpit = new ArrayList<Card>();
+    public ArrayList<Card> RightSpit = new ArrayList<Card>();
+    public ArrayList<Card> player2Cards = new ArrayList<Card>();
+    public ArrayList<Card> TwoStockOne = new ArrayList<Card>();
+    public ArrayList<Card> TwoStockTwo = new ArrayList<Card>();
+    public ArrayList<Card> TwoStockThree = new ArrayList<Card>();
+    public ArrayList<Card> TwoStockFour = new ArrayList<Card>();
+    public ArrayList<Card> TwoStockFive = new ArrayList<Card>();
     abstract class KeyAdapter implements KeyListener
     {
         public void keyPressedP2(KeyEvent e)
