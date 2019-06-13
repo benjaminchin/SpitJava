@@ -170,35 +170,35 @@ public class PlayGame extends Player
             }
 
         }
-        
+
         if (p1pile == "+" && OneStockOne.size() ==0 && OneStockTwo.size() ==0 && OneStockThree.size() == 0 && OneStockFour.size() == 0
         && OneStockFive.size() == 0)
         {
-            
+
             if (LeftSpit.size() < RightSpit.size())
             {
                 for (int i = 0; i<= LeftSpit.size(); i++)
                 {
                     player1Cards.add(LeftSpit.get(i));
-                    
+
                 }
                 LeftSpit.clear();
-                
+
             }
-            
+
             else
             {
                 for (int k = 0; k<=RightSpit.size(); k++)
                 {
-                    
+
                     player1Cards.add(RightSpit.get(k));
-                    
+
                 }
                 RightSpit.clear();
             }
-            
+
         }
-        
+
     }
 
     public  void p2MakePlay()
@@ -290,7 +290,6 @@ public class PlayGame extends Player
 
         }
 
-
         if (p2selected ==5 && p2pile == "delete")
         {
 
@@ -302,10 +301,32 @@ public class PlayGame extends Player
 
         }
 
-        
-        
-        
-        
+        if (p2pile == "slap" && TwoStockOne.size()==0 && TwoStockTwo.size() == 0 && TwoStockThree.size() == 0 && TwoStockFour.size() == 0
+        && TwoStockFive.size()== 0)
+        {
+
+            if (LeftSpit.size() < RightSpit.size())
+            {
+                for (int i = 0; i<= LeftSpit.size(); i++)
+                {
+                    player2Cards.add(LeftSpit.get(i));
+
+                }
+                LeftSpit.clear();
+
+            }
+            else
+            {
+                for (int k = 0; k<=RightSpit.size(); k++)
+                {
+                    player2Cards.add(RightSpit.get(k));
+
+                }
+                RightSpit.clear();
+            }
+
+        }
+
     }
 
     public boolean gameIsOver()
