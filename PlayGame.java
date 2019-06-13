@@ -23,7 +23,7 @@ public class PlayGame extends Player
     public ArrayList<Card> TwoStockThree = new ArrayList<Card>();
     public ArrayList<Card> TwoStockFour = new ArrayList<Card>();
     public ArrayList<Card> TwoStockFive = new ArrayList<Card>();
-    
+
     public static void main(String[] args)
     {
         deck.shuffle();
@@ -32,37 +32,37 @@ public class PlayGame extends Player
 
     /*public static void selectedCards()
     {  
-        if(player1.p1selected == 1)
-            p1Selection = deck.OneStockOne;
-        else if(player1.p1selected == 2)
-            p1Selection = deck.OneStockTwo;
-        else if(player1.p1selected == 3)
-            p1Selection = deck.OneStockThree;
-        else if(player1.p1selected == 4)
-            p1Selection = deck.OneStockFour;
-        else
-            p1Selection = deck.OneStockFive;
+    if(player1.p1selected == 1)
+    p1Selection = deck.OneStockOne;
+    else if(player1.p1selected == 2)
+    p1Selection = deck.OneStockTwo;
+    else if(player1.p1selected == 3)
+    p1Selection = deck.OneStockThree;
+    else if(player1.p1selected == 4)
+    p1Selection = deck.OneStockFour;
+    else
+    p1Selection = deck.OneStockFive;
 
-        if(player2.p2selected ==1 )
-            p2Selection = deck.TwoStockOne;
-        else if(player2.p2selected == 2)
-            p2Selection = deck.TwoStockTwo;
-        else if(player2.p2selected == 3)
-            p2Selection = deck.TwoStockThree;
-        else if(player2.p2selected == 4)
-            p2Selection = deck.TwoStockFour;
-        else
-            p2Selection = deck.TwoStockFive;
+    if(player2.p2selected ==1 )
+    p2Selection = deck.TwoStockOne;
+    else if(player2.p2selected == 2)
+    p2Selection = deck.TwoStockTwo;
+    else if(player2.p2selected == 3)
+    p2Selection = deck.TwoStockThree;
+    else if(player2.p2selected == 4)
+    p2Selection = deck.TwoStockFour;
+    else
+    p2Selection = deck.TwoStockFive;
 
-        if(player1.p1pile == "a")
-            p1SelectedPile = deck.LeftSpit;
-        else
-            p1SelectedPile = deck.RightSpit;
+    if(player1.p1pile == "a")
+    p1SelectedPile = deck.LeftSpit;
+    else
+    p1SelectedPile = deck.RightSpit;
 
-        if(player2.p2pile == "0")
-            p2SelectedPile = deck.LeftSpit;
-        else
-            p2SelectedPile = deck.RightSpit;
+    if(player2.p2pile == "0")
+    p2SelectedPile = deck.LeftSpit;
+    else
+    p2SelectedPile = deck.RightSpit;
     } */
 
     //public static boolean canPlay()
@@ -170,6 +170,35 @@ public class PlayGame extends Player
             }
 
         }
+        
+        if (p1pile == "+" && OneStockOne.size() ==0 && OneStockTwo.size() ==0 && OneStockThree.size() == 0 && OneStockFour.size() == 0
+        && OneStockFive.size() == 0)
+        {
+            
+            if (LeftSpit.size() < RightSpit.size())
+            {
+                for (int i = 0; i<= LeftSpit.size(); i++)
+                {
+                    player1Cards.add(LeftSpit.get(i));
+                    
+                }
+                LeftSpit.clear();
+                
+            }
+            
+            else
+            {
+                for (int k = 0; k<=RightSpit.size(); k++)
+                {
+                    
+                    player1Cards.add(RightSpit.get(k));
+                    
+                }
+                RightSpit.clear();
+            }
+            
+        }
+        
     }
 
     public  void p2MakePlay()
@@ -261,7 +290,7 @@ public class PlayGame extends Player
 
         }
 
-        
+
         if (p2selected ==5 && p2pile == "delete")
         {
 
@@ -272,6 +301,10 @@ public class PlayGame extends Player
             }
 
         }
+
+        
+        
+        
         
     }
 
@@ -287,7 +320,7 @@ public class PlayGame extends Player
     public boolean roundisOver()
     {
         if (LeftSpit.size() == 0 || RightSpit.size() == 0)
-        return true;
+            return true;
         return false;
     }
 }
