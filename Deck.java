@@ -3,23 +3,23 @@ import java.util.ArrayList;
 import java.util.Collections;
 public class Deck
 {
-  //  public ArrayList<Card> InitialDeck = new ArrayList<Card>();
-   // public ArrayList<Card> player1Cards = new ArrayList<Card>();
-    //public ArrayList<Card> OneStockOne = new ArrayList<Card>();
-  //  public ArrayList<Card> OneStockTwo = new ArrayList<Card>();
-  //  public ArrayList<Card> OneStockThree = new ArrayList<Card>();
-  //  public ArrayList<Card> OneStockFour = new ArrayList<Card>();
-  //  public ArrayList<Card> OneStockFive = new ArrayList<Card>();
-  //  public ArrayList<Card> LeftSpit = new ArrayList<Card>();
-  //  public ArrayList<Card> RightSpit = new ArrayList<Card>();
-  //  public ArrayList<Card> player2Cards = new ArrayList<Card>();
-  //  public ArrayList<Card> TwoStockOne = new ArrayList<Card>();
-  //  public ArrayList<Card> TwoStockTwo = new ArrayList<Card>();
-  //  public ArrayList<Card> TwoStockThree = new ArrayList<Card>();
-   // public ArrayList<Card> TwoStockFour = new ArrayList<Card>();
-   // public ArrayList<Card> TwoStockFive = new ArrayList<Card>();
-    
-   // public ArrayList<ArrayList<Card>> player1Stocks = new ArrayList<ArrayList<Card>>();
+    public ArrayList<Card> InitialDeck = new ArrayList<Card>();
+    public ArrayList<Card> player1Cards = new ArrayList<Card>();
+    public ArrayList<Card> OneStockOne = new ArrayList<Card>();
+    public ArrayList<Card> OneStockTwo = new ArrayList<Card>();
+    public ArrayList<Card> OneStockThree = new ArrayList<Card>();
+    public ArrayList<Card> OneStockFour = new ArrayList<Card>();
+    public ArrayList<Card> OneStockFive = new ArrayList<Card>();
+    public ArrayList<Card> LeftSpit = new ArrayList<Card>();
+    public ArrayList<Card> RightSpit = new ArrayList<Card>();
+    public ArrayList<Card> player2Cards = new ArrayList<Card>();
+    public ArrayList<Card> TwoStockOne = new ArrayList<Card>();
+    public ArrayList<Card> TwoStockTwo = new ArrayList<Card>();
+    public ArrayList<Card> TwoStockThree = new ArrayList<Card>();
+    public ArrayList<Card> TwoStockFour = new ArrayList<Card>();
+    public ArrayList<Card> TwoStockFive = new ArrayList<Card>();
+
+    // public ArrayList<ArrayList<Card>> player1Stocks = new ArrayList<ArrayList<Card>>();
     //public ArrayList<ArrayList<Card>> player2Stocks = new ArrayList<ArrayList<Card>>();
     //public ArrayList<ArrayList<Card>> spitPiles = new ArrayList<ArrayList<Card>>();
     public Deck()
@@ -32,8 +32,8 @@ public class Deck
             InitialDeck.add(new Card(i, "HEARTS", "RED"));
             InitialDeck.add(new Card(i, "DIAMONDS", "RED"));
         }
+
         
-        player1Stocks.add(OneStockOne
     }
 
     public void shuffle()
@@ -154,60 +154,72 @@ public class Deck
             RightSpit.add(0,player2Cards.remove(0));
         }
     }
+
     public void setPlayer1Cards(ArrayList<Card> c)
     {
         player1Cards = c;
     }
+
     public void setOneStockOne(ArrayList<Card> c)
     {
         OneStockOne = c;
     }
+
     public void setOneStockTwo(ArrayList<Card> c)
     {
         OneStockTwo = c;
     }
+
     public void setOneStockThree(ArrayList<Card> c)
     {
         OneStockThree = c;
     }
+
     public void setOneStockFour(ArrayList<Card> c)
     {
         OneStockFour = c;
     }
+
     public void setOneStockFive(ArrayList<Card> c)
     {
         OneStockFive = c;
     }
-    
+
     public void setPlayer2Cards(ArrayList<Card> c)
     {
         player2Cards = c;
     }
+
     public void setTwoStockOne(ArrayList<Card> c)
     {
         TwoStockOne = c;
     }
+
     public void setTwoStockTwo(ArrayList<Card> c)
     {
         TwoStockTwo = c;
     }
+
     public void setTwoStockThree(ArrayList<Card> c)
     {
         TwoStockThree = c;
     }
+
     public void setTwoStockFour(ArrayList<Card> c)
     {
         TwoStockFour = c;
     }
+
     public void setTwoStockFive(ArrayList<Card> c)
     {
         TwoStockFive = c;
     }
-    
+
     public void setRightSpit(ArrayList<Card> c)
     {
         RightSpit = c;
     }
+
     public void setLeftSpit(ArrayList<Card> c)
     {
         LeftSpit = c;

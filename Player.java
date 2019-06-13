@@ -7,7 +7,7 @@ import java.awt.event.*;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class player
+public class Player
 {
     public int p2selected = 0;
     public String p2pile;

@@ -76,9 +76,7 @@ public class GUI extends JFrame
 
             }
         }
-<<<<<<< HEAD
 
-=======
         public void keyPressed(KeyEvent e)
         {
             int code = e.getKeyCode();
@@ -91,6 +89,6 @@ public class GUI extends JFrame
         public void keyTyped(KeyEvent e)
         {
         }
->>>>>>> 07a86177081a7fe75ed4c8fabb0419456f3522f1
+
     }
 }
