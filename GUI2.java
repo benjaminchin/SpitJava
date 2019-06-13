@@ -43,7 +43,7 @@ public class GUI2 extends Deck
         gameFrame.setDefaultLookAndFeelDecorated(true);
         gameFrame.add(gamePanel);
         gameFrame.setSize(200, 200);
-        gameFrame.setBackground(Color.ORANGE);
+        gamePanel.setBackground(Color.ORANGE);
 
         spit.setFont(new Font("Courier New",Font.BOLD,30));
         gamePanel.add(spit);
@@ -112,7 +112,7 @@ public class GUI2 extends Deck
             else //Source == start
             {
                 gameFrame.setSize(750, 750);
-                gameFrame.setBackground(Color.GREEN);
+                //gameFrame.setBackground(Color.GREEN);
                 gamePanel.setSize(750, 750);
                 gamePanel.setBackground(Color.GREEN);
                 
