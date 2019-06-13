@@ -40,6 +40,8 @@ public class Player
                 p2pile = "0";
                 case KeyEvent.VK_DELETE:
                 p2pile = "delete";
+                case KeyEvent.VK_ENTER:
+                p2pile = "slap";
             }
             getP2Selection();
             getPileSelected();
@@ -68,6 +70,8 @@ public class Player
                 p1pile = "a";
                 case KeyEvent.VK_D:
                 p1pile = "d";
+                case KeyEvent.VK_SHIFT:
+                p1pile = "+";
             }
             getP1Selection();
             getPileSelection();
