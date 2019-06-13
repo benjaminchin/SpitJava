@@ -76,12 +76,10 @@ public class GUI extends JFrame
 
             }
         }
-
+        
         public void keyPressed(KeyEvent e)
         {
-            int code = e.getKeyCode();
-            //
-            
+           
         }
         public void keyReleased(KeyEvent e)
         {
