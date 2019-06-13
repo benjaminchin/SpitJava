@@ -1,11 +1,10 @@
 import java.awt.event.*;
 import java.awt.*;
 import java.awt.event.*;
-
 /**
  * Write a description of class player here.
  *
- * @author (your name)
+ * @author Dhruv Gupta
  * @version (a version number or a date)
  */
 public class Player
@@ -14,7 +13,6 @@ public class Player
     public String p2pile;
     public int p1selected = 0;
     public String p1pile;
-
     abstract class KeyAdapter implements KeyListener
     {
         public void keyPressedP2(KeyEvent e)
@@ -42,6 +40,8 @@ public class Player
                 p2pile = "delete";
                 case KeyEvent.VK_ENTER:
                 p2pile = "slap";
+                case KeyEvent.VK_PLUS:
+                p2pile = "draw";
             }
             getP2Selection();
             getPileSelected();
@@ -63,7 +63,7 @@ public class Player
                 case KeyEvent.VK_5:
                 p1selected = 5;
             }
-
+            
             switch(code)
             {
                 case KeyEvent.VK_A:
@@ -72,6 +72,8 @@ public class Player
                 p1pile = "d";
                 case KeyEvent.VK_SHIFT:
                 p1pile = "+";
+                case KeyEvent.VK_Z:
+                p1pile = "flip";
             }
             getP1Selection();
             getPileSelection();
