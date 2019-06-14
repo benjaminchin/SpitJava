@@ -275,6 +275,9 @@ public class GUI2 extends Deck
                 {
                     //Nothing
                 }
+                
+                gameFrame.setFocusable(true);
+                
             }
         }
         
