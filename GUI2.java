@@ -262,6 +262,7 @@ public class GUI2 extends Deck
         public void keyPressed(KeyEvent e)
         {
             int code = e.getKeyCode();
+            System.out.println("here"); //Means implementation is wrong
             if(code == KeyEvent.VK_1)
             {    
                 Card temp = deck.OneStockOne.get(0);
