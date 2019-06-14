@@ -1,10 +1,10 @@
 import java.awt.event.*;
 import java.awt.*;
 
-public class KeyInput implements KeyListener
+public class KeyInputTest implements KeyListener
 {
     private String pile;
-    private String spit;
+    private String spitPile;
     public void keyPressed(KeyEvent e)
     {
         int c = e.getKeyCode();
@@ -29,18 +29,18 @@ public class KeyInput implements KeyListener
         else if(c == KeyEvent.VK_NUMPAD2)
             pile = "num5";
         else if(c == KeyEvent.VK_A || c == KeyEvent.VK_NUMPAD0)
-            spit = "left";
+            spitPile = "left";
         else if(c == KeyEvent.VK_D || c == KeyEvent.VK_DELETE)
-            spit = "right";
+            spitPile = "right";
     }
     public void keyTyped(KeyEvent e){}
     public void keyReleased(KeyEvent e){}
-    public String pile()
+    public String getPile()
     {
         return pile;
     }
-    public String spit()
+    public String getSpit()
     {
-        return spit;
+        return spitPile;
     }
 }

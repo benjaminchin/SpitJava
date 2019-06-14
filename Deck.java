@@ -5,12 +5,12 @@ public class Deck
 {
     public ArrayList<Card> InitialDeck = new ArrayList<Card>();
     public ArrayList<Card> player1Cards = new ArrayList<Card>();
-    public ArrayList<Card> OneStockOne = new ArrayList<Card>();
+    public static ArrayList<Card> OneStockOne = new ArrayList<Card>();
     public ArrayList<Card> OneStockTwo = new ArrayList<Card>();
     public ArrayList<Card> OneStockThree = new ArrayList<Card>();
     public ArrayList<Card> OneStockFour = new ArrayList<Card>();
     public ArrayList<Card> OneStockFive = new ArrayList<Card>();
-    public ArrayList<Card> LeftSpit = new ArrayList<Card>();
+    public static ArrayList<Card> LeftSpit = new ArrayList<Card>();
     public ArrayList<Card> RightSpit = new ArrayList<Card>();
     public ArrayList<Card> player2Cards = new ArrayList<Card>();
     public ArrayList<Card> TwoStockOne = new ArrayList<Card>();
