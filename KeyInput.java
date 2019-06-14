@@ -13,20 +13,34 @@ public class KeyInput implements KeyListener
     {
         int code = e.getKeyCode();
         
-        if(code == KeyEvent.VK_NUMPAD1 || code == KeyEvent.VK_1)
+        if(code == KeyEvent.VK_NUMPAD1)
         {}
-        else if(code == KeyEvent.VK_NUMPAD2 || code == KeyEvent.VK_2)
+        else if(code == KeyEvent.VK_NUMPAD2)
         {}
-        else if(code == KeyEvent.VK_NUMPAD3 || code == KeyEvent.VK_3)
+        else if(code == KeyEvent.VK_NUMPAD3)
         {}
-        else if(code == KeyEvent.VK_NUMPAD4 || code == KeyEvent.VK_4)
+        else if(code == KeyEvent.VK_NUMPAD4)
         {}
-        else if(code == KeyEvent.VK_NUMPAD5 || code == KeyEvent.VK_5)
+        else if(code == KeyEvent.VK_NUMPAD5)
+        {}
+        else if(code == KeyEvent.VK_1)
+        {}
+        else if(code == KeyEvent.VK_2)
+        {}
+        else if(code == KeyEvent.VK_3)
+        {}
+        else if(code == KeyEvent.VK_4)
+        {}
+        else if(code == KeyEvent.VK_5)
         {}
         
-        if(code == KeyEvent.VK_NUMPAD0 || code == KeyEvent.VK_A)
+        if(code == KeyEvent.VK_NUMPAD0)
         {}
-        else if(code == KeyEvent.VK_DELETE || code == KeyEvent.VK_D)
+        else if(code == KeyEvent.VK_DELETE)
+        {}
+        else if(code == KeyEvent.VK_A)
+        {}
+        else if(code == KeyEvent.VK_D)
         {}
     }
     
