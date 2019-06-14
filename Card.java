@@ -1,8 +1,8 @@
 public class Card
 {
-    private int rank; // 
+    private int rank; // 1-13 ace-king
     private String suit;
-    private String color;
+    private String color; //Not actually used besides toString() to test
     private int x;
     private int y;
     public Card(int r, String s, String c)
