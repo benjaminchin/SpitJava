@@ -149,6 +149,8 @@ public class GUI2 extends Deck
         gameFrame.getContentPane().add(leftSpit);
         gameFrame.getContentPane().add(rightSpit);
         //spit.setVisible(true);
+        gamePanel.setFocusable(true);
+        
         gameFrame.setVisible(true);
     }
     public static void repaintCards() throws IOException
