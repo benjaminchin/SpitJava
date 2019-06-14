@@ -88,6 +88,7 @@ public class GUI2 extends Deck
 
         start.addActionListener(new Action());
         instructions.addActionListener(new Action());
+        frame.addKeyListener(new KeyInput());
         //start.setBounds(20, 50, 100, 100);
         //gamePanel.add(start);
         //gamePanel.add(instructions);
@@ -151,7 +152,7 @@ public class GUI2 extends Deck
                 JFrame helpFrame = new JFrame(); //Create frame and panel
                 JPanel help = new JPanel(new FlowLayout());
                 helpFrame.add(help); //Add panel to window
-                helpFrame.setSize(1000, 500);
+                helpFrame.setSize(720, 720);
 
                 JLabel lbl = new JLabel("<html>To play this game: <br/> Each Player starts with an evenly spit deck of cards." + 
                         "<br/>The cards are dealt into 5 stock piles, the first with 1 card, the second with 2, and so on. " +
@@ -165,8 +166,8 @@ public class GUI2 extends Deck
                         "<br/>When one player's stock piles are completely finished, both " +
                         "<br/>players have to slap the table. <br/>Player 1 does this by pressing the left shift button, <br/>and Player 2 " + 
                         "does this by pressing the Enter key. " + "<br/>Whoever slaps first gets the spit pile with less cards." + 
-                        "<br/>They then must add this number of cards to their original draw pile, <br/>reshuffle, and deal again. " +
-                        "This is considered a round. <br/>The game keeps going until one player has gotten rid of all of their cards.</html>");
+                        "<br/>They then must add this number of cards <br/> to their original draw pile, reshuffle, and deal again. " +
+                        "This is considered a round. <br/>The game keeps going until one player <br/>has gotten rid of all of their cards.</html>");
                 lbl.setFont(new Font("Courier New",Font.BOLD,15));
                 Dimension lblSize = lbl.getPreferredSize();
                 lbl.setBounds(0, 0, lblSize.width, lblSize.height);
