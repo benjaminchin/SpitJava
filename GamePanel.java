@@ -51,10 +51,12 @@ public class GamePanel  extends JPanel
         leftSpit.setBounds(200, 270, 72, 96);
         rightSpit.setBounds(440, 270, 72, 96);
         
-        //BufferedImage first1s1 = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
+        BufferedImage p1Image = img.getSubimage(936, 0, 72, 96);
+        BufferedImage p2Image = img.getSubimage(936, 0, 72, 96);
         
+        player1.setIcon(new ImageIcon(p1Image));
+        player2.setIcon(new ImageIcon(p2Image));
         
-        //repaintCards();
         //Add labels to panel
         this.add(player1);
         this.add(oneStockOne);
@@ -86,67 +88,122 @@ public class GamePanel  extends JPanel
     
     public void repaintCards()
     {
+        //BufferedImage swapPlayer1 = img.getSubimage(deck.player1Cards.get(0).getX(), deck.player1Cards.get(0).getY(), 72, 96);
+        BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
+        BufferedImage swapOneStockTwo = img.getSubimage(deck.OneStockTwo.get(0).getX(), deck.OneStockTwo.get(0).getY(), 72, 96);
+        BufferedImage swapOneStockThree = img.getSubimage(deck.OneStockThree.get(0).getX(), deck.OneStockThree.get(0).getY(), 72, 96);
+        BufferedImage swapOneStockFour = img.getSubimage(deck.OneStockFour.get(0).getX(), deck.OneStockFour.get(0).getY(), 72, 96);
+        BufferedImage swapOneStockFive = img.getSubimage(deck.OneStockFive.get(0).getX(), deck.OneStockFive.get(0).getY(), 72, 96);
         
+        //BufferedImage swapPlayer2 = img.getSubimage(deck.player2Cards.get(0).getX(), deck.player2Cards.get(0).getY(), 72, 96);
+        BufferedImage swapTwoStockOne = img.getSubimage(deck.TwoStockOne.get(0).getX(), deck.TwoStockOne.get(0).getY(), 72, 96);
+        BufferedImage swapTwoStockTwo = img.getSubimage(deck.TwoStockTwo.get(0).getX(), deck.TwoStockTwo.get(0).getY(), 72, 96);
+        BufferedImage swapTwoStockThree = img.getSubimage(deck.TwoStockThree.get(0).getX(), deck.TwoStockThree.get(0).getY(), 72, 96);
+        BufferedImage swapTwoStockFour = img.getSubimage(deck.TwoStockFour.get(0).getX(), deck.TwoStockFour.get(0).getY(), 72, 96);
+        BufferedImage swapTwoStockFive = img.getSubimage(deck.TwoStockFive.get(0).getX(), deck.TwoStockFive.get(0).getY(), 72, 96);
+        
+        BufferedImage swapLeftSpit = img.getSubimage(deck.LeftSpit.get(0).getX(), deck.LeftSpit.get(0).getY(), 72, 96);
+        BufferedImage swapRightSpit = img.getSubimage(deck.RightSpit.get(0).getX(), deck.RightSpit.get(0).getY(), 72, 96);
+        
+        //if(deck.player1Cards.size() > 0)
+            //player1.setIcon(new ImageIcon(swapPlayer1));
+        if(deck.OneStockOne.size() > 0)
+            oneStockOne.setIcon(new ImageIcon(swapOneStockOne));
+        if(deck.OneStockTwo.size() > 0)
+            oneStockTwo.setIcon(new ImageIcon(swapOneStockTwo));
+        if(deck.OneStockThree.size() > 0)
+            oneStockThree.setIcon(new ImageIcon(swapOneStockThree));
+        if(deck.OneStockFour.size() > 0)
+            oneStockFour.setIcon(new ImageIcon(swapOneStockFour));
+        if(deck.OneStockFive.size() > 0)
+            oneStockFive.setIcon(new ImageIcon(swapOneStockFive));
+        //if(deck.player2Cards.size() > 0)
+            //player2.setIcon(new ImageIcon(swapPlayer2));
+        if(deck.TwoStockOne.size() > 0)
+            twoStockOne.setIcon(new ImageIcon(swapTwoStockOne));
+        if(deck.TwoStockTwo.size() > 0)
+            twoStockTwo.setIcon(new ImageIcon(swapTwoStockTwo));
+        if(deck.TwoStockThree.size() > 0)
+            twoStockThree.setIcon(new ImageIcon(swapTwoStockThree));
+        if(deck.TwoStockFour.size() > 0)
+            twoStockFour.setIcon(new ImageIcon(swapTwoStockFour));    
+        if(deck.TwoStockFive.size() > 0)
+            twoStockFive.setIcon(new ImageIcon(swapTwoStockFive));    
+        
+        if(deck.LeftSpit.size() > 0)
+            leftSpit.setIcon(new ImageIcon(swapLeftSpit));
+        if(deck.RightSpit.size() > 0)
+            rightSpit.setIcon(new ImageIcon(swapRightSpit));
     }
     //Player 1 moves
     public void p1OneToLeft()
     {
         deck.LeftSpit.add(deck.OneStockOne.get(0));
         deck.OneStockOne.remove(0);
+        repaintCards();
     }
     
     public void p1OneToRight()
     {
         deck.RightSpit.add(deck.OneStockOne.get(0));
         deck.OneStockOne.remove(0);
+        repaintCards();
     }
 
     public void p1TwoToLeft()
     {
         deck.LeftSpit.add(deck.OneStockTwo.get(0));
         deck.OneStockTwo.remove(0);
+        repaintCards();
     }
     
     public void p1TwoToRight()
     {
         deck.RightSpit.add(deck.OneStockTwo.get(0));
         deck.OneStockTwo.remove(0);
+        repaintCards();
     }
     
     public void p1ThreeToLeft()
     {
         deck.LeftSpit.add(deck.OneStockThree.get(0));
         deck.OneStockThree.remove(0);
+        repaintCards();
     }
     
     public void p1ThreeToRight()
     {
         deck.RightSpit.add(deck.OneStockThree.get(0));
         deck.OneStockThree.remove(0);
+        repaintCards();
     }
     
     public void p1FourToLeft()
     {
         deck.LeftSpit.add(deck.OneStockFour.get(0));
         deck.OneStockFour.remove(0);
+        repaintCards();
     }
     
     public void p1FourToRight()
     {
         deck.RightSpit.add(deck.OneStockFour.get(0));
         deck.OneStockFour.remove(0);
+        repaintCards();
     }
     
     public void p1FiveToLeft()
     {
         deck.LeftSpit.add(deck.OneStockFive.get(0));
         deck.OneStockFive.remove(0);
+        repaintCards();
     }
     
     public void p1FiveToRight()
     {
         deck.RightSpit.add(deck.OneStockFive.get(0));
         deck.OneStockFive.remove(0);
+        repaintCards();
     }
     
     //Player 2 moves
@@ -154,59 +211,69 @@ public class GamePanel  extends JPanel
     {
         deck.LeftSpit.add(deck.TwoStockOne.get(0));
         deck.TwoStockOne.remove(0);
+        repaintCards();
     }
     
     public void p2OneToRight()
     {
         deck.RightSpit.add(deck.TwoStockOne.get(0));
         deck.TwoStockOne.remove(0);
+        repaintCards();
     }
     
     public void p2TwoToLeft()
     {
         deck.LeftSpit.add(deck.TwoStockTwo.get(0));
         deck.TwoStockTwo.remove(0);
+        repaintCards();
     }
     
     public void p2TwoToRight()
     {
         deck.RightSpit.add(deck.TwoStockTwo.get(0));
         deck.TwoStockTwo.remove(0);
+        repaintCards();
     }
     
     public void p2ThreeToLeft()
     {
         deck.LeftSpit.add(deck.TwoStockThree.get(0));
         deck.TwoStockThree.remove(0);
+        repaintCards();
     }
     
     public void p2ThreeToRight()
     {
         deck.RightSpit.add(deck.TwoStockThree.get(0));
         deck.TwoStockThree.remove(0);
+        repaintCards();
     }
     
     public void p2FourToLeft()
     {
         deck.LeftSpit.add(deck.TwoStockFour.get(0));
         deck.TwoStockFour.remove(0);
+        repaintCards();
     }
     
     public void p2FourToRight()
     {
         deck.RightSpit.add(deck.TwoStockFour.get(0));
         deck.TwoStockFour.remove(0);
+        repaintCards();
     }
     
     public void p2FiveToLeft()
     {
         deck.LeftSpit.add(deck.TwoStockFive.get(0));
         deck.TwoStockFive.remove(0);
+        repaintCards();
     }
     
     public void p2FiveToRight()
     {
         deck.RightSpit.add(deck.TwoStockFive.get(0));
         deck.TwoStockFive.remove(0);
+        repaintCards();
     }
 }

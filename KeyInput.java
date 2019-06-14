@@ -10,6 +10,8 @@ import java.awt.event.*;
 public class KeyInput implements KeyListener
 {
     private GamePanel panel;
+    private int p1Selected;
+    private int p2Selected;
     public KeyInput(GamePanel panel)
     {
         this.panel = panel;
@@ -17,8 +19,6 @@ public class KeyInput implements KeyListener
     public void keyPressed(KeyEvent e)
     {
         int code = e.getKeyCode();
-        int p1Selected = 0;
-        int p2Selected = 0;
         if(code == KeyEvent.VK_NUMPAD1)
         {
             p2Selected = 1;
@@ -83,7 +83,7 @@ public class KeyInput implements KeyListener
                 panel.p2ThreeToRight();
             else if(p2Selected == 4)
                 panel.p2FourToRight();
-            else //5
+            else if(p2Selected == 5)
                 panel.p2FiveToRight();
         }
         else if(code == KeyEvent.VK_A)
@@ -109,7 +109,7 @@ public class KeyInput implements KeyListener
                 panel.p1ThreeToRight();
             else if(p1Selected == 4)
                 panel.p1FourToRight();
-            else //5
+            else if(p1Selected ==5)
                 panel.p1FiveToRight();
         }
     }
