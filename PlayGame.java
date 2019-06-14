@@ -101,69 +101,82 @@ public class PlayGame extends GUI2
         if (p1selected == 2)
         {
             if(p1pile == "a")
-            if (OneStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(OneStockTwo.remove(OneStockTwo.size()-1));
+                if (OneStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    LeftSpit.add(OneStockTwo.remove(OneStockTwo.size()-1));
+                }
             }
             else if(p1pile == "d")
-            if (OneStockTwo.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                RightSpit.add(OneStockTwo.remove(OneStockTwo.size()-1));
+                if (OneStockTwo.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    RightSpit.add(OneStockTwo.remove(OneStockTwo.size()-1));
+                }
             }
         }
         
         if (p1selected == 3)
         {
             if(p1pile == "a")
-            if (OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add( OneStockThree.remove(OneStockThree.size()-1));
-
+                if (OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    LeftSpit.add( OneStockThree.remove(OneStockThree.size()-1));
+                }
             }
             else if(p1pile == "d")
-            if (OneStockThree.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                RightSpit.add( OneStockThree.remove(OneStockThree.size()-1));
+                if (OneStockThree.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    RightSpit.add( OneStockThree.remove(OneStockThree.size()-1));
 
+                }
             }
         }
         
         if (p1selected == 4)
         {
             if(p1pile == "a")
+            {
                 if (OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
                 {
                     LeftSpit.add(OneStockFour.remove(OneStockFour.size()-1));
 
                 }
+            }
             if(p1pile == "d")
+            {
                 if (OneStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
                 {
                     RightSpit.add(OneStockFour.remove(OneStockFour.size()-1));
 
                 }
+            }
         }
 
         if (p1selected == 5)
         {
             if(p1pile == "a")
+            {
                 if (OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
                 {
                     LeftSpit.add(OneStockFive.remove(OneStockFive.size()-1));
                 }
+            }
             else if(p1pile == "d")
+            {
                 if (OneStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
                 {
                     RightSpit.add(OneStockFive.remove(OneStockFive.size()-1));
                 }
+            }
         }
         
         
         if (p1pile == "flip")
-        {
-            
-            LeftSpit.add(player1Cards.remove(player1Cards.size()-1));
-            
+        {           
+            LeftSpit.add(player1Cards.remove(player1Cards.size()-1));            
         }
         
         
@@ -206,70 +219,90 @@ public class PlayGame extends GUI2
         if (p2selected == 1)
         {
             if(p2pile == "0")
-            if (TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(TwoStockOne.remove(TwoStockOne.size()-1));
+                if (TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    LeftSpit.add(TwoStockOne.remove(TwoStockOne.size()-1));
+                }
             }
             else if(p2pile == "delete")
-            if (TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(TwoStockOne.remove(TwoStockOne.size()-1));
+                if (TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    LeftSpit.add(TwoStockOne.remove(TwoStockOne.size()-1));
+                }
             }
         }
         
         if (p2selected == 2)
         {
             if(p2pile == "0")
-            if (TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(TwoStockTwo.remove(TwoStockTwo.size()-1));
+                if (TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    LeftSpit.add(TwoStockTwo.remove(TwoStockTwo.size()-1));
+                }
             }
             else if (p2pile == "delete")
-            if (TwoStockTwo.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                RightSpit.add(TwoStockTwo.remove(TwoStockTwo.size()-1));
+                if (TwoStockTwo.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    RightSpit.add(TwoStockTwo.remove(TwoStockTwo.size()-1));
+                }
             }
         }
         
         if (p2selected == 3)
         {
             if(p2pile == "0")
-            if(TwoStockThree.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(TwoStockThree.remove(TwoStockThree.size()-1));
+                if(TwoStockThree.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    LeftSpit.add(TwoStockThree.remove(TwoStockThree.size()-1));
+                }
             }
             else if(p2pile == "0")
-            if(TwoStockThree.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                RightSpit.add(TwoStockThree.remove(TwoStockThree.size()-1));
+                if(TwoStockThree.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    RightSpit.add(TwoStockThree.remove(TwoStockThree.size()-1));
+                }
             }
         }
 
         if (p2selected == 4)
         {
             if(p2pile == "0")
-            if (TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add( TwoStockFour.remove(TwoStockFour.size()-1));
+                if (TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    LeftSpit.add( TwoStockFour.remove(TwoStockFour.size()-1));
+                }
             }
             else if(p2pile == "delete")
-            if (TwoStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                RightSpit.add( TwoStockFour.remove(TwoStockFour.size()-1));
+                if (TwoStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    RightSpit.add( TwoStockFour.remove(TwoStockFour.size()-1));
+                }
             }
         }
 
         if (p2selected == 5)
         {
             if(p2pile == "0")
-            if (TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                LeftSpit.add(TwoStockFive.remove(TwoStockFive.size()-1));
+                if (TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    LeftSpit.add(TwoStockFive.remove(TwoStockFive.size()-1));
+                }
             }
             else if(p2pile == "delete")
-            if (TwoStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
             {
-                RightSpit.add(TwoStockFive.remove(TwoStockFive.size()-1));
+                if (TwoStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                {
+                    RightSpit.add(TwoStockFive.remove(TwoStockFive.size()-1));
+                }
             }
         }
 
