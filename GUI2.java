@@ -264,7 +264,9 @@ public class GUI2 extends Deck
             int code = e.getKeyCode();
             if(code == KeyEvent.VK_1)
             {    
-                OneStockOne.remove(0);
+                Card temp = deck.OneStockOne.get(0);
+                deck.OneStockOne.remove(0);
+                deck.LeftSpit.add(0, temp);
                 try
                 {
                     repaintCards();
