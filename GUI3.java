@@ -14,7 +14,7 @@ import java.awt.Dimension;
 
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
-public class GUI3 extends JFrame implements ActionListener, KeyListener
+public class GUI3 extends JFrame implements ActionListener//, KeyListener
 {
     private Deck deck = new Deck();
     
@@ -105,6 +105,9 @@ public class GUI3 extends JFrame implements ActionListener, KeyListener
         
         start.addActionListener(this);
         instructions.addActionListener(this);
+        
+        
+        
         addKeyListener(this);
         
         setFocusable(true);
@@ -176,7 +179,7 @@ public class GUI3 extends JFrame implements ActionListener, KeyListener
         }
     }
     
-    public void keyPressed(KeyEvent e)
+    /*public void keyPressed(KeyEvent e)
     {
        
        //setFocusable(true);
@@ -203,9 +206,10 @@ public class GUI3 extends JFrame implements ActionListener, KeyListener
     }
     public void keyTyped(KeyEvent e){}
     public void keyReleased(KeyEvent e){}
-    
+    */
     public void repaintCards() throws IOException
     {
+        System.out.println("Painted");
         img = ImageIO.read(new File("cards.png"));
 
         BufferedImage swapPlayer1 = img.getSubimage(936, 0, 72, 96);
