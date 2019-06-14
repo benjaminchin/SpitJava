@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class PlayGame extends Player
+public class PlayGame extends GUI2
 {
     private static Deck deck = new Deck();
     private static Player1 player1 = new Player1();

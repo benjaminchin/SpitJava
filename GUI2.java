@@ -9,7 +9,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import java.io.File;
-
+import java.util.ArrayList;
 import java.awt.Dimension;
 public class GUI2 extends Deck
 {
@@ -18,6 +18,10 @@ public class GUI2 extends Deck
     private static JLabel spit = new JLabel("Spit");
     private static JButton start = new JButton("Start");
     private static JButton instructions = new JButton("Instructions");
+    public  static int p2selected = 0;
+    public static String p2pile;
+    public static int p1selected = 0;
+    public static String p1pile;
 
     private static BufferedImage img;
     private static JLabel player1 = new JLabel();
@@ -38,7 +42,22 @@ public class GUI2 extends Deck
     private static JLabel rightSpit = new JLabel();
 
     private static Deck deck = new Deck();
-    
+    public   static ArrayList<Card> InitialDeck = new ArrayList<Card>();
+    public static ArrayList<Card> player1Cards = new ArrayList<Card>();
+    public static ArrayList<Card> OneStockOne = new ArrayList<Card>();
+    public static ArrayList<Card> OneStockTwo = new ArrayList<Card>();
+    public static ArrayList<Card> OneStockThree = new ArrayList<Card>();
+    public static ArrayList<Card> OneStockFour = new ArrayList<Card>();
+    public static ArrayList<Card> OneStockFive = new ArrayList<Card>();
+    public static ArrayList<Card> LeftSpit = new ArrayList<Card>();
+    public static ArrayList<Card> RightSpit = new ArrayList<Card>();
+    public static ArrayList<Card> player2Cards = new ArrayList<Card>();
+    public static ArrayList<Card> TwoStockOne = new ArrayList<Card>();
+    public static ArrayList<Card> TwoStockTwo = new ArrayList<Card>();
+    public static ArrayList<Card> TwoStockThree = new ArrayList<Card>();
+    public static ArrayList<Card> TwoStockFour = new ArrayList<Card>();
+    public static ArrayList<Card> TwoStockFive = new ArrayList<Card>();
+
     private static Dimension spitSize;
     private static Dimension startSize;
     private static Dimension instructSize;
@@ -53,22 +72,20 @@ public class GUI2 extends Deck
         gameFrame.add(gamePanel);
         gameFrame.setSize(300, 200);
         gameFrame.getContentPane().setBackground(Color.ORANGE);
-        
 
         spit.setFont(new Font("Courier New",Font.BOLD,30));
-        
         spitSize = spit.getPreferredSize();
         startSize = start.getPreferredSize();
         instructSize = instructions.getPreferredSize();
-        
+
         spit.setBounds(110, 0, spitSize.width, spitSize.height);
         start.setBounds(50, 50, startSize.width, startSize.height);
         instructions.setBounds(150, 50, instructSize.width, instructSize.height);
-        
+
         gameFrame.getContentPane().add(spit);
         gameFrame.getContentPane().add(start);
         gameFrame.getContentPane().add(instructions);
-        
+
         start.addActionListener(new Action());
         instructions.addActionListener(new Action());
         //start.setBounds(20, 50, 100, 100);
@@ -91,7 +108,7 @@ public class GUI2 extends Deck
 
         leftSpit.setBounds(200, 270, 72, 96);
         rightSpit.setBounds(440, 270, 72, 96);
-        
+
         /*gamePanel.add(player1);
         gamePanel.add(oneStockOne);
         gamePanel.add(oneStockTwo);
@@ -106,7 +123,7 @@ public class GUI2 extends Deck
         gamePanel.add(twoStockFive);
         gamePanel.add(leftSpit);
         gamePanel.add(rightSpit);
-        */
+         */
         gameFrame.getContentPane().add(player1);
         gameFrame.getContentPane().add(oneStockOne);
         gameFrame.getContentPane().add(oneStockTwo);
@@ -125,7 +142,7 @@ public class GUI2 extends Deck
         gameFrame.setVisible(true);
     }
 
-    static class Action implements ActionListener
+    static class Action extends JFrame implements ActionListener, KeyListener
     {
         public void actionPerformed(ActionEvent e)
         {
@@ -161,17 +178,18 @@ public class GUI2 extends Deck
             }
             else //Source == start
             {
-                
+
                 gameFrame.setSize(750, 750);
                 //gameFrame.setLayout(null);
                 gameFrame.getContentPane().setBackground(Color.GREEN);
-                
+
                 //gamePanel.setBackground(Color.GREEN);
 
                 gameFrame.getContentPane().remove(start);
                 gameFrame.getContentPane().remove(spit);
                 instructions.setBounds(0, 0, instructSize.width, instructSize.height);
                 //gamePanel.remove(instructions);
+                
                 try
                 {
                     repaintCards();
@@ -180,13 +198,16 @@ public class GUI2 extends Deck
                 {
                     //Nothing
                 }
+                addKeyListener(this);
+                setFocusable(true);
+                setFocusTraversalKeysEnabled(false);
             }
         }
 
         public static void repaintCards() throws IOException
         {
             img = ImageIO.read(new File("cards.png"));
-            
+
             BufferedImage swapPlayer1 = img.getSubimage(936, 0, 72, 96);
             BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
             BufferedImage swapOneStockTwo = img.getSubimage(deck.OneStockTwo.get(0).getX(), deck.OneStockTwo.get(0).getY(), 72, 96);
@@ -221,5 +242,316 @@ public class GUI2 extends Deck
             leftSpit.setIcon(new ImageIcon(swapLeftSpit));
             rightSpit.setIcon(new ImageIcon(swapRightSpit));
         }
+
+        public void keyPressedP2(KeyEvent e)
+        {
+            int code = e.getKeyCode();
+            addKeyListener(this);
+            setFocusable(true);
+            setFocusTraversalKeysEnabled(false);
+            switch(code)
+            {
+                case KeyEvent.VK_NUMPAD1:
+                p2selected = 1;
+                case KeyEvent.VK_NUMPAD2:
+                p2selected = 2;
+                case KeyEvent.VK_NUMPAD3:
+                p2selected = 3;
+                case KeyEvent.VK_NUMPAD4:
+                p2selected= 4;
+                case KeyEvent.VK_NUMPAD5:
+                p2selected = 5;
+            }
+
+            switch(code)
+            {
+                case KeyEvent.VK_NUMPAD0:
+                p2pile = "0";
+                case KeyEvent.VK_DELETE:
+                p2pile = "delete";
+                case KeyEvent.VK_ENTER:
+                p2pile = "slap";
+                case KeyEvent.VK_PLUS:
+                p2pile = "draw";
+            }
+
+        }
+
+        public void keyPressed(KeyEvent e)
+        {
+            int code = e.getKeyCode();
+            addKeyListener(this);
+            setFocusable(true);
+            setFocusTraversalKeysEnabled(false);
+            switch(code)
+            {
+                case KeyEvent.VK_1:
+                p1selected = 1;
+                case KeyEvent.VK_2:
+                p1selected = 2;
+                case KeyEvent.VK_3:
+                p1selected = 3;
+                case KeyEvent.VK_4:
+                p1selected= 4;
+                case KeyEvent.VK_5:
+                p1selected = 5;
+            }
+
+            switch(code)
+            {
+                case KeyEvent.VK_A:
+                p1pile = "a";
+                case KeyEvent.VK_D:
+                p1pile = "d";
+                case KeyEvent.VK_SHIFT:
+                p1pile = "+";
+                case KeyEvent.VK_Z:
+                p1pile = "flip";
+            }
+            p1MakePlay();
+        }
+
+        public void keyReleased(KeyEvent e)
+        {
+
+        }
+
+        public void keyTyped(KeyEvent e)
+        {
+
+        }
+
+        public void p1MakePlay()
+        {
+            if (p1selected == 1)
+            {
+                if(p1pile == "a")
+                    if (OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1 )
+                    {
+                        LeftSpit.add( OneStockOne.remove(OneStockOne.size()-1));
+                        // display image code
+                    }
+                    else if(p1pile == "d")
+                        if (OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1 )
+                        {
+                            RightSpit.add( OneStockOne.remove(OneStockOne.size()-1));
+                            // display image code
+                        }
+            }
+
+            if (p1selected == 2)
+            {
+                if(p1pile == "a")
+                    if (OneStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                    {
+                        LeftSpit.add(OneStockTwo.remove(OneStockTwo.size()-1));
+                    }
+                    else if(p1pile == "d")
+                        if (OneStockTwo.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                        {
+                            RightSpit.add(OneStockTwo.remove(OneStockTwo.size()-1));
+                        }
+            }
+
+            if (p1selected == 3)
+            {
+                if(p1pile == "a")
+                    if (OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                    {
+                        LeftSpit.add( OneStockThree.remove(OneStockThree.size()-1));
+
+                    }
+                    else if(p1pile == "d")
+                        if (OneStockThree.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockThree.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                        {
+                            RightSpit.add( OneStockThree.remove(OneStockThree.size()-1));
+
+                        }
+            }
+
+            if (p1selected == 4)
+            {
+                if(p1pile == "a")
+                    if (OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                    {
+                        LeftSpit.add(OneStockFour.remove(OneStockFour.size()-1));
+
+                    }
+                if(p1pile == "d")
+                    if (OneStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                    {
+                        RightSpit.add(OneStockFour.remove(OneStockFour.size()-1));
+
+                    }
+            }
+
+            if (p1selected == 5)
+            {
+                if(p1pile == "a")
+                    if (OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                    {
+                        LeftSpit.add(OneStockFive.remove(OneStockFive.size()-1));
+                    }
+                    else if(p1pile == "d")
+                        if (OneStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                        {
+                            RightSpit.add(OneStockFive.remove(OneStockFive.size()-1));
+                        }
+            }
+
+            if (p1pile == "flip")
+            {
+
+                LeftSpit.add(player1Cards.remove(player1Cards.size()-1));
+
+            }
+
+            if (p1pile == "+" && OneStockOne.size() ==0 && OneStockTwo.size() ==0 && OneStockThree.size() == 0 && OneStockFour.size() == 0
+            && OneStockFive.size() == 0)
+            {
+
+                if (LeftSpit.size() < RightSpit.size())
+                {
+                    for (int i = 0; i<= LeftSpit.size(); i++)
+                    {
+                        player1Cards.add(LeftSpit.get(i));
+
+                    }
+                    LeftSpit.clear();
+
+                }
+
+                else
+                {
+                    for (int k = 0; k<=RightSpit.size(); k++)
+                    {
+
+                        player1Cards.add(RightSpit.get(k));
+
+                    }
+                    RightSpit.clear();
+                }
+
+            }
+
+            // code case to assign player smaller pile when slapped
+
+        }
+
+        public  void p2MakePlay()
+        {
+            if (p2selected == 1)
+            {
+                if(p2pile == "0")
+                    if (TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                    {
+                        LeftSpit.add(TwoStockOne.remove(TwoStockOne.size()-1));
+                    }
+                    else if(p2pile == "delete")
+                        if (TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                        {
+                            LeftSpit.add(TwoStockOne.remove(TwoStockOne.size()-1));
+                        }
+            }
+
+            if (p2selected == 2)
+            {
+                if(p2pile == "0")
+                    if (TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                    {
+                        LeftSpit.add(TwoStockTwo.remove(TwoStockTwo.size()-1));
+                    }
+                    else if (p2pile == "delete")
+                        if (TwoStockTwo.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                        {
+                            RightSpit.add(TwoStockTwo.remove(TwoStockTwo.size()-1));
+                        }
+            }
+
+            if (p2selected == 3)
+            {
+                if(p2pile == "0")
+                    if(TwoStockThree.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                    {
+                        LeftSpit.add(TwoStockThree.remove(TwoStockThree.size()-1));
+                    }
+                    else if(p2pile == "0")
+                        if(TwoStockThree.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockTwo.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                        {
+                            RightSpit.add(TwoStockThree.remove(TwoStockThree.size()-1));
+                        }
+            }
+
+            if (p2selected == 4)
+            {
+                if(p2pile == "0")
+                    if (TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                    {
+                        LeftSpit.add( TwoStockFour.remove(TwoStockFour.size()-1));
+                    }
+                    else if(p2pile == "delete")
+                        if (TwoStockFour.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockFour.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                        {
+                            RightSpit.add( TwoStockFour.remove(TwoStockFour.size()-1));
+                        }
+            }
+
+            if (p2selected == 5)
+            {
+                if(p2pile == "0")
+                    if (TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                    {
+                        LeftSpit.add(TwoStockFive.remove(TwoStockFive.size()-1));
+                    }
+                    else if(p2pile == "delete")
+                        if (TwoStockFive.get(0).getRank() == RightSpit.get(0).getRank()-1 || TwoStockFive.get(0).getRank() == LeftSpit.get(0).getRank()+1)
+                        {
+                            RightSpit.add(TwoStockFive.remove(TwoStockFive.size()-1));
+                        }
+            }
+
+            if (p2pile == "slap" && TwoStockOne.size()==0 && TwoStockTwo.size() == 0 && TwoStockThree.size() == 0 && TwoStockFour.size() == 0
+            && TwoStockFive.size()== 0)
+            {
+                if (LeftSpit.size() < RightSpit.size())
+                {
+                    for (int i = 0; i<= LeftSpit.size(); i++)
+                    {
+                        player2Cards.add(LeftSpit.get(i));
+
+                    }
+                    LeftSpit.clear();
+                }
+                else
+                {
+                    for (int k = 0; k<=RightSpit.size(); k++)
+                    {
+                        player2Cards.add(RightSpit.get(k));
+                    }
+                    RightSpit.clear();
+                }
+            }
+
+            // code case to assign player smaller pile when slapped
+
+        }
+
+        public boolean gameIsOver()
+        {
+            if (player1Cards.size() == 0 || player2Cards.size() == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public boolean roundisOver()
+        {
+            if (LeftSpit.size() == 0 || RightSpit.size() == 0)
+                return true;
+            return false;
+        }
+
     }
+
 }
