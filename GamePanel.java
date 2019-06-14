@@ -138,70 +138,70 @@ public class GamePanel  extends JPanel
     //Player 1 moves
     public void p1OneToLeft()
     {
-        deck.LeftSpit.add(deck.OneStockOne.get(0));
+        deck.LeftSpit.add(0, deck.OneStockOne.get(0));
         deck.OneStockOne.remove(0);
         repaintCards();
     }
     
     public void p1OneToRight()
     {
-        deck.RightSpit.add(deck.OneStockOne.get(0));
+        deck.RightSpit.add(0, deck.OneStockOne.get(0));
         deck.OneStockOne.remove(0);
         repaintCards();
     }
 
     public void p1TwoToLeft()
     {
-        deck.LeftSpit.add(deck.OneStockTwo.get(0));
+        deck.LeftSpit.add(0, deck.OneStockTwo.get(0));
         deck.OneStockTwo.remove(0);
         repaintCards();
     }
     
     public void p1TwoToRight()
     {
-        deck.RightSpit.add(deck.OneStockTwo.get(0));
+        deck.RightSpit.add(0, deck.OneStockTwo.get(0));
         deck.OneStockTwo.remove(0);
         repaintCards();
     }
     
     public void p1ThreeToLeft()
     {
-        deck.LeftSpit.add(deck.OneStockThree.get(0));
+        deck.LeftSpit.add(0, deck.OneStockThree.get(0));
         deck.OneStockThree.remove(0);
         repaintCards();
     }
     
     public void p1ThreeToRight()
     {
-        deck.RightSpit.add(deck.OneStockThree.get(0));
+        deck.RightSpit.add(0, deck.OneStockThree.get(0));
         deck.OneStockThree.remove(0);
         repaintCards();
     }
     
     public void p1FourToLeft()
     {
-        deck.LeftSpit.add(deck.OneStockFour.get(0));
+        deck.LeftSpit.add(0, deck.OneStockFour.get(0));
         deck.OneStockFour.remove(0);
         repaintCards();
     }
     
     public void p1FourToRight()
     {
-        deck.RightSpit.add(deck.OneStockFour.get(0));
+        deck.RightSpit.add(0, deck.OneStockFour.get(0));
         deck.OneStockFour.remove(0);
         repaintCards();
     }
     
     public void p1FiveToLeft()
     {
-        deck.LeftSpit.add(deck.OneStockFive.get(0));
+        deck.LeftSpit.add(0, deck.OneStockFive.get(0));
         deck.OneStockFive.remove(0);
         repaintCards();
     }
     
     public void p1FiveToRight()
     {
-        deck.RightSpit.add(deck.OneStockFive.get(0));
+        deck.RightSpit.add(0, deck.OneStockFive.get(0));
         deck.OneStockFive.remove(0);
         repaintCards();
     }
@@ -209,70 +209,70 @@ public class GamePanel  extends JPanel
     //Player 2 moves
     public void p2OneToLeft()
     {
-        deck.LeftSpit.add(deck.TwoStockOne.get(0));
+        deck.LeftSpit.add(0, deck.TwoStockOne.get(0));
         deck.TwoStockOne.remove(0);
         repaintCards();
     }
     
     public void p2OneToRight()
     {
-        deck.RightSpit.add(deck.TwoStockOne.get(0));
+        deck.RightSpit.add(0, deck.TwoStockOne.get(0));
         deck.TwoStockOne.remove(0);
         repaintCards();
     }
     
     public void p2TwoToLeft()
     {
-        deck.LeftSpit.add(deck.TwoStockTwo.get(0));
+        deck.LeftSpit.add(0, deck.TwoStockTwo.get(0));
         deck.TwoStockTwo.remove(0);
         repaintCards();
     }
     
     public void p2TwoToRight()
     {
-        deck.RightSpit.add(deck.TwoStockTwo.get(0));
+        deck.RightSpit.add(0, deck.TwoStockTwo.get(0));
         deck.TwoStockTwo.remove(0);
         repaintCards();
     }
     
     public void p2ThreeToLeft()
     {
-        deck.LeftSpit.add(deck.TwoStockThree.get(0));
+        deck.LeftSpit.add(0, deck.TwoStockThree.get(0));
         deck.TwoStockThree.remove(0);
         repaintCards();
     }
     
     public void p2ThreeToRight()
     {
-        deck.RightSpit.add(deck.TwoStockThree.get(0));
+        deck.RightSpit.add(0, deck.TwoStockThree.get(0));
         deck.TwoStockThree.remove(0);
         repaintCards();
     }
     
     public void p2FourToLeft()
     {
-        deck.LeftSpit.add(deck.TwoStockFour.get(0));
+        deck.LeftSpit.add(0, deck.TwoStockFour.get(0));
         deck.TwoStockFour.remove(0);
         repaintCards();
     }
     
     public void p2FourToRight()
     {
-        deck.RightSpit.add(deck.TwoStockFour.get(0));
+        deck.RightSpit.add(0, deck.TwoStockFour.get(0));
         deck.TwoStockFour.remove(0);
         repaintCards();
     }
     
     public void p2FiveToLeft()
     {
-        deck.LeftSpit.add(deck.TwoStockFive.get(0));
+        deck.LeftSpit.add(0, deck.TwoStockFive.get(0));
         deck.TwoStockFive.remove(0);
         repaintCards();
     }
     
     public void p2FiveToRight()
     {
-        deck.RightSpit.add(deck.TwoStockFive.get(0));
+        deck.RightSpit.add(0, deck.TwoStockFive.get(0));
         deck.TwoStockFive.remove(0);
         repaintCards();
     }
