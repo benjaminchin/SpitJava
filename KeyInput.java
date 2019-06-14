@@ -1,11 +1,6 @@
 import java.awt.event.*;
 import java.awt.*;
-/**
- * Write a description of class KeyInput here.
- *
- * @author (Ben Chin)
- * @version (a version number or a date)
- */
+
 public class KeyInput implements KeyListener
 {
     private String pile;
