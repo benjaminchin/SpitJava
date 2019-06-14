@@ -80,18 +80,23 @@ public class PlayGame extends GUI2
         if (p1selected == 1)
         {
             if(p1pile == "a")
-            if (OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1 )
             {
-                LeftSpit.add( OneStockOne.remove(OneStockOne.size()-1));
-                // display image code
+                if (OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1 )
+                {
+                    LeftSpit.add( OneStockOne.remove(OneStockOne.size()-1));
+                    // display image code
+                }
             }
             else if(p1pile == "d")
-            if (OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1 )
-            {
-                RightSpit.add( OneStockOne.remove(OneStockOne.size()-1));
-                // display image code
+            {    
+                if (OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1 )
+                {
+                    RightSpit.add( OneStockOne.remove(OneStockOne.size()-1));
+                    // display image code
+                }
             }
         }
+        
         
         if (p1selected == 2)
         {
