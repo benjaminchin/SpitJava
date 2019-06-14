@@ -12,6 +12,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.awt.Dimension;
 
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 public class GUI3 extends JFrame implements ActionListener, KeyListener
 {
     private Deck deck = new Deck();
@@ -53,6 +55,7 @@ public class GUI3 extends JFrame implements ActionListener, KeyListener
         
         gameFrame.getContentPane().setBackground(Color.ORANGE);
         gameFrame.setSize(300, 200);
+        //addKeyListener(this);
         
         spit.setFont(new Font("Courier New",Font.BOLD,30));
         
@@ -103,6 +106,7 @@ public class GUI3 extends JFrame implements ActionListener, KeyListener
         start.addActionListener(this);
         instructions.addActionListener(this);
         addKeyListener(this);
+        
         setFocusable(true);
         setFocusTraversalKeysEnabled(true);
         gameFrame.setVisible(true);
@@ -166,9 +170,9 @@ public class GUI3 extends JFrame implements ActionListener, KeyListener
             {
                 //Nothing
             }
-            
-            //setFocusable(true);
-            //setFocusTraversalKeysEnabled(false);
+            repaint();
+            setFocusable(false);
+            setFocusTraversalKeysEnabled(false);
         }
     }
     
@@ -178,7 +182,7 @@ public class GUI3 extends JFrame implements ActionListener, KeyListener
        //setFocusable(true);
        if(e.getKeyCode() == KeyEvent.VK_1)
        {
-           System.out.println("yo");
+           System.out.println("Test");
            Card temp = deck.OneStockOne.get(0);
            deck.OneStockOne.remove(0);
            deck.LeftSpit.add(0, temp);
@@ -191,6 +195,7 @@ public class GUI3 extends JFrame implements ActionListener, KeyListener
            {
                //Nothing
            }
+           repaint();
            System.out.println("YAY");
        }
        
