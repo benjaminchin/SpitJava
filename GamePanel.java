@@ -80,12 +80,6 @@ public class GamePanel  extends JPanel
         repaintCards();
     }
     
-    public void makeMove()
-    {
-        deck.LeftSpit.add(deck.OneStockTwo.get(0));
-        deck.OneStockTwo.remove(0);
-    }
-    
     public void repaintCards()
     {
         //BufferedImage swapPlayer1 = img.getSubimage(deck.player1Cards.get(0).getX(), deck.player1Cards.get(0).getY(), 72, 96);
