@@ -89,7 +89,7 @@ public class PlayGame extends GUI2
             }
             else if(p1pile == "d")
             {    
-                if (OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == LeftSpit.get(0).getRank()+1 )
+                if (OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()-1 || OneStockOne.get(0).getRank() == RightSpit.get(0).getRank()+1 )
                 {
                     RightSpit.add( OneStockOne.remove(OneStockOne.size()-1));
                     // display image code

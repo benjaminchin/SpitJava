@@ -13,17 +13,17 @@ public class GamePanel  extends JPanel
     private JLabel oneStockThree = new JLabel();
     private JLabel oneStockFour = new JLabel();
     private JLabel oneStockFive = new JLabel();
-        
+
     private JLabel player2 = new JLabel();
     private JLabel twoStockOne = new JLabel();
     private JLabel twoStockTwo = new JLabel();
     private JLabel twoStockThree = new JLabel();
     private JLabel twoStockFour = new JLabel();
     private JLabel twoStockFive = new JLabel();
-        
+
     private JLabel leftSpit = new JLabel();
     private JLabel rightSpit = new JLabel();
-    
+
     private Deck deck = new Deck();
     private BufferedImage img;
     public GamePanel() throws IOException
@@ -31,9 +31,9 @@ public class GamePanel  extends JPanel
         this.setBackground(Color.GREEN);
         deck.shuffle();
         deck.deal();
-        
+
         img = ImageIO.read(new File("cards.png"));
-        
+
         player1.setBounds(320,10, 72, 96);
         oneStockOne.setBounds(80,130, 72, 96);
         oneStockTwo.setBounds(200,130, 72, 96);
@@ -50,13 +50,13 @@ public class GamePanel  extends JPanel
 
         leftSpit.setBounds(200, 270, 72, 96);
         rightSpit.setBounds(440, 270, 72, 96);
-        
+
         BufferedImage p1Image = img.getSubimage(936, 0, 72, 96);
         BufferedImage p2Image = img.getSubimage(936, 0, 72, 96);
-        
+
         player1.setIcon(new ImageIcon(p1Image));
         player2.setIcon(new ImageIcon(p2Image));
-        
+
         //Add labels to panel
         this.add(player1);
         this.add(oneStockOne);
@@ -70,16 +70,16 @@ public class GamePanel  extends JPanel
         this.add(twoStockThree);
         this.add(twoStockFour);
         this.add(twoStockFive);
-        
+
         this.add(leftSpit);
         this.add(rightSpit);
- 
+
         this.setFocusable(true);
         this.setFocusTraversalKeysEnabled(true);
-        
+
         repaintCards();
     }
-    
+
     public void repaintCards()
     {
         //BufferedImage swapPlayer1 = img.getSubimage(deck.player1Cards.get(0).getX(), deck.player1Cards.get(0).getY(), 72, 96);
@@ -88,19 +88,19 @@ public class GamePanel  extends JPanel
         //BufferedImage swapOneStockThree = img.getSubimage(deck.OneStockThree.get(0).getX(), deck.OneStockThree.get(0).getY(), 72, 96);
         //BufferedImage swapOneStockFour = img.getSubimage(deck.OneStockFour.get(0).getX(), deck.OneStockFour.get(0).getY(), 72, 96);
         //BufferedImage swapOneStockFive = img.getSubimage(deck.OneStockFive.get(0).getX(), deck.OneStockFive.get(0).getY(), 72, 96);
-        
+
         //BufferedImage swapPlayer2 = img.getSubimage(deck.player2Cards.get(0).getX(), deck.player2Cards.get(0).getY(), 72, 96);
         //BufferedImage swapTwoStockOne = img.getSubimage(deck.TwoStockOne.get(0).getX(), deck.TwoStockOne.get(0).getY(), 72, 96);
         //BufferedImage swapTwoStockTwo = img.getSubimage(deck.TwoStockTwo.get(0).getX(), deck.TwoStockTwo.get(0).getY(), 72, 96);
         //BufferedImage swapTwoStockThree = img.getSubimage(deck.TwoStockThree.get(0).getX(), deck.TwoStockThree.get(0).getY(), 72, 96);
         //BufferedImage swapTwoStockFour = img.getSubimage(deck.TwoStockFour.get(0).getX(), deck.TwoStockFour.get(0).getY(), 72, 96);
         //BufferedImage swapTwoStockFive = img.getSubimage(deck.TwoStockFive.get(0).getX(), deck.TwoStockFive.get(0).getY(), 72, 96);
-        
+
         //BufferedImage swapLeftSpit = img.getSubimage(deck.LeftSpit.get(0).getX(), deck.LeftSpit.get(0).getY(), 72, 96);
         //BufferedImage swapRightSpit = img.getSubimage(deck.RightSpit.get(0).getX(), deck.RightSpit.get(0).getY(), 72, 96);
-        
+
         //if(deck.player1Cards.size() > 0)
-            //player1.setIcon(new ImageIcon(swapPlayer1));
+        //player1.setIcon(new ImageIcon(swapPlayer1));
         if(deck.OneStockOne.size() > 0)
         {    
             BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
@@ -137,7 +137,7 @@ public class GamePanel  extends JPanel
         else
             oneStockFive.setIcon(null);
         //if(deck.player2Cards.size() > 0)
-            //player2.setIcon(new ImageIcon(swapPlayer2));
+        //player2.setIcon(new ImageIcon(swapPlayer2));
         if(deck.TwoStockOne.size() > 0)
         {    
             BufferedImage swapTwoStockOne = img.getSubimage(deck.TwoStockOne.get(0).getX(), deck.TwoStockOne.get(0).getY(), 72, 96);
@@ -192,18 +192,18 @@ public class GamePanel  extends JPanel
     public void p1OneToLeft()
     {
         if(deck.OneStockOne.size() > 0 && (deck.OneStockOne.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
-         deck.OneStockOne.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
+            deck.OneStockOne.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {    
             deck.LeftSpit.add(0, deck.OneStockOne.get(0));
             deck.OneStockOne.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p1OneToRight()
     {
         if(deck.OneStockOne.size() > 0 && (deck.OneStockOne.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
-        deck.OneStockOne.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
+            deck.OneStockOne.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.OneStockOne.get(0));
             deck.OneStockOne.remove(0);
@@ -214,201 +214,224 @@ public class GamePanel  extends JPanel
     public void p1TwoToLeft()
     {
         if(deck.OneStockTwo.size() > 0 && (deck.OneStockTwo.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
-        deck.OneStockTwo.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
+            deck.OneStockTwo.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {    
             deck.LeftSpit.add(0, deck.OneStockTwo.get(0));
             deck.OneStockTwo.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p1TwoToRight()
     {
         if(deck.OneStockTwo.size() > 0 && (deck.OneStockTwo.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
-        deck.OneStockTwo.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
+            deck.OneStockTwo.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.OneStockTwo.get(0));
             deck.OneStockTwo.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p1ThreeToLeft()
     {
         if(deck.OneStockThree.size() > 0 && (deck.OneStockThree.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
-        deck.OneStockThree.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
+            deck.OneStockThree.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.OneStockThree.get(0));
             deck.OneStockThree.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p1ThreeToRight()
     {
         if(deck.OneStockThree.size() > 0 && (deck.OneStockThree.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
-        deck.OneStockThree.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
+            deck.OneStockThree.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.OneStockThree.get(0));
             deck.OneStockThree.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p1FourToLeft()
     {
         if(deck.OneStockFour.size() > 0 && (deck.OneStockFour.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
-        deck.OneStockFour.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
+            deck.OneStockFour.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.OneStockFour.get(0));
             deck.OneStockFour.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p1FourToRight()
     {
         if(deck.OneStockFour.size() > 0 && (deck.OneStockFour.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
-        deck.OneStockFour.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
+            deck.OneStockFour.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.OneStockFour.get(0));
             deck.OneStockFour.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p1FiveToLeft()
     {
         if(deck.OneStockFive.size() > 0 && (deck.OneStockFive.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
-        deck.OneStockFive.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
+            deck.OneStockFive.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.OneStockFive.get(0));
             deck.OneStockFive.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p1FiveToRight()
     {
         if(deck.OneStockFive.size() > 0 && (deck.OneStockFive.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
-        deck.OneStockFive.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
+            deck.OneStockFive.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.OneStockFive.get(0));
             deck.OneStockFive.remove(0);
             repaintCards();
         }
     }
-    
+
     //Player 2 moves
     public void p2OneToLeft()
     {
         if(deck.TwoStockOne.size() > 0 && (deck.TwoStockOne.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
-        deck.TwoStockOne.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
+            deck.TwoStockOne.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.TwoStockOne.get(0));
             deck.TwoStockOne.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p2OneToRight()
     {
         if(deck.TwoStockOne.size() > 0 && (deck.TwoStockOne.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
-        deck.TwoStockOne.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
+            deck.TwoStockOne.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.TwoStockOne.get(0));
             deck.TwoStockOne.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p2TwoToLeft()
     {
         if(deck.TwoStockTwo.size() > 0 && (deck.TwoStockTwo.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
-        deck.TwoStockTwo.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
+            deck.TwoStockTwo.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.TwoStockTwo.get(0));
             deck.TwoStockTwo.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p2TwoToRight()
     {
         if(deck.TwoStockTwo.size() > 0 && (deck.TwoStockTwo.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
-        deck.TwoStockTwo.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
+            deck.TwoStockTwo.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.TwoStockTwo.get(0));
             deck.TwoStockTwo.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p2ThreeToLeft()
     {
         if(deck.TwoStockThree.size() > 0 && (deck.TwoStockThree.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
-        deck.TwoStockThree.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
+            deck.TwoStockThree.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.TwoStockThree.get(0));
             deck.TwoStockThree.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p2ThreeToRight()
     {
         if(deck.TwoStockThree.size() > 0 && (deck.TwoStockThree.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
-        deck.TwoStockThree.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
+            deck.TwoStockThree.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.TwoStockThree.get(0));
             deck.TwoStockThree.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p2FourToLeft()
     {
         if(deck.TwoStockFour.size() > 0 && (deck.TwoStockFour.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
-        deck.TwoStockFour.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
+            deck.TwoStockFour.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.TwoStockFour.get(0));
             deck.TwoStockFour.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p2FourToRight()
     {
         if(deck.TwoStockFour.size() > 0 && (deck.TwoStockFour.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
-        deck.TwoStockFour.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
+            deck.TwoStockFour.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.TwoStockFour.get(0));
             deck.TwoStockFour.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p2FiveToLeft()
     {
         if(deck.TwoStockFive.size() > 0 && (deck.TwoStockFive.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
-        deck.TwoStockFive.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
+            deck.TwoStockFive.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.TwoStockFive.get(0));
             deck.TwoStockFive.remove(0);
             repaintCards();
         }
     }
-    
+
     public void p2FiveToRight()
     {
         if(deck.TwoStockFive.size() > 0 &&(deck.TwoStockFive.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
-        deck.TwoStockFive.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
+            deck.TwoStockFive.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.TwoStockFive.get(0));
             deck.TwoStockFive.remove(0);
             repaintCards();
         }
     }
-    
-    
+
+    public boolean canPlay()
+    {
+        if(deck.OneStockOne.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.OneStockOne.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 && deck.OneStockOne.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && 
+        deck.OneStockOne.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 && deck.OneStockTwo.get(0).getRank() != 
+        deck.LeftSpit.get(0).getRank() - 1 && deck.OneStockTwo.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 && 
+        deck.OneStockTwo.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.OneStockTwo.get(0).getRank() != 
+        deck.RightSpit.get(0).getRank() + 1 && deck.OneStockThree.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.OneStockThree.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 && 
+        deck.OneStockThree.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.OneStockThree.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 && deck.OneStockFour.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && 
+        deck.OneStockFour.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 && deck.OneStockFive.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.OneStockFive.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 &&
+        deck.OneStockFive.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.OneStockFive.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 && 
+        deck.TwoStockOne.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.TwoStockOne.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 &&
+        deck.TwoStockOne.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.TwoStockOne.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 &&
+        deck.TwoStockTwo.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.TwoStockTwo.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 &&
+        deck.TwoStockTwo.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.TwoStockTwo.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 &&
+        deck.TwoStockThree.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.TwoStockThree.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 &&
+        deck.TwoStockThree.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.TwoStockThree.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 &&
+        deck.TwoStockFour.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 &&  deck.TwoStockFour.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 &&
+        deck.TwoStockFour.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.TwoStockFour.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 &&
+        deck.TwoStockFive.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.TwoStockFive.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 &&
+        deck.TwoStockFive.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.TwoStockFive.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1)
+            return false;
+        return true;
+    }
+
 }
