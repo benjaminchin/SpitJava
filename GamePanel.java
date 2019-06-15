@@ -470,7 +470,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public boolean canPlay()
+    public boolean canPlay() //index out of bounds when using the last card. Cannot check if card 0 is +- 1 because it doesn't exist. Need to check for size for each case.
     {
         if(deck.OneStockOne.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.OneStockOne.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 && deck.OneStockOne.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && 
         deck.OneStockOne.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 && deck.OneStockTwo.get(0).getRank() != 
