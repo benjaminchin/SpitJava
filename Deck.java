@@ -49,7 +49,7 @@ public class Deck
         }
     }
 
-    public void deal()
+    /*public void deal()
     {
         ArrayList<Card> temp = new ArrayList<Card>();
         temp = InitialDeck;
@@ -153,8 +153,38 @@ public class Deck
         {
             RightSpit.add(0,player2Cards.remove(0));
         }
-    }
+    }*/
 
+    public void deal()
+    {
+        for(int i = 0; i < InitialDeck.size() / 2; i++)
+        {
+            player1Cards.add(0, InitialDeck.get(i));
+        }
+        for(int i = InitialDeck.size() / 2; i < InitialDeck.size(); i++)
+        {
+            player2Cards.add(0, InitialDeck.get(i));
+        }
+        InitialDeck.removeAll(InitialDeck); //Makes it so above only runs once
+        while(OneStockOne.size() + OneStockTwo.size() + OneStockThree.size() + OneStockFour.size() + OneStockFive.size() < 15 && player1Cards.size() > 0) //Doesnt work, evenly splits piles
+        {    
+            OneStockOne.add(0, player1Cards.get(0));
+            player1Cards.remove(0);
+        
+            OneStockTwo.add(0, player1Cards.get(0));
+            player1Cards.remove(0);
+        
+            OneStockThree.add(0, player1Cards.get(0));
+            player1Cards.remove(0);
+        
+            OneStockFour.add(0, player1Cards.get(0));
+            player1Cards.remove(0);
+        
+            OneStockFive.add(0, player1Cards.get(0));
+            player1Cards.remove(0);
+        }
+    }
+    
     public void setPlayer1Cards(ArrayList<Card> c)
     {
         player1Cards = c;
