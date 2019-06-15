@@ -166,22 +166,68 @@ public class Deck
             player2Cards.add(0, InitialDeck.get(i));
         }
         InitialDeck.removeAll(InitialDeck); //Makes it so above only runs once
+        
+        LeftSpit.add(player1Cards.get(0));
+        player1Cards.remove(0);
+        
+        RightSpit.add(player2Cards.get(0));
+        player2Cards.remove(0);
         while(OneStockOne.size() + OneStockTwo.size() + OneStockThree.size() + OneStockFour.size() + OneStockFive.size() < 15 && player1Cards.size() > 0) //Doesnt work, evenly splits piles
         {    
-            OneStockOne.add(0, player1Cards.get(0));
-            player1Cards.remove(0);
+            if(OneStockOne.size() < 1)
+            {
+                OneStockOne.add(0, player1Cards.get(0));
+                player1Cards.remove(0);
+            }
+            if(OneStockTwo.size() < 2)
+            {
+                OneStockTwo.add(0, player1Cards.get(0));
+                player1Cards.remove(0);
+            }
+            if(OneStockThree.size() < 3)
+            {
+                OneStockThree.add(0, player1Cards.get(0));
+                player1Cards.remove(0);
+            }
+            if(OneStockFour.size() < 4)
+            {
+                OneStockFour.add(0, player1Cards.get(0));
+                player1Cards.remove(0);
+            }
+            if(OneStockFive.size() < 5)
+            {
+                OneStockFive.add(0, player1Cards.get(0));
+                player1Cards.remove(0);
+            }
+        }
         
-            OneStockTwo.add(0, player1Cards.get(0));
-            player1Cards.remove(0);
-        
-            OneStockThree.add(0, player1Cards.get(0));
-            player1Cards.remove(0);
-        
-            OneStockFour.add(0, player1Cards.get(0));
-            player1Cards.remove(0);
-        
-            OneStockFive.add(0, player1Cards.get(0));
-            player1Cards.remove(0);
+        while(TwoStockOne.size() + TwoStockTwo.size() + TwoStockThree.size() + TwoStockFour.size() + TwoStockFive.size() < 15 && player2Cards.size() > 0)
+        {
+            if(TwoStockOne.size() < 1)
+            {
+                TwoStockOne.add(0, player2Cards.get(0));
+                player2Cards.remove(0);
+            }
+            if(TwoStockTwo.size() < 2)
+            {
+                TwoStockTwo.add(0, player2Cards.get(0));
+                player2Cards.remove(0);
+            }
+            if(TwoStockThree.size() < 3)
+            {
+                TwoStockThree.add(0, player2Cards.get(0));
+                player2Cards.remove(0);
+            }
+            if(TwoStockFour.size() < 4)
+            {
+                TwoStockFour.add(0, player2Cards.get(0));
+                player2Cards.remove(0);
+            }
+            if(TwoStockFive.size() < 5)
+            {
+                TwoStockFive.add(0, player2Cards.get(0));
+                player2Cards.remove(0);
+            }
         }
     }
     
