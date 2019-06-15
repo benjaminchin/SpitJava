@@ -609,8 +609,10 @@ public class GamePanel  extends JPanel
            (deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)))
            while(canPlay()==false)
            {
-               deck.LeftSpit.add(0, deck.player1Cards.remove(0));
-               deck.RightSpit.add(0, deck.player2Cards.remove(0));
+               if(deck.player1Cards.size() > 0)
+                   deck.LeftSpit.add(0, deck.player1Cards.remove(0));
+               if(deck.player2Cards.size() > 0)
+                   deck.RightSpit.add(0, deck.player2Cards.remove(0));
                repaintCards();
             }
     }
