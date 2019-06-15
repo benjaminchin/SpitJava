@@ -33,7 +33,14 @@ public class Deck
             InitialDeck.add(new Card(i, "DIAMONDS", "RED"));
         }
 
-        
+        for(int i = 0; i < InitialDeck.size() / 2; i++)
+        {
+            player1Cards.add(0, InitialDeck.get(i));
+        }
+        for(int i = InitialDeck.size() / 2; i < InitialDeck.size(); i++)
+        {
+            player2Cards.add(0, InitialDeck.get(i));
+        }
     }
 
     public void shuffle()
@@ -157,7 +164,7 @@ public class Deck
 
     public void deal()
     {
-        for(int i = 0; i < InitialDeck.size() / 2; i++)
+        /*for(int i = 0; i < InitialDeck.size() / 2; i++)
         {
             player1Cards.add(0, InitialDeck.get(i));
         }
@@ -166,7 +173,7 @@ public class Deck
             player2Cards.add(0, InitialDeck.get(i));
         }
         InitialDeck.removeAll(InitialDeck); //Makes it so above only runs once
-        
+        */
         LeftSpit.add(player1Cards.get(0));
         player1Cards.remove(0);
         
@@ -174,27 +181,27 @@ public class Deck
         player2Cards.remove(0);
         while(OneStockOne.size() + OneStockTwo.size() + OneStockThree.size() + OneStockFour.size() + OneStockFive.size() < 15 && player1Cards.size() > 0) //Doesnt work, evenly splits piles
         {    
-            if(OneStockOne.size() < 1)
+            if(OneStockOne.size() < 1 && player1Cards.size() > 0)
             {
                 OneStockOne.add(0, player1Cards.get(0));
                 player1Cards.remove(0);
             }
-            if(OneStockTwo.size() < 2)
+            if(OneStockTwo.size() < 2 && player1Cards.size() > 0)
             {
                 OneStockTwo.add(0, player1Cards.get(0));
                 player1Cards.remove(0);
             }
-            if(OneStockThree.size() < 3)
+            if(OneStockThree.size() < 3 && player1Cards.size() > 0)
             {
                 OneStockThree.add(0, player1Cards.get(0));
                 player1Cards.remove(0);
             }
-            if(OneStockFour.size() < 4)
+            if(OneStockFour.size() < 4 && player1Cards.size() > 0)
             {
                 OneStockFour.add(0, player1Cards.get(0));
                 player1Cards.remove(0);
             }
-            if(OneStockFive.size() < 5)
+            if(OneStockFive.size() < 5 && player1Cards.size() > 0)
             {
                 OneStockFive.add(0, player1Cards.get(0));
                 player1Cards.remove(0);
@@ -203,27 +210,27 @@ public class Deck
         
         while(TwoStockOne.size() + TwoStockTwo.size() + TwoStockThree.size() + TwoStockFour.size() + TwoStockFive.size() < 15 && player2Cards.size() > 0)
         {
-            if(TwoStockOne.size() < 1)
+            if(TwoStockOne.size() < 1 && player2Cards.size() > 0)
             {
                 TwoStockOne.add(0, player2Cards.get(0));
                 player2Cards.remove(0);
             }
-            if(TwoStockTwo.size() < 2)
+            if(TwoStockTwo.size() < 2 && player2Cards.size() > 0)
             {
                 TwoStockTwo.add(0, player2Cards.get(0));
                 player2Cards.remove(0);
             }
-            if(TwoStockThree.size() < 3)
+            if(TwoStockThree.size() < 3 && player2Cards.size() > 0)
             {
                 TwoStockThree.add(0, player2Cards.get(0));
                 player2Cards.remove(0);
             }
-            if(TwoStockFour.size() < 4)
+            if(TwoStockFour.size() < 4 && player2Cards.size() > 0)
             {
                 TwoStockFour.add(0, player2Cards.get(0));
                 player2Cards.remove(0);
             }
-            if(TwoStockFive.size() < 5)
+            if(TwoStockFive.size() < 5 && player2Cards.size() > 0)
             {
                 TwoStockFive.add(0, player2Cards.get(0));
                 player2Cards.remove(0);
