@@ -605,12 +605,14 @@ public class GamePanel  extends JPanel
 
     public void drawCard()
     {
-        while(canPlay()==false)
-        {
-            deck.LeftSpit.add(0, deck.player1Cards.remove(0));
-            deck.RightSpit.add(0, deck.player2Cards.remove(0));
-            repaintCards();
-        }
+        if(!((deck.OneStockOne.size() == 0 && deck.OneStockTwo.size() == 0 && deck.OneStockThree.size() == 0 && deck.OneStockFour.size() == 0 && deck.OneStockFive.size() == 0) ||
+           (deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)))
+           while(canPlay()==false)
+           {
+               deck.LeftSpit.add(0, deck.player1Cards.remove(0));
+               deck.RightSpit.add(0, deck.player2Cards.remove(0));
+               repaintCards();
+            }
     }
 
     public void roundIsOver()
