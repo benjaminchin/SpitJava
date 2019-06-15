@@ -82,25 +82,6 @@ public class GamePanel  extends JPanel
 
     public void repaintCards()
     {
-        //BufferedImage swapPlayer1 = img.getSubimage(deck.player1Cards.get(0).getX(), deck.player1Cards.get(0).getY(), 72, 96);
-        //BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
-        //BufferedImage swapOneStockTwo = img.getSubimage(deck.OneStockTwo.get(0).getX(), deck.OneStockTwo.get(0).getY(), 72, 96);
-        //BufferedImage swapOneStockThree = img.getSubimage(deck.OneStockThree.get(0).getX(), deck.OneStockThree.get(0).getY(), 72, 96);
-        //BufferedImage swapOneStockFour = img.getSubimage(deck.OneStockFour.get(0).getX(), deck.OneStockFour.get(0).getY(), 72, 96);
-        //BufferedImage swapOneStockFive = img.getSubimage(deck.OneStockFive.get(0).getX(), deck.OneStockFive.get(0).getY(), 72, 96);
-
-        //BufferedImage swapPlayer2 = img.getSubimage(deck.player2Cards.get(0).getX(), deck.player2Cards.get(0).getY(), 72, 96);
-        //BufferedImage swapTwoStockOne = img.getSubimage(deck.TwoStockOne.get(0).getX(), deck.TwoStockOne.get(0).getY(), 72, 96);
-        //BufferedImage swapTwoStockTwo = img.getSubimage(deck.TwoStockTwo.get(0).getX(), deck.TwoStockTwo.get(0).getY(), 72, 96);
-        //BufferedImage swapTwoStockThree = img.getSubimage(deck.TwoStockThree.get(0).getX(), deck.TwoStockThree.get(0).getY(), 72, 96);
-        //BufferedImage swapTwoStockFour = img.getSubimage(deck.TwoStockFour.get(0).getX(), deck.TwoStockFour.get(0).getY(), 72, 96);
-        //BufferedImage swapTwoStockFive = img.getSubimage(deck.TwoStockFive.get(0).getX(), deck.TwoStockFive.get(0).getY(), 72, 96);
-
-        //BufferedImage swapLeftSpit = img.getSubimage(deck.LeftSpit.get(0).getX(), deck.LeftSpit.get(0).getY(), 72, 96);
-        //BufferedImage swapRightSpit = img.getSubimage(deck.RightSpit.get(0).getX(), deck.RightSpit.get(0).getY(), 72, 96);
-
-        //if(deck.player1Cards.size() > 0)
-        //player1.setIcon(new ImageIcon(swapPlayer1));
         if(deck.OneStockOne.size() > 0)
         {    
             BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
@@ -507,7 +488,10 @@ public class GamePanel  extends JPanel
             deck.TwoStockFive.remove(0);
             repaintCards();
         }
-        drawCard();
+        if(canPlay()==false)
+        {
+            drawCard();
+        }
         roundIsOver();
     }
 
@@ -528,37 +512,8 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    /*public boolean canPlay() //index out of bounds when using the last card. Cannot check if card 0 is +- 1 because it doesn't exist. Need to check for size for each case.
-    {
-    if((deck.OneStockOne.size()!=0) && deck.OneStockOne.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.OneStockOne.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() && deck.OneStockOne.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && 
-    deck.OneStockOne.get(0).getRank()+1 != deck.RightSpit.get(0).getRank()  && (deck.OneStockTwo.size()!=0) && deck.OneStockTwo.get(0).getRank()-1 != 
-    deck.LeftSpit.get(0).getRank() && deck.OneStockTwo.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() && 
-    deck.OneStockTwo.get(0).getRank()-1 != deck.RightSpit.get(0).getRank()&& deck.OneStockTwo.get(0).getRank()+1 != 
-    deck.RightSpit.get(0).getRank() && (deck.OneStockThree.size()!=0) && deck.OneStockThree.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.OneStockThree.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() && 
-    deck.OneStockThree.get(0).getRank()-1 != deck.RightSpit.get(0).getRank()  && deck.OneStockThree.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() && (deck.OneStockFour.size()!=0) && deck.OneStockFour.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && 
-    deck.OneStockFour.get(0).getRank()+1 != deck.RightSpit.get(0).getRank()  && (deck.OneStockFive.size()!=0) && deck.OneStockFive.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.OneStockFive.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() &&
-    deck.OneStockFive.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && deck.OneStockFive.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() && 
-    (deck.TwoStockOne.size()!=0) && deck.TwoStockOne.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && deck.TwoStockOne.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() &&
-    deck.TwoStockOne.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockOne.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() &&
-    (deck.TwoStockTwo.size()!=0)&& deck.TwoStockTwo.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && deck.TwoStockTwo.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() &&
-    (deck.TwoStockThree.size()!=0)&& deck.TwoStockTwo.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockTwo.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() &&
-    deck.TwoStockThree.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && deck.TwoStockThree.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() &&
-    deck.TwoStockThree.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockThree.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() &&
-    (deck.TwoStockFour.size()!=0) && deck.TwoStockFour.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() &&  deck.TwoStockFour.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() &&
-    deck.TwoStockFour.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockFour.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() &&
-    (deck.TwoStockFive.size()!=0) && deck.TwoStockFive.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && deck.TwoStockFive.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() &&
-    deck.TwoStockFive.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockFive.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank())
-    return false;
-    return true;
-    }*/
-
     public boolean canPlay()
     {
-        //if(OneStockOne.size() == 0 && OneStockTwo.size() == 0 && OneStockThree.size() == 0 && OneStockFour.size() == 0 && OneStockFive.size() == 0 &&
-        // TwoStockOne.size() == 0 && TwoStockTwo.size() == 0 && TwoStockThree.size() == 0 && TwoStockFour.size() == 0 && TwoStockFive.size() == 0)
-        //if(deck.OneStockOne.size() != 0)
-        //  if((deck.OneStockOne.get(0).getRank() - 1 != deck.LeftSpit.get(0).getRank() && deck.OneStockOne.get(0).getRank() + 1 != deck.LeftSpit.get(0).getRank()) &&
-        //    (deck.OneStockOne.get(0).getRank() - 1 != deck.RightSpit.get(0).getRank() && deck.OneStockOne.get(0).getRank() + 1 != deck.RightSpit.get(0).getRank())
         if(deck.OneStockOne.size() > 0)
             if(((deck.OneStockOne.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.OneStockOne.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
             ((deck.OneStockOne.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.OneStockOne.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
@@ -626,11 +581,15 @@ public class GamePanel  extends JPanel
             {
                 for(Card c : deck.RightSpit)
                     deck.player1Cards.add(c);
+                for(Card c : deck.LeftSpit)
+                    deck.player2Cards.add(c);
             }
             else
             {
                 for(Card  c : deck.LeftSpit)
                     deck.player1Cards.add(c);
+                for(Card c : deck.RightSpit)
+                    deck.player2Cards.add(c);    
             }
             deck.deal();
             repaintCards();
@@ -644,11 +603,15 @@ public class GamePanel  extends JPanel
             {
                 for(Card c : deck.RightSpit)
                     deck.player2Cards.add(c);
+                for(Card c : deck.LeftSpit)
+                    deck.player1Cards.add(c);
             }
             else
             {
                 for(Card  c : deck.LeftSpit)
                     deck.player2Cards.add(c);
+                for(Card c : deck.RightSpit)
+                    deck.player1Cards.add(c);
             }
             deck.deal();
             repaintCards();
