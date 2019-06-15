@@ -470,7 +470,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public boolean canPlay() //index out of bounds when using the last card. Cannot check if card 0 is +- 1 because it doesn't exist. Need to check for size for each case.
+    /*public boolean canPlay() //index out of bounds when using the last card. Cannot check if card 0 is +- 1 because it doesn't exist. Need to check for size for each case.
     {
         if((deck.OneStockOne.size()!=0) && deck.OneStockOne.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.OneStockOne.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() && deck.OneStockOne.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && 
         deck.OneStockOne.get(0).getRank()+1 != deck.RightSpit.get(0).getRank()  && (deck.OneStockTwo.size()!=0) && deck.OneStockTwo.get(0).getRank()-1 != 
@@ -492,6 +492,57 @@ public class GamePanel  extends JPanel
         deck.TwoStockFive.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockFive.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank())
             return false;
         return true;
+    }*/
+    
+    public boolean canPlay()
+    {
+        //if(OneStockOne.size() == 0 && OneStockTwo.size() == 0 && OneStockThree.size() == 0 && OneStockFour.size() == 0 && OneStockFive.size() == 0 &&
+          // TwoStockOne.size() == 0 && TwoStockTwo.size() == 0 && TwoStockThree.size() == 0 && TwoStockFour.size() == 0 && TwoStockFive.size() == 0)
+        //if(deck.OneStockOne.size() != 0)
+          //  if((deck.OneStockOne.get(0).getRank() - 1 != deck.LeftSpit.get(0).getRank() && deck.OneStockOne.get(0).getRank() + 1 != deck.LeftSpit.get(0).getRank()) &&
+           //    (deck.OneStockOne.get(0).getRank() - 1 != deck.RightSpit.get(0).getRank() && deck.OneStockOne.get(0).getRank() + 1 != deck.RightSpit.get(0).getRank())
+        if(deck.OneStockOne.size() > 0)
+            if(((deck.OneStockOne.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.OneStockOne.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
+               ((deck.OneStockOne.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.OneStockOne.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
+                return true;
+        if(deck.OneStockTwo.size() > 0)
+            if(((deck.OneStockTwo.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.OneStockTwo.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
+               ((deck.OneStockTwo.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.OneStockTwo.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
+                return true;        
+        if(deck.OneStockThree.size() > 0)
+            if(((deck.OneStockThree.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.OneStockThree.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
+               ((deck.OneStockThree.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.OneStockThree.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
+                return true;        
+        if(deck.OneStockFour.size() > 0)
+            if(((deck.OneStockFour.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.OneStockFour.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
+               ((deck.OneStockFour.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.OneStockFour.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
+                return true;
+        if(deck.OneStockFive.size() > 0)
+            if(((deck.OneStockFive.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.OneStockFive.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
+               ((deck.OneStockFive.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.OneStockFive.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
+                return true;
+                
+        if(deck.TwoStockOne.size() > 0)
+            if(((deck.TwoStockOne.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.TwoStockOne.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
+               ((deck.TwoStockOne.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.TwoStockOne.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
+                return true;
+        if(deck.TwoStockTwo.size() > 0)
+            if(((deck.TwoStockTwo.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.TwoStockTwo.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
+               ((deck.TwoStockTwo.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.TwoStockTwo.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
+                return true;
+        if(deck.TwoStockThree.size() > 0)
+            if(((deck.TwoStockThree.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.TwoStockThree.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
+               ((deck.TwoStockThree.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.TwoStockThree.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
+                return true;
+        if(deck.TwoStockFour.size() > 0)
+            if(((deck.TwoStockFour.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.TwoStockFour.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
+               ((deck.TwoStockFour.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.TwoStockFour.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
+                return true;
+        if(deck.TwoStockFive.size() > 0)
+            if(((deck.TwoStockFive.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.TwoStockFive.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
+               ((deck.TwoStockFive.get(0).getRank() - 1) == deck.RightSpit.get(0).getRank()) || ((deck.TwoStockFive.get(0).getRank() + 1) == deck.RightSpit.get(0).getRank()))
+                return true; 
+        return false;
     }
 
     public void drawCard()
