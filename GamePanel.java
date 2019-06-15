@@ -472,24 +472,24 @@ public class GamePanel  extends JPanel
 
     public boolean canPlay() //index out of bounds when using the last card. Cannot check if card 0 is +- 1 because it doesn't exist. Need to check for size for each case.
     {
-        if((deck.OneStockOne.size()!=0) && deck.OneStockOne.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.OneStockOne.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 && deck.OneStockOne.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && 
-        deck.OneStockOne.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 && (deck.OneStockTwo.size()!=0) && deck.OneStockTwo.get(0).getRank() != 
-        deck.LeftSpit.get(0).getRank() - 1 && deck.OneStockTwo.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 && 
-        deck.OneStockTwo.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.OneStockTwo.get(0).getRank() != 
-        deck.RightSpit.get(0).getRank() + 1 && (deck.OneStockThree.size()!=0) && deck.OneStockThree.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.OneStockThree.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 && 
-        deck.OneStockThree.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.OneStockThree.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 && (deck.OneStockFour.size()!=0) && deck.OneStockFour.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && 
-        deck.OneStockFour.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 && (deck.OneStockFive.size()!=0) && deck.OneStockFive.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.OneStockFive.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 &&
-        deck.OneStockFive.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.OneStockFive.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 && 
-        (deck.TwoStockOne.size()!=0) && deck.TwoStockOne.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.TwoStockOne.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 &&
-        deck.TwoStockOne.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.TwoStockOne.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 &&
-        (deck.TwoStockTwo.size()!=0)&& deck.TwoStockTwo.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.TwoStockTwo.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 &&
-        (deck.TwoStockThree.size()!=0)&& deck.TwoStockTwo.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.TwoStockTwo.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 &&
-        deck.TwoStockThree.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.TwoStockThree.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 &&
-        deck.TwoStockThree.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.TwoStockThree.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1 &&
-        (deck.TwoStockFour.size()!=0) && deck.TwoStockFour.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 &&  deck.TwoStockFour.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 &&
-        deck.TwoStockFour.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.TwoStockFour.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 &&
-        (deck.TwoStockFive.size()!=0) && deck.TwoStockFive.get(0).getRank() != deck.RightSpit.get(0).getRank() - 1 && deck.TwoStockFive.get(0).getRank() != deck.RightSpit.get(0).getRank() + 1 &&
-        deck.TwoStockFive.get(0).getRank() != deck.LeftSpit.get(0).getRank() - 1 && deck.TwoStockFive.get(0).getRank() != deck.LeftSpit.get(0).getRank() + 1)
+        if((deck.OneStockOne.size()!=0) && deck.OneStockOne.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.OneStockOne.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() && deck.OneStockOne.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && 
+        deck.OneStockOne.get(0).getRank()+1 != deck.RightSpit.get(0).getRank()  && (deck.OneStockTwo.size()!=0) && deck.OneStockTwo.get(0).getRank()-1 != 
+        deck.LeftSpit.get(0).getRank() && deck.OneStockTwo.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() && 
+        deck.OneStockTwo.get(0).getRank()-1 != deck.RightSpit.get(0).getRank()&& deck.OneStockTwo.get(0).getRank()+1 != 
+        deck.RightSpit.get(0).getRank() && (deck.OneStockThree.size()!=0) && deck.OneStockThree.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.OneStockThree.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() && 
+        deck.OneStockThree.get(0).getRank()-1 != deck.RightSpit.get(0).getRank()  && deck.OneStockThree.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() && (deck.OneStockFour.size()!=0) && deck.OneStockFour.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && 
+        deck.OneStockFour.get(0).getRank()+1 != deck.RightSpit.get(0).getRank()  && (deck.OneStockFive.size()!=0) && deck.OneStockFive.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.OneStockFive.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() &&
+        deck.OneStockFive.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && deck.OneStockFive.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() && 
+        (deck.TwoStockOne.size()!=0) && deck.TwoStockOne.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && deck.TwoStockOne.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() &&
+        deck.TwoStockOne.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockOne.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() &&
+        (deck.TwoStockTwo.size()!=0)&& deck.TwoStockTwo.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && deck.TwoStockTwo.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() &&
+        (deck.TwoStockThree.size()!=0)&& deck.TwoStockTwo.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockTwo.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() &&
+        deck.TwoStockThree.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && deck.TwoStockThree.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() &&
+        deck.TwoStockThree.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockThree.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank() &&
+        (deck.TwoStockFour.size()!=0) && deck.TwoStockFour.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() &&  deck.TwoStockFour.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() &&
+        deck.TwoStockFour.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockFour.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() &&
+        (deck.TwoStockFive.size()!=0) && deck.TwoStockFive.get(0).getRank()-1 != deck.RightSpit.get(0).getRank() && deck.TwoStockFive.get(0).getRank()+1 != deck.RightSpit.get(0).getRank() &&
+        deck.TwoStockFive.get(0).getRank()-1 != deck.LeftSpit.get(0).getRank() && deck.TwoStockFive.get(0).getRank()+1 != deck.LeftSpit.get(0).getRank())
             return false;
         return true;
     }
