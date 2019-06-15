@@ -632,7 +632,7 @@ public class GamePanel  extends JPanel
             }
             deck.deal();
             repaintCards();
-            System.out.println("Round is Over");
+            System.out.println("Round is Over - Player1 WINS!");
             System.out.println("New Round");
         }
         else if(deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && 
@@ -650,7 +650,7 @@ public class GamePanel  extends JPanel
             }
             deck.deal();
             repaintCards();
-            System.out.println("Round is Over");
+            System.out.println("Round is Over - Player2 WINS!");
             System.out.println("New Round");
         }
     }
