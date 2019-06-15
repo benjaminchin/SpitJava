@@ -197,142 +197,202 @@ public class GamePanel  extends JPanel
     //Player 1 moves
     public void p1OneToLeft()
     {
-        deck.LeftSpit.add(0, deck.OneStockOne.get(0));
-        deck.OneStockOne.remove(0);
-        repaintCards();
+        if(deck.OneStockOne.size() > 0)
+        {    
+            deck.LeftSpit.add(0, deck.OneStockOne.get(0));
+            deck.OneStockOne.remove(0);
+            repaintCards();
+        }
     }
     
     public void p1OneToRight()
     {
-        deck.RightSpit.add(0, deck.OneStockOne.get(0));
-        deck.OneStockOne.remove(0);
-        repaintCards();
+        if(deck.OneStockOne.size() > 0)
+        {
+            deck.RightSpit.add(0, deck.OneStockOne.get(0));
+            deck.OneStockOne.remove(0);
+            repaintCards();
+        }
     }
 
     public void p1TwoToLeft()
     {
-        deck.LeftSpit.add(0, deck.OneStockTwo.get(0));
-        deck.OneStockTwo.remove(0);
-        repaintCards();
+        if(deck.OneStockTwo.size() > 0)
+        {    
+            deck.LeftSpit.add(0, deck.OneStockTwo.get(0));
+            deck.OneStockTwo.remove(0);
+            repaintCards();
+        }
     }
     
     public void p1TwoToRight()
     {
-        deck.RightSpit.add(0, deck.OneStockTwo.get(0));
-        deck.OneStockTwo.remove(0);
-        repaintCards();
+        if(deck.OneStockTwo.size() > 0)
+        {
+            deck.RightSpit.add(0, deck.OneStockTwo.get(0));
+            deck.OneStockTwo.remove(0);
+            repaintCards();
+        }
     }
     
     public void p1ThreeToLeft()
     {
-        deck.LeftSpit.add(0, deck.OneStockThree.get(0));
-        deck.OneStockThree.remove(0);
-        repaintCards();
+        if(deck.OneStockThree.size() > 0)
+        {
+            deck.LeftSpit.add(0, deck.OneStockThree.get(0));
+            deck.OneStockThree.remove(0);
+            repaintCards();
+        }
     }
     
     public void p1ThreeToRight()
     {
-        deck.RightSpit.add(0, deck.OneStockThree.get(0));
-        deck.OneStockThree.remove(0);
-        repaintCards();
+        if(deck.OneStockThree.size() > 0)
+        {
+            deck.RightSpit.add(0, deck.OneStockThree.get(0));
+            deck.OneStockThree.remove(0);
+            repaintCards();
+        }
     }
     
     public void p1FourToLeft()
     {
-        deck.LeftSpit.add(0, deck.OneStockFour.get(0));
-        deck.OneStockFour.remove(0);
-        repaintCards();
+        if(deck.OneStockFour.size() > 0)
+        {
+            deck.LeftSpit.add(0, deck.OneStockFour.get(0));
+            deck.OneStockFour.remove(0);
+            repaintCards();
+        }
     }
     
     public void p1FourToRight()
     {
-        deck.RightSpit.add(0, deck.OneStockFour.get(0));
-        deck.OneStockFour.remove(0);
-        repaintCards();
+        if(deck.OneStockFour.size() > 0)
+        {
+            deck.RightSpit.add(0, deck.OneStockFour.get(0));
+            deck.OneStockFour.remove(0);
+            repaintCards();
+        }
     }
     
     public void p1FiveToLeft()
     {
-        deck.LeftSpit.add(0, deck.OneStockFive.get(0));
-        deck.OneStockFive.remove(0);
-        repaintCards();
+        if(deck.OneStockFive.size() > 0)
+        {
+            deck.LeftSpit.add(0, deck.OneStockFive.get(0));
+            deck.OneStockFive.remove(0);
+            repaintCards();
+        }
     }
     
     public void p1FiveToRight()
     {
-        deck.RightSpit.add(0, deck.OneStockFive.get(0));
-        deck.OneStockFive.remove(0);
-        repaintCards();
+        if(deck.OneStockFive.size() > 0)
+        {
+            deck.RightSpit.add(0, deck.OneStockFive.get(0));
+            deck.OneStockFive.remove(0);
+            repaintCards();
+        }
     }
     
     //Player 2 moves
     public void p2OneToLeft()
     {
-        deck.LeftSpit.add(0, deck.TwoStockOne.get(0));
-        deck.TwoStockOne.remove(0);
-        repaintCards();
+        if(deck.TwoStockOne.size() > 0)
+        {
+            deck.LeftSpit.add(0, deck.TwoStockOne.get(0));
+            deck.TwoStockOne.remove(0);
+            repaintCards();
+        }
     }
     
     public void p2OneToRight()
     {
-        deck.RightSpit.add(0, deck.TwoStockOne.get(0));
-        deck.TwoStockOne.remove(0);
-        repaintCards();
+        if(deck.TwoStockOne.size() > 0)
+        {
+            deck.RightSpit.add(0, deck.TwoStockOne.get(0));
+            deck.TwoStockOne.remove(0);
+            repaintCards();
+        }
     }
     
     public void p2TwoToLeft()
     {
-        deck.LeftSpit.add(0, deck.TwoStockTwo.get(0));
-        deck.TwoStockTwo.remove(0);
-        repaintCards();
+        if(deck.TwoStockTwo.size() > 0)
+        {
+            deck.LeftSpit.add(0, deck.TwoStockTwo.get(0));
+            deck.TwoStockTwo.remove(0);
+            repaintCards();
+        }
     }
     
     public void p2TwoToRight()
     {
-        deck.RightSpit.add(0, deck.TwoStockTwo.get(0));
-        deck.TwoStockTwo.remove(0);
-        repaintCards();
+        if(deck.TwoStockTwo.size() > 0)
+        {
+            deck.RightSpit.add(0, deck.TwoStockTwo.get(0));
+            deck.TwoStockTwo.remove(0);
+            repaintCards();
+        }
     }
     
     public void p2ThreeToLeft()
     {
-        deck.LeftSpit.add(0, deck.TwoStockThree.get(0));
-        deck.TwoStockThree.remove(0);
-        repaintCards();
+        if(deck.TwoStockThree.size() > 0)
+        {
+            deck.LeftSpit.add(0, deck.TwoStockThree.get(0));
+            deck.TwoStockThree.remove(0);
+            repaintCards();
+        }
     }
     
     public void p2ThreeToRight()
     {
-        deck.RightSpit.add(0, deck.TwoStockThree.get(0));
-        deck.TwoStockThree.remove(0);
-        repaintCards();
+        if(deck.TwoStockThree.size() > 0)
+        {
+            deck.RightSpit.add(0, deck.TwoStockThree.get(0));
+            deck.TwoStockThree.remove(0);
+            repaintCards();
+        }
     }
     
     public void p2FourToLeft()
     {
-        deck.LeftSpit.add(0, deck.TwoStockFour.get(0));
-        deck.TwoStockFour.remove(0);
-        repaintCards();
+        if(deck.TwoStockFour.size() > 0)
+        {
+            deck.LeftSpit.add(0, deck.TwoStockFour.get(0));
+            deck.TwoStockFour.remove(0);
+            repaintCards();
+        }
     }
     
     public void p2FourToRight()
     {
-        deck.RightSpit.add(0, deck.TwoStockFour.get(0));
-        deck.TwoStockFour.remove(0);
-        repaintCards();
+        if(deck.TwoStockFour.size() > 0)
+        {
+            deck.RightSpit.add(0, deck.TwoStockFour.get(0));
+            deck.TwoStockFour.remove(0);
+            repaintCards();
+        }
     }
     
     public void p2FiveToLeft()
     {
-        deck.LeftSpit.add(0, deck.TwoStockFive.get(0));
-        deck.TwoStockFive.remove(0);
-        repaintCards();
+        if(deck.TwoStockFive.size() > 0)
+        {
+            deck.LeftSpit.add(0, deck.TwoStockFive.get(0));
+            deck.TwoStockFive.remove(0);
+            repaintCards();
+        }
     }
     
     public void p2FiveToRight()
     {
-        deck.RightSpit.add(0, deck.TwoStockFive.get(0));
-        deck.TwoStockFive.remove(0);
-        repaintCards();
+        if(deck.TwoStockFive.size() > 0)
+        {
+            deck.RightSpit.add(0, deck.TwoStockFive.get(0));
+            deck.TwoStockFive.remove(0);
+            repaintCards();
+        }
     }
 }
