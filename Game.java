@@ -42,20 +42,36 @@ public class Game
                
                helpFrame.setSize(750, 750);
                
-               JLabel lbl = new JLabel("<html>To play this game: <br/> Each Player starts with an evenly spit deck of cards." + 
-                "<br/>The cards are dealt into 5 stock piles, the first with 1 card, <br/>the second with 2, and so on. " +
-                "<br/>The moves you can make are one rank higher or lower (suit doesn't matter) <br/>on either spit pile. " + 
-                "<br/>For Player 1 to make a move, they can use <br/>numbers 1-5 on the keyboard to select a stock pile to play from " +
-                "<br/>and A or D to play on the left or right spit pile, respectively. " +
-                "<br/>For Player 2, they use numbers 1-5 on the number pad, <br/>and the 0 and Delete buttons to play on each spit pile." +
-                "<br/>There are no turns; if you see a move, make it as quick as possible! <br/>The other " +
-                "player can make a move on either pile as well. <br/>When neither player has a valid move, <br/>they must each flip a " +
-                "<br/>card onto a spit pile at the same time, <br/>and keep doing so until someone has a valid move." +
-                "<br/>When one player's stock piles are completely finished, both " +
-                "<br/>players have to slap the table. <br/>Player 1 does this by pressing the left shift button, <br/>and Player 2 " + 
-                "does this by pressing the Enter key. " + "<br/>Whoever slaps first gets the spit pile with less cards." + 
-                "<br/>They then must add this number of cards <br/> to their original draw pile, reshuffle, and deal again. " +
-                "<br/>This is considered a round. <br/>The game keeps going until one player <br/>has gotten rid of all of their cards.</html>");
+               JLabel lbl = new JLabel("<html>To play this game: <br/> The game uses a single deck of cards. <br/>"
+                    + "The deck is split into two even piles of 26 cards. <br/>"
+                    + "Each player gets one half. The cards are dealt into 5 piles per each player. <br/>"
+                    + "The first pile(left to right) has 1 card. <br/>"
+                    + "The second pile as 2 cards, third pile has 3, etc. <br/>"
+                    + "Player 1's cards are at the top, and Player 2's cards are at the bottom. <br/>"
+                    + "There are two 'spit' piles in the center of the table: <br/>"
+                    + "Left and right.<br/>"
+                    + "The objective is to get rid of all your cards.<br/>"
+                    + "The Players can select a pile 1-5, and <br/>"
+                    + " place it in the left or right spit piles. <br/>"
+                    + "Cards can only be played if they are<br/>"
+                    + " one higher or lower than the top card of the spit pile.<br/>"
+                    + "If no cards from the 5 piles can be played,<br/>"
+                    + "One card from each of the player's draw piles(The no-face piles)<br/>"
+                    + " will be placed on to the spit piles until a card can be played.<br/>"
+                    + "The first player to get rid of all their cards in the 5 piles<br/>"
+                    + " gets to get the pile with the least cards.<br/>"
+                    + "The round ends when both players use up all of their cards in the 5 piles.<br/>"
+                    + "Each player recieves their respective piles.<br/>"
+                    + "They are then redealt into the 5 piles.<br/>"
+                    + "The game continues until one player<br/>"
+                    + " gets rid of all their cards.<br/><br/><br/>"
+                    + "Controls:<br/>"
+                    +"  Player1:<br/>"
+                    +"      Select Piles 1-5 with Keys 1, 2, 3, 4, 5<br/>"
+                    +"      Select Spit Piles with Keys A for Left, D for Right<br/><br/>"
+                    +"  Player2:<br/>"
+                    +"      Select Piles 1-5 with Keys 1, 2, 3, 4, 5 on NUMPAD<br/>"
+                    +"      Select Spit Piles with Keys 0 on NUMPAD for Left, Enter on NUMPAD for Right<html>");
                lbl.setFont(new Font("Courier New",Font.BOLD,15));
                Dimension lblSize = lbl.getPreferredSize();
                lbl.setBounds(0, 0, lblSize.width, lblSize.height);
