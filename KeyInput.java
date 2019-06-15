@@ -60,7 +60,7 @@ public class KeyInput implements KeyListener
             p1Selected = 5;
         }
         
-        if(code == 79)
+        if(code == KeyEvent.VK_NUMPAD0)
         {
             if(p2Selected == 1)
                 panel.p2OneToLeft();
@@ -73,7 +73,7 @@ public class KeyInput implements KeyListener
             else //5
                 panel.p2FiveToLeft();
         }
-        else if(code == 80)
+        else if(code == KeyEvent.VK_ENTER)
         {
             if(p2Selected == 1)
                 panel.p2OneToRight();
