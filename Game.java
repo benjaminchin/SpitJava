@@ -24,6 +24,8 @@ public class Game
         frame.getContentPane().add(panel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setDefaultLookAndFeelDecorated(true);
+        instructions.setFocusable(false);
+        panel.setFocusable(true);
         frame.setSize(750, 750);
         frame.setVisible(true);
     }
