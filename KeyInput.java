@@ -19,48 +19,48 @@ public class KeyInput implements KeyListener
     public void keyPressed(KeyEvent e)
     {
         int code = e.getKeyCode();
-        if(code == KeyEvent.VK_NUMPAD1)
+        if(code == 97)
         {
             p2Selected = 1;
         }
-        else if(code == KeyEvent.VK_NUMPAD2)
+        else if(code == 98)
         {
             p2Selected = 2;
         }
-        else if(code == KeyEvent.VK_NUMPAD3)
+        else if(code == 99)
         {
             p2Selected = 3;
         }
-        else if(code == KeyEvent.VK_NUMPAD4)
+        else if(code == 100)
         {
             p2Selected = 4;
         }
-        else if(code == KeyEvent.VK_NUMPAD5)
+        else if(code == 101)
         {
             p2Selected = 5;
         }
-        else if(code == KeyEvent.VK_1)
+        else if(code == 49)
         {
             p1Selected = 1;
         }
-        else if(code == KeyEvent.VK_2)
+        else if(code == 50)
         {
             p1Selected = 2;
         }
-        else if(code == KeyEvent.VK_3)
+        else if(code == 51)
         {
             p1Selected = 3;
         }
-        else if(code == KeyEvent.VK_4)
+        else if(code == 52)
         {
             p1Selected = 4;
         }
-        else if(code == KeyEvent.VK_5)
+        else if(code == 53)
         {
             p1Selected = 5;
         }
         
-        if(code == KeyEvent.VK_NUMPAD0)
+        if(code == 96)
         {
             if(p2Selected == 1)
                 panel.p2OneToLeft();
@@ -73,7 +73,7 @@ public class KeyInput implements KeyListener
             else //5
                 panel.p2FiveToLeft();
         }
-        else if(code == KeyEvent.VK_DELETE)
+        else if(code == 127)
         {
             if(p2Selected == 1)
                 panel.p2OneToRight();
@@ -86,7 +86,7 @@ public class KeyInput implements KeyListener
             else if(p2Selected == 5)
                 panel.p2FiveToRight();
         }
-        else if(code == KeyEvent.VK_A)
+        else if(code == 65)
         {
             if(p1Selected == 1)
                 panel.p1OneToLeft();
@@ -99,7 +99,7 @@ public class KeyInput implements KeyListener
             else //5
                 panel.p1FiveToLeft();
         }
-        else if(code == KeyEvent.VK_D)
+        else if(code == 68)
         {
             if(p1Selected == 1)
                 panel.p1OneToRight();
