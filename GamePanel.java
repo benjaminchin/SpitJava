@@ -191,7 +191,8 @@ public class GamePanel  extends JPanel
     //Player 1 moves
     public void p1OneToLeft()
     {
-        if(deck.OneStockOne.size() > 0)
+        if(deck.OneStockOne.size() > 0 && (deck.OneStockOne.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
+         deck.OneStockOne.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {    
             deck.LeftSpit.add(0, deck.OneStockOne.get(0));
             deck.OneStockOne.remove(0);
@@ -201,7 +202,8 @@ public class GamePanel  extends JPanel
     
     public void p1OneToRight()
     {
-        if(deck.OneStockOne.size() > 0)
+        if(deck.OneStockOne.size() > 0 && (deck.OneStockOne.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
+        deck.OneStockOne.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.OneStockOne.get(0));
             deck.OneStockOne.remove(0);
@@ -211,7 +213,8 @@ public class GamePanel  extends JPanel
 
     public void p1TwoToLeft()
     {
-        if(deck.OneStockTwo.size() > 0)
+        if(deck.OneStockTwo.size() > 0 && (deck.OneStockTwo.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
+        deck.OneStockTwo.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {    
             deck.LeftSpit.add(0, deck.OneStockTwo.get(0));
             deck.OneStockTwo.remove(0);
@@ -221,7 +224,8 @@ public class GamePanel  extends JPanel
     
     public void p1TwoToRight()
     {
-        if(deck.OneStockTwo.size() > 0)
+        if(deck.OneStockTwo.size() > 0 && (deck.OneStockTwo.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
+        deck.OneStockTwo.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.OneStockTwo.get(0));
             deck.OneStockTwo.remove(0);
@@ -231,7 +235,8 @@ public class GamePanel  extends JPanel
     
     public void p1ThreeToLeft()
     {
-        if(deck.OneStockThree.size() > 0)
+        if(deck.OneStockThree.size() > 0 && (deck.OneStockThree.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
+        deck.OneStockThree.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.OneStockThree.get(0));
             deck.OneStockThree.remove(0);
@@ -241,7 +246,8 @@ public class GamePanel  extends JPanel
     
     public void p1ThreeToRight()
     {
-        if(deck.OneStockThree.size() > 0)
+        if(deck.OneStockThree.size() > 0 && (deck.OneStockThree.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
+        deck.OneStockThree.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.OneStockThree.get(0));
             deck.OneStockThree.remove(0);
@@ -251,7 +257,8 @@ public class GamePanel  extends JPanel
     
     public void p1FourToLeft()
     {
-        if(deck.OneStockFour.size() > 0)
+        if(deck.OneStockFour.size() > 0 && (deck.OneStockFour.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
+        deck.OneStockFour.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.OneStockFour.get(0));
             deck.OneStockFour.remove(0);
@@ -261,7 +268,8 @@ public class GamePanel  extends JPanel
     
     public void p1FourToRight()
     {
-        if(deck.OneStockFour.size() > 0)
+        if(deck.OneStockFour.size() > 0 && (deck.OneStockFour.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
+        deck.OneStockFour.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.OneStockFour.get(0));
             deck.OneStockFour.remove(0);
@@ -271,7 +279,8 @@ public class GamePanel  extends JPanel
     
     public void p1FiveToLeft()
     {
-        if(deck.OneStockFive.size() > 0)
+        if(deck.OneStockFive.size() > 0 && (deck.OneStockFive.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
+        deck.OneStockFive.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.OneStockFive.get(0));
             deck.OneStockFive.remove(0);
@@ -281,7 +290,8 @@ public class GamePanel  extends JPanel
     
     public void p1FiveToRight()
     {
-        if(deck.OneStockFive.size() > 0)
+        if(deck.OneStockFive.size() > 0 && (deck.OneStockFive.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
+        deck.OneStockFive.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.OneStockFive.get(0));
             deck.OneStockFive.remove(0);
@@ -292,7 +302,8 @@ public class GamePanel  extends JPanel
     //Player 2 moves
     public void p2OneToLeft()
     {
-        if(deck.TwoStockOne.size() > 0)
+        if(deck.TwoStockOne.size() > 0 && (deck.TwoStockOne.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
+        deck.TwoStockOne.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.TwoStockOne.get(0));
             deck.TwoStockOne.remove(0);
@@ -302,7 +313,8 @@ public class GamePanel  extends JPanel
     
     public void p2OneToRight()
     {
-        if(deck.TwoStockOne.size() > 0)
+        if(deck.TwoStockOne.size() > 0 && (deck.TwoStockOne.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
+        deck.TwoStockOne.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.TwoStockOne.get(0));
             deck.TwoStockOne.remove(0);
@@ -312,7 +324,8 @@ public class GamePanel  extends JPanel
     
     public void p2TwoToLeft()
     {
-        if(deck.TwoStockTwo.size() > 0)
+        if(deck.TwoStockTwo.size() > 0 && (deck.TwoStockTwo.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
+        deck.TwoStockTwo.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.TwoStockTwo.get(0));
             deck.TwoStockTwo.remove(0);
@@ -322,7 +335,8 @@ public class GamePanel  extends JPanel
     
     public void p2TwoToRight()
     {
-        if(deck.TwoStockTwo.size() > 0)
+        if(deck.TwoStockTwo.size() > 0 && (deck.TwoStockTwo.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
+        deck.TwoStockTwo.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.TwoStockTwo.get(0));
             deck.TwoStockTwo.remove(0);
@@ -332,7 +346,8 @@ public class GamePanel  extends JPanel
     
     public void p2ThreeToLeft()
     {
-        if(deck.TwoStockThree.size() > 0)
+        if(deck.TwoStockThree.size() > 0 && (deck.TwoStockThree.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
+        deck.TwoStockThree.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.TwoStockThree.get(0));
             deck.TwoStockThree.remove(0);
@@ -342,7 +357,8 @@ public class GamePanel  extends JPanel
     
     public void p2ThreeToRight()
     {
-        if(deck.TwoStockThree.size() > 0)
+        if(deck.TwoStockThree.size() > 0 && (deck.TwoStockThree.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
+        deck.TwoStockThree.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.TwoStockThree.get(0));
             deck.TwoStockThree.remove(0);
@@ -352,7 +368,8 @@ public class GamePanel  extends JPanel
     
     public void p2FourToLeft()
     {
-        if(deck.TwoStockFour.size() > 0)
+        if(deck.TwoStockFour.size() > 0 && (deck.TwoStockFour.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
+        deck.TwoStockFour.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.TwoStockFour.get(0));
             deck.TwoStockFour.remove(0);
@@ -362,7 +379,8 @@ public class GamePanel  extends JPanel
     
     public void p2FourToRight()
     {
-        if(deck.TwoStockFour.size() > 0)
+        if(deck.TwoStockFour.size() > 0 && (deck.TwoStockFour.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
+        deck.TwoStockFour.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.TwoStockFour.get(0));
             deck.TwoStockFour.remove(0);
@@ -372,7 +390,8 @@ public class GamePanel  extends JPanel
     
     public void p2FiveToLeft()
     {
-        if(deck.TwoStockFive.size() > 0)
+        if(deck.TwoStockFive.size() > 0 && (deck.TwoStockFive.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
+        deck.TwoStockFive.get(0).getRank()+1 == deck.LeftSpit.get(0).getRank()))
         {
             deck.LeftSpit.add(0, deck.TwoStockFive.get(0));
             deck.TwoStockFive.remove(0);
@@ -382,11 +401,14 @@ public class GamePanel  extends JPanel
     
     public void p2FiveToRight()
     {
-        if(deck.TwoStockFive.size() > 0)
+        if(deck.TwoStockFive.size() > 0 &&(deck.TwoStockFive.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
+        deck.TwoStockFive.get(0).getRank()+1 == deck.RightSpit.get(0).getRank()))
         {
             deck.RightSpit.add(0, deck.TwoStockFive.get(0));
             deck.TwoStockFive.remove(0);
             repaintCards();
         }
     }
+    
+    
 }
