@@ -89,51 +89,110 @@ public class GamePanel  extends JPanel
     public void repaintCards()
     {
         //BufferedImage swapPlayer1 = img.getSubimage(deck.player1Cards.get(0).getX(), deck.player1Cards.get(0).getY(), 72, 96);
-        BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
-        BufferedImage swapOneStockTwo = img.getSubimage(deck.OneStockTwo.get(0).getX(), deck.OneStockTwo.get(0).getY(), 72, 96);
-        BufferedImage swapOneStockThree = img.getSubimage(deck.OneStockThree.get(0).getX(), deck.OneStockThree.get(0).getY(), 72, 96);
-        BufferedImage swapOneStockFour = img.getSubimage(deck.OneStockFour.get(0).getX(), deck.OneStockFour.get(0).getY(), 72, 96);
-        BufferedImage swapOneStockFive = img.getSubimage(deck.OneStockFive.get(0).getX(), deck.OneStockFive.get(0).getY(), 72, 96);
+        //BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
+        //BufferedImage swapOneStockTwo = img.getSubimage(deck.OneStockTwo.get(0).getX(), deck.OneStockTwo.get(0).getY(), 72, 96);
+        //BufferedImage swapOneStockThree = img.getSubimage(deck.OneStockThree.get(0).getX(), deck.OneStockThree.get(0).getY(), 72, 96);
+        //BufferedImage swapOneStockFour = img.getSubimage(deck.OneStockFour.get(0).getX(), deck.OneStockFour.get(0).getY(), 72, 96);
+        //BufferedImage swapOneStockFive = img.getSubimage(deck.OneStockFive.get(0).getX(), deck.OneStockFive.get(0).getY(), 72, 96);
         
         //BufferedImage swapPlayer2 = img.getSubimage(deck.player2Cards.get(0).getX(), deck.player2Cards.get(0).getY(), 72, 96);
-        BufferedImage swapTwoStockOne = img.getSubimage(deck.TwoStockOne.get(0).getX(), deck.TwoStockOne.get(0).getY(), 72, 96);
-        BufferedImage swapTwoStockTwo = img.getSubimage(deck.TwoStockTwo.get(0).getX(), deck.TwoStockTwo.get(0).getY(), 72, 96);
-        BufferedImage swapTwoStockThree = img.getSubimage(deck.TwoStockThree.get(0).getX(), deck.TwoStockThree.get(0).getY(), 72, 96);
-        BufferedImage swapTwoStockFour = img.getSubimage(deck.TwoStockFour.get(0).getX(), deck.TwoStockFour.get(0).getY(), 72, 96);
-        BufferedImage swapTwoStockFive = img.getSubimage(deck.TwoStockFive.get(0).getX(), deck.TwoStockFive.get(0).getY(), 72, 96);
+        //BufferedImage swapTwoStockOne = img.getSubimage(deck.TwoStockOne.get(0).getX(), deck.TwoStockOne.get(0).getY(), 72, 96);
+        //BufferedImage swapTwoStockTwo = img.getSubimage(deck.TwoStockTwo.get(0).getX(), deck.TwoStockTwo.get(0).getY(), 72, 96);
+        //BufferedImage swapTwoStockThree = img.getSubimage(deck.TwoStockThree.get(0).getX(), deck.TwoStockThree.get(0).getY(), 72, 96);
+        //BufferedImage swapTwoStockFour = img.getSubimage(deck.TwoStockFour.get(0).getX(), deck.TwoStockFour.get(0).getY(), 72, 96);
+        //BufferedImage swapTwoStockFive = img.getSubimage(deck.TwoStockFive.get(0).getX(), deck.TwoStockFive.get(0).getY(), 72, 96);
         
-        BufferedImage swapLeftSpit = img.getSubimage(deck.LeftSpit.get(0).getX(), deck.LeftSpit.get(0).getY(), 72, 96);
-        BufferedImage swapRightSpit = img.getSubimage(deck.RightSpit.get(0).getX(), deck.RightSpit.get(0).getY(), 72, 96);
+        //BufferedImage swapLeftSpit = img.getSubimage(deck.LeftSpit.get(0).getX(), deck.LeftSpit.get(0).getY(), 72, 96);
+        //BufferedImage swapRightSpit = img.getSubimage(deck.RightSpit.get(0).getX(), deck.RightSpit.get(0).getY(), 72, 96);
         
         //if(deck.player1Cards.size() > 0)
             //player1.setIcon(new ImageIcon(swapPlayer1));
         if(deck.OneStockOne.size() > 0)
+        {    
+            BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
             oneStockOne.setIcon(new ImageIcon(swapOneStockOne));
+        }
+        else
+            oneStockOne.setIcon(null);
         if(deck.OneStockTwo.size() > 0)
+        {    
+            BufferedImage swapOneStockTwo = img.getSubimage(deck.OneStockTwo.get(0).getX(), deck.OneStockTwo.get(0).getY(), 72, 96);
             oneStockTwo.setIcon(new ImageIcon(swapOneStockTwo));
+        }
+        else
+            oneStockTwo.setIcon(null);
         if(deck.OneStockThree.size() > 0)
+        {    
+            BufferedImage swapOneStockThree = img.getSubimage(deck.OneStockThree.get(0).getX(), deck.OneStockThree.get(0).getY(), 72, 96);
             oneStockThree.setIcon(new ImageIcon(swapOneStockThree));
+        }
+        else
+            oneStockThree.setIcon(null);
         if(deck.OneStockFour.size() > 0)
+        {    
+            BufferedImage swapOneStockFour = img.getSubimage(deck.OneStockFour.get(0).getX(), deck.OneStockFour.get(0).getY(), 72, 96);
             oneStockFour.setIcon(new ImageIcon(swapOneStockFour));
+        }
+        else
+            oneStockFour.setIcon(null);
         if(deck.OneStockFive.size() > 0)
+        {    
+            BufferedImage swapOneStockFive = img.getSubimage(deck.OneStockFive.get(0).getX(), deck.OneStockFive.get(0).getY(), 72, 96);
             oneStockFive.setIcon(new ImageIcon(swapOneStockFive));
+        }
+        else
+            oneStockFive.setIcon(null);
         //if(deck.player2Cards.size() > 0)
             //player2.setIcon(new ImageIcon(swapPlayer2));
         if(deck.TwoStockOne.size() > 0)
+        {    
+            BufferedImage swapTwoStockOne = img.getSubimage(deck.TwoStockOne.get(0).getX(), deck.TwoStockOne.get(0).getY(), 72, 96);
             twoStockOne.setIcon(new ImageIcon(swapTwoStockOne));
+        }
+        else
+            twoStockOne.setIcon(null);
         if(deck.TwoStockTwo.size() > 0)
+        {    
+            BufferedImage swapTwoStockTwo = img.getSubimage(deck.TwoStockTwo.get(0).getX(), deck.TwoStockTwo.get(0).getY(), 72, 96);
             twoStockTwo.setIcon(new ImageIcon(swapTwoStockTwo));
+        }
+        else
+            twoStockTwo.setIcon(null);
         if(deck.TwoStockThree.size() > 0)
+        {    
+            BufferedImage swapTwoStockThree = img.getSubimage(deck.TwoStockThree.get(0).getX(), deck.TwoStockThree.get(0).getY(), 72, 96);
             twoStockThree.setIcon(new ImageIcon(swapTwoStockThree));
+        }
+        else
+            twoStockThree.setIcon(null);
         if(deck.TwoStockFour.size() > 0)
+        {    
+            BufferedImage swapTwoStockFour = img.getSubimage(deck.TwoStockFour.get(0).getX(), deck.TwoStockFour.get(0).getY(), 72, 96);
             twoStockFour.setIcon(new ImageIcon(swapTwoStockFour));    
+        }
+        else
+            twoStockFour.setIcon(null);
         if(deck.TwoStockFive.size() > 0)
+        {    
+            BufferedImage swapTwoStockFive = img.getSubimage(deck.TwoStockFive.get(0).getX(), deck.TwoStockFive.get(0).getY(), 72, 96);
             twoStockFive.setIcon(new ImageIcon(swapTwoStockFive));    
-        
+        }
+        else
+            twoStockFive.setIcon(null);
         if(deck.LeftSpit.size() > 0)
+        {
+            BufferedImage swapLeftSpit = img.getSubimage(deck.LeftSpit.get(0).getX(), deck.LeftSpit.get(0).getY(), 72, 96);
             leftSpit.setIcon(new ImageIcon(swapLeftSpit));
+        }
+        else
+            leftSpit.setIcon(null);
         if(deck.RightSpit.size() > 0)
+        {    
+            BufferedImage swapRightSpit = img.getSubimage(deck.RightSpit.get(0).getX(), deck.RightSpit.get(0).getY(), 72, 96);
             rightSpit.setIcon(new ImageIcon(swapRightSpit));
+        }
+        else
+            rightSpit.setIcon(null);
     }
     //Player 1 moves
     public void p1OneToLeft()
