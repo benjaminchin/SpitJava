@@ -724,14 +724,14 @@ public class GamePanel  extends JPanel
         {
             System.out.println("Game is Over.");
             infoBoxes("Player 1 is the winner!", "Winner");
-            
+            System.exit(0);
         }
         else if (deck.player2Cards.size() == 0 && deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 &&
         deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)
         {
             System.out.println("Game is Over.");
             infoBoxes("Player 2 is the winner!", "Winner");
-            
+            System.exit(0);
         }
         
     }
