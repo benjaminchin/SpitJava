@@ -187,6 +187,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }//If no cards can be placed, auto-draw
+        gameIsOver();
         roundIsOver();//Checks for round over, restarts round if so
     }
 
@@ -204,6 +205,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -221,6 +223,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -238,6 +241,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -255,6 +259,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -272,6 +277,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -289,7 +295,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
-
+        gameIsOver();
         roundIsOver();
     }
 
@@ -307,6 +313,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -324,6 +331,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -341,6 +349,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -359,6 +368,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -376,6 +386,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -393,6 +404,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -410,6 +422,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -427,6 +440,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -444,6 +458,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -461,6 +476,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -478,6 +494,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -495,6 +512,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -512,6 +530,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
+        gameIsOver();
         roundIsOver();
     }
 
@@ -619,10 +638,7 @@ public class GamePanel  extends JPanel
                 for(Card c : deck.RightSpit)
                     deck.player2Cards.add(c);    
             }
-            deck.deal();
-            repaintCards();
-            if(canPlay() == false)
-                drawCard();
+            
             infoBoxes("Round is Over - Player1 WINS!", "Round End");
             //System.out.println("New Round");
         }
@@ -643,13 +659,52 @@ public class GamePanel  extends JPanel
                 for(Card c : deck.RightSpit)
                     deck.player1Cards.add(c);
             }
-            deck.deal();
-            repaintCards();
-            if(canPlay() == false)
-                drawCard();
+            
             infoBoxes("Round is Over - Player2 WINS!", "Round End");
             //System.out.println("New Round");
         }
+        for(Card c : deck.OneStockOne)
+            deck.player1Cards.add(c);
+        for(Card c : deck.OneStockTwo)
+            deck.player1Cards.add(c);
+        for(Card c : deck.OneStockThree)
+            deck.player1Cards.add(c);
+        for(Card c : deck.OneStockFour)
+            deck.player1Cards.add(c);
+        for(Card c : deck.OneStockFive)
+            deck.player1Cards.add(c);
+        
+        for(Card c : deck.TwoStockOne)
+            deck.player2Cards.add(c);
+        for(Card c : deck.TwoStockTwo)
+            deck.player2Cards.add(c);
+        for(Card c : deck.TwoStockThree)
+            deck.player2Cards.add(c);
+        for(Card c : deck.TwoStockFour)
+            deck.player2Cards.add(c);
+        for(Card c : deck.TwoStockFive)
+            deck.player2Cards.add(c);    
+            
+        deck.RightSpit.clear();
+        deck.LeftSpit.clear();
+        deck.OneStockOne.clear();
+        deck.OneStockTwo.clear();
+        deck.OneStockThree.clear();
+        deck.OneStockFour.clear();
+        deck.OneStockFive.clear();
+        deck.TwoStockOne.clear();
+        deck.TwoStockTwo.clear();
+        deck.TwoStockThree.clear();
+        deck.TwoStockFour.clear();
+        deck.TwoStockFive.clear();
+        
+        Collections.shuffle(deck.player1Cards);
+        Collections.shuffle(deck.player2Cards);
+        
+        deck.deal();
+        repaintCards();
+        if(canPlay() == false)
+                drawCard();
     }
 
     public static void infoBoxes(String infoMessage, String titleBar)
@@ -657,22 +712,22 @@ public class GamePanel  extends JPanel
         JOptionPane.showMessageDialog(null, infoMessage, titleBar, JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public boolean gameIsOver()
+    public void gameIsOver()
     {
         if (deck.player1Cards.size() == 0 && deck.OneStockOne.size() == 0 && deck.OneStockTwo.size() == 0 &&
         deck.OneStockThree.size() == 0 && deck.OneStockFour.size() == 0 && deck.OneStockFive.size() == 0)
         {
             System.out.println("Game is Over.");
             infoBoxes("Player 1 is the winner!", "Winner");
-            return true;
+            
         }
         else if (deck.player2Cards.size() == 0 && deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 &&
         deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)
         {
             System.out.println("Game is Over.");
             infoBoxes("Player 2 is the winner!", "Winner");
-            return true;
+            
         }
-        return false;
+        
     }
 }
