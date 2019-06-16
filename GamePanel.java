@@ -596,7 +596,7 @@ public class GamePanel  extends JPanel
                     if(deck.player2Cards.size() > 0)
                         deck.RightSpit.add(0, deck.player2Cards.remove(0));
                     repaintCards();
-                    System.out.println("Card drawn.");//Testing
+                    //System.out.println("Card drawn.");//Testing
                 }
             }
             if(canPlay() == false)
@@ -609,15 +609,6 @@ public class GamePanel  extends JPanel
                 }
             }
         }
-            /*while(canPlay()==false)
-            {
-                if(deck.player1Cards.size() > 0)
-                    deck.LeftSpit.add(0, deck.player1Cards.remove(0));
-                if(deck.player2Cards.size() > 0)
-                    deck.RightSpit.add(0, deck.player2Cards.remove(0));
-                repaintCards();
-                System.out.println("Card drawn.");
-            }*/
     }
 
     public void roundIsOver()
@@ -640,7 +631,7 @@ public class GamePanel  extends JPanel
                     deck.player2Cards.add(c);    
             }
             setUpRound();
-            infoBoxes("Round is Over - Player1 WINS!", "Round End");
+            infoBoxes("Round is Over - Player1 Wins the Round!", "Round End");
             //System.out.println("New Round");
         }
         else if(deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && 
@@ -661,7 +652,7 @@ public class GamePanel  extends JPanel
                     deck.player1Cards.add(c);
             }
             setUpRound();
-            infoBoxes("Round is Over - Player2 WINS!", "Round End");
+            infoBoxes("Round is Over - Player2 Wins the Round!", "Round End");
             //System.out.println("New Round");
         }
         

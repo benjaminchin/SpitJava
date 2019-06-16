@@ -1,152 +1,201 @@
-
-/**
- * Start GUI for Spit Game
- *
- * @author Revanth Sudhireddy
- * @version (a version number or a date)
- */
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Dimension;
 import java.awt.Graphics2D;
-
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-public class TestGUI extends JPanel
+import java.io.File;
+public class TestGUI extends JFrame
 {
-    private static  JButton start = new JButton("Start"); 
-    private  static JFrame frame= new JFrame("Start Menu");
-    private  static JButton instructions = new JButton("Instructions");  
-    private static JPanel panel = new JPanel();
-    private static JLabel spit = new JLabel("SPIT");
-    public static JLabel player1 = new JLabel();
-    public static JLabel OneStockOne = new JLabel();
-    public static JLabel OneStockTwo = new JLabel();
-    public static JLabel OneStockThree = new JLabel();
-    public static JLabel OneStockFour = new JLabel();
-    public static JLabel OneStockFive = new JLabel();
-    public static JLabel LeftSpit= new JLabel();
-    public static JLabel player2 = new JLabel();
-    public static JLabel TwoStockOne = new JLabel();
-    public static JLabel TwoStockTwo = new JLabel();
-    public static JLabel TwoStockThree = new JLabel();
-    public static JLabel TwoStockFour= new JLabel();
-    public static JLabel TwoStockFive= new JLabel();
-    public static JLabel RightSpit = new JLabel();
-    public  static void Start()
-    {
+    private static JLabel spit = new JLabel("Spit");
+    private static JButton start = new JButton("Start");
+    private static JButton instructions = new JButton("Instructions");
+    private static JFrame frame = new JFrame();
 
+    public static void start()
+    {
+        JPanel startMenu = new JPanel(new FlowLayout());
+        frame.setDefaultLookAndFeelDecorated(true);
+
+        frame.add(startMenu);//Add startMenu window to the frame
+        frame.setSize(400, 100);
+        spit.setLocation(200, 50); //Set locations of label and buttons
+        start.setLocation(50, 150);
+        instructions.setLocation(550, 150);
         spit.setFont(new Font("Courier New",Font.BOLD,30));
-        frame.add(panel);
-        panel.add(start); 
-        panel.add(instructions);
-        panel.add(spit);
-        frame.setVisible(true);
-        panel.setLayout(null);
-        start.setLayout(null);
-        instructions.setLayout(null);
-        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        frame.setSize(400,300);
-        start.setPreferredSize(new Dimension(80,35));
-        instructions.setPreferredSize(new Dimension(105,35));
-        panel.setBackground(Color.ORANGE);
+        startMenu.add(spit); //Add label and buttons to panel
+        startMenu.add(start);
         start.addActionListener(new Action());
+        startMenu.add(instructions);
         instructions.addActionListener(new Action());
-        start.setLocation(50,150);
-        instructions.setLocation(150,150);
-        spit.setLocation(110,90);
+        startMenu.setBackground(Color.ORANGE);
+        startMenu.setVisible(true); //Make visible
+        frame.setVisible(true);
         
-        player1.setLocation(320, 10);
-        OneStockOne.setLocation(80, 130);
-        OneStockTwo.setLocation(200, 130);
-        OneStockThree.setLocation(320, 130);
-        OneStockFour.setLocation(440, 130);
-        OneStockFive.setLocation(560, 130);
-        
-        player2.setLocation(320, 590);
-        TwoStockOne.setLocation(80, 450);
-        TwoStockTwo.setLocation(200, 450);
-        TwoStockThree.setLocation(320, 450);
-        TwoStockFour.setLocation(440, 450);
-        TwoStockFive.setLocation(560, 450);
-        
-        LeftSpit.setLocation(200, 270);
-        RightSpit.setLocation(440, 270);
-        
-        displayCards();
-    }  
-    static class Action extends JFrame implements ActionListener
+    }
+
+    public static void main(String[] args)
+    {
+        start();
+    }
+
+    static class Action extends Deck implements ActionListener
     {  
+        private JFrame playGame = new JFrame();
+        private JPanel game = new JPanel();
+
+        private static BufferedImage img;
+        private static JLabel player1 = new JLabel();
+        private static JLabel oneStockOne = new JLabel();
+        private static JLabel oneStockTwo = new JLabel();
+        private static JLabel oneStockThree = new JLabel();
+        private static JLabel oneStockFour = new JLabel();
+        private static JLabel oneStockFive = new JLabel();
+        
+        private static JLabel player2 = new JLabel();
+        private static JLabel twoStockOne = new JLabel();
+        private static JLabel twoStockTwo = new JLabel();
+        private static JLabel twoStockThree = new JLabel();
+        private static JLabel twoStockFour = new JLabel();
+        private static JLabel twoStockFive = new JLabel();
+        
+        private static JLabel leftSpit = new JLabel();
+        private static JLabel rightSpit = new JLabel();
+        
+        private static Deck deck = new Deck();
+        
         public void actionPerformed (ActionEvent e)
         {
-            if (e.getSource() == instructions) // if "instructions" button is pressed, display how to play game.
+            if (e.getSource() == instructions) //If "instructions" button is pressed, display how to play game.
             {
-                JFrame help = new JFrame("Instructions");
-                help.setVisible(true);
-                help.setSize(400,400);
-                JPanel panel1 = new JPanel();
-                panel1.setBackground(Color.CYAN);
-                help.add(panel1);
-                JLabel text = new JLabel("");
-                panel1.add(text);
+                JFrame helpFrame = new JFrame(); //Create frame and panel
+                JPanel help = new JPanel(new FlowLayout());
+                helpFrame.add(help); //Add panel to window
+                helpFrame.setSize(750, 750);
 
+                JLabel lbl = new JLabel("To play this game "); //Label text
+                lbl.setFont(new Font("Courier New",Font.BOLD,30));
+                lbl.setLocation(325, 325);
+
+                help.add(lbl); //Add label to panel
+                help.setBackground(Color.CYAN);
+                help.setVisible(true); //Display
+                helpFrame.setVisible(true);
             }
-            else // if start button is pressed, display table and start playing game.
+            else //If start button is pressed, display table and start playing game.
             {
-                MyPanel panel = new MyPanel();
-                // create a basic JFrame
-                JFrame.setDefaultLookAndFeelDecorated(true);
-                JFrame frame = new JFrame("Spit");
-                frame.setSize(750,750);
-                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-                frame.setBackground(Color.GREEN);
-                // add panel to main frame
-                frame.add(panel);
-
-                frame.setVisible(true);
-
-            }
-        }
-    }
-
-    public static void main(String args[])
-    {
-        Start();
-        
-    }
-    
-    public static void displayCards()
-    {
-        
-        BufferedImage img = null;
-        try
-        {
-            img = ImageIO.read(new File("cards.png"));
-        }
-        catch(Exception e)
-        {
-            //Exception
-        }
+                
             
+                deck.shuffle();
+                deck.deal();
+                
+                playGame.add(game);
+                playGame.setSize(750, 750);
+
+                game.setBackground(Color.GREEN);
+
+                try
+                {
+                    img = ImageIO.read(new File("cards.png"));
+                }
+                catch(Exception ex)
+                {
+                    //Nothing
+                }
+
+                playGame.add(player1);
+                playGame.add(oneStockOne);
+                playGame.add(oneStockTwo);
+                playGame.add(oneStockThree);
+                playGame.add(oneStockFour);
+                playGame.add(oneStockFive);
+                playGame.add(player2);
+                playGame.add(twoStockOne);
+                playGame.add(twoStockTwo);
+                playGame.add(twoStockThree);
+                playGame.add(twoStockFour);
+                playGame.add(twoStockFive);
+                playGame.add(leftSpit);
+                playGame.add(rightSpit);
+
+                player1.setBounds(320,10, 72, 96);
+                oneStockOne.setBounds(80,130, 72, 96);
+                oneStockTwo.setBounds(200,130, 72, 96);
+                oneStockThree.setBounds(320,130, 72, 96);
+                oneStockFour.setBounds(440,130, 72, 96);
+                oneStockFive.setBounds(560,130, 72, 96);
+
+                player2.setBounds(320, 590, 72, 96);
+                twoStockOne.setBounds(80, 450, 72, 96);
+                twoStockTwo.setBounds(200, 450, 72, 96);
+                twoStockThree.setBounds(320, 450, 72, 96);
+                twoStockFour.setBounds(440, 450, 72, 96);
+                twoStockFive.setBounds(560, 450, 72, 96);
+
+                leftSpit.setBounds(200, 270, 72, 96);
+                rightSpit.setBounds(440, 270, 72, 96);
+                
+                game.setVisible(true);
+                playGame.setVisible(true);
+                playGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            }
+        }
+        public static void repaint()
+        {
+            //BufferedImage img = ImageIO.read(new File("cards.png"));
+            BufferedImage swapPlayer1 = img.getSubimage(deck.player1Cards.get(0).getX(), deck.player1Cards.get(0).getY(), 72, 96);
+            BufferedImage swapOneStockOne = img.getSubimage(deck.OneStockOne.get(0).getX(), deck.OneStockOne.get(0).getY(), 72, 96);
+            BufferedImage swapOneStockTwo = img.getSubimage(deck.OneStockTwo.get(0).getX(), deck.OneStockTwo.get(0).getY(), 72, 96);
+            BufferedImage swapOneStockThree = img.getSubimage(deck.OneStockThree.get(0).getX(), deck.OneStockThree.get(0).getY(), 72, 96);
+            BufferedImage swapOneStockFour = img.getSubimage(deck.OneStockFour.get(0).getX(), deck.OneStockFour.get(0).getY(), 72, 96);
+            BufferedImage swapOneStockFive = img.getSubimage(deck.OneStockFive.get(0).getX(), deck.OneStockFive.get(0).getY(), 72, 96);
         
-   
-        BufferedImage club1 = img.getSubimage(0, 0, 73, 99);
-        ImageIcon club1Icon = new ImageIcon(club1);
+            BufferedImage swapPlayer2 = img.getSubimage(deck.player2Cards.get(0).getX(), deck.player2Cards.get(0).getY(), 72, 96);
+            BufferedImage swapTwoStockOne = img.getSubimage(deck.TwoStockOne.get(0).getX(), deck.TwoStockOne.get(0).getY(), 72, 96);
+            BufferedImage swapTwoStockTwo = img.getSubimage(deck.TwoStockTwo.get(0).getX(), deck.TwoStockTwo.get(0).getY(), 72, 96);
+            BufferedImage swapTwoStockThree = img.getSubimage(deck.TwoStockThree.get(0).getX(), deck.TwoStockThree.get(0).getY(), 72, 96);
+            BufferedImage swapTwoStockFour = img.getSubimage(deck.TwoStockFour.get(0).getX(), deck.TwoStockFour.get(0).getY(), 72, 96);
+            BufferedImage swapTwoStockFive = img.getSubimage(deck.TwoStockFive.get(0).getX(), deck.TwoStockFive.get(0).getY(), 72, 96);
         
-        player1.setIcon(club1Icon);
+            BufferedImage swapLeftSpit = img.getSubimage(deck.LeftSpit.get(0).getX(), deck.LeftSpit.get(0).getY(), 72, 96);
+            BufferedImage swapRightSpit = img.getSubimage(deck.RightSpit.get(0).getX(), deck.RightSpit.get(0).getY(), 72, 96);
+        
+            player1.setIcon(new ImageIcon(swapPlayer1));
+            oneStockOne.setIcon(new ImageIcon(swapOneStockOne));
+            oneStockTwo.setIcon(new ImageIcon(swapOneStockTwo));
+            oneStockThree.setIcon(new ImageIcon(swapOneStockThree));
+            oneStockFour.setIcon(new ImageIcon(swapOneStockFour));
+            oneStockFive.setIcon(new ImageIcon(swapOneStockFive));
+        
+            player2.setIcon(new ImageIcon(swapPlayer2));
+            twoStockOne.setIcon(new ImageIcon(swapTwoStockOne));
+            twoStockTwo.setIcon(new ImageIcon(swapTwoStockTwo));
+            twoStockThree.setIcon(new ImageIcon(swapTwoStockThree));
+            twoStockFour.setIcon(new ImageIcon(swapTwoStockFour));
+            twoStockFive.setIcon(new ImageIcon(swapTwoStockFive));
+        
+            leftSpit.setIcon(new ImageIcon(swapLeftSpit));
+            rightSpit.setIcon(new ImageIcon(swapRightSpit));
+        }
+    
+        
+        public void keyPressed(KeyEvent e)
+        {
+
+        }
+
+        public void keyReleased(KeyEvent e)
+        {
+        }
+
+        public void keyTyped(KeyEvent e)
+        {
+        }
+
     }
 }
-
-     
-     
-
