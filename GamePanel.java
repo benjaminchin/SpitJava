@@ -609,7 +609,7 @@ public class GamePanel  extends JPanel
                     repaintCards();
                 }
             }
-            infoBoxes("Card drawn", "Update");
+            infoBoxes("Cards drawn", "Update");
         }
     }
 
