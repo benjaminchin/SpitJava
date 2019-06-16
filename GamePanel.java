@@ -638,7 +638,7 @@ public class GamePanel  extends JPanel
                 for(Card c : deck.RightSpit)
                     deck.player2Cards.add(c);    
             }
-            
+            setUpRound();
             infoBoxes("Round is Over - Player1 WINS!", "Round End");
             //System.out.println("New Round");
         }
@@ -659,10 +659,15 @@ public class GamePanel  extends JPanel
                 for(Card c : deck.RightSpit)
                     deck.player1Cards.add(c);
             }
-            
+            setUpRound();
             infoBoxes("Round is Over - Player2 WINS!", "Round End");
             //System.out.println("New Round");
         }
+        
+    }
+    
+    public void setUpRound()
+    {
         for(Card c : deck.OneStockOne)
             deck.player1Cards.add(c);
         for(Card c : deck.OneStockTwo)
@@ -706,7 +711,6 @@ public class GamePanel  extends JPanel
         if(canPlay() == false)
                 drawCard();
     }
-
     public static void infoBoxes(String infoMessage, String titleBar)
     {
         JOptionPane.showMessageDialog(null, infoMessage, titleBar, JOptionPane.INFORMATION_MESSAGE);
