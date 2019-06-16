@@ -605,6 +605,7 @@ public class GamePanel  extends JPanel
                 {    
                     Collections.shuffle(deck.LeftSpit);
                     Collections.shuffle(deck.RightSpit);
+                    repaintCards();
                 }
             }
         }
