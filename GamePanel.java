@@ -654,8 +654,7 @@ public class GamePanel  extends JPanel
 
     public static void infoBoxes(String infoMessage, String titleBar)
     {
-        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, 
-        JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, infoMessage, titleBar, JOptionPane.INFORMATION_MESSAGE);
     }
 
     public boolean gameIsOver()
