@@ -564,14 +564,29 @@ public class GamePanel  extends JPanel
     {
         if(!((deck.OneStockOne.size() == 0 && deck.OneStockTwo.size() == 0 && deck.OneStockThree.size() == 0 && deck.OneStockFour.size() == 0 && deck.OneStockFive.size() == 0) ||
             (deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)))
-            while(canPlay()==false)
+            for(int i = 0; i < 52; i++)
+            {
+                if(canPlay() == true)
+                    break;
+                else
+                {
+                    if(deck.player1Cards.size() > 0)
+                        deck.LeftSpit.add(0, deck.player1Cards.remove(0));
+                    if(deck.player2Cards.size() > 0)
+                        deck.RightSpit.add(0, deck.player2Cards.remove(0));
+                    repaintCards();
+                    System.out.println("Card drawn.");//Testing
+                }
+            }
+            /*while(canPlay()==false)
             {
                 if(deck.player1Cards.size() > 0)
                     deck.LeftSpit.add(0, deck.player1Cards.remove(0));
                 if(deck.player2Cards.size() > 0)
                     deck.RightSpit.add(0, deck.player2Cards.remove(0));
                 repaintCards();
-            }
+                System.out.println("Card drawn.");
+            }*/
     }
 
     public void roundIsOver()
@@ -598,7 +613,7 @@ public class GamePanel  extends JPanel
             if(canPlay() == false)
                 drawCard();
             infoBoxes("Round is Over - Player1 WINS!", "Round End");
-            System.out.println("New Round");
+            //System.out.println("New Round");
         }
         else if(deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && 
         deck.TwoStockFive.size() == 0)
@@ -622,7 +637,7 @@ public class GamePanel  extends JPanel
             if(canPlay() == false)
                 drawCard();
             infoBoxes("Round is Over - Player2 WINS!", "Round End");
-            System.out.println("New Round");
+            //System.out.println("New Round");
         }
     }
 
