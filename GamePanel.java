@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.io.File;
 import javax.swing.JOptionPane;
+import java.util.Collections;
 public class GamePanel  extends JPanel
 {
     private JLabel player1 = new JLabel();
@@ -564,6 +565,7 @@ public class GamePanel  extends JPanel
     {
         if(!((deck.OneStockOne.size() == 0 && deck.OneStockTwo.size() == 0 && deck.OneStockThree.size() == 0 && deck.OneStockFour.size() == 0 && deck.OneStockFive.size() == 0) ||
             (deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)))
+        {    
             for(int i = 0; i < 52; i++)
             {
                 if(canPlay() == true)
@@ -578,6 +580,15 @@ public class GamePanel  extends JPanel
                     System.out.println("Card drawn.");//Testing
                 }
             }
+            if(canPlay() == false)
+            {
+                while(canPlay() == false)
+                {    
+                    Collections.shuffle(deck.LeftSpit);
+                    Collections.shuffle(deck.RightSpit);
+                }
+            }
+        }
             /*while(canPlay()==false)
             {
                 if(deck.player1Cards.size() > 0)
