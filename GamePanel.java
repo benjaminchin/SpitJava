@@ -596,7 +596,7 @@ public class GamePanel  extends JPanel
                     if(deck.player2Cards.size() > 0)
                         deck.RightSpit.add(0, deck.player2Cards.remove(0));
                     repaintCards();
-                    infoBoxes("Card drawn", "Update");
+                    //infoBoxes("Card drawn", "Update");
                     //System.out.println("Card drawn.");//Testing
                 }
             }
@@ -609,6 +609,7 @@ public class GamePanel  extends JPanel
                     repaintCards();
                 }
             }
+            infoBoxes("Card drawn", "Update");
         }
     }
 
@@ -714,14 +715,14 @@ public class GamePanel  extends JPanel
         if (deck.player1Cards.size() == 0 && deck.OneStockOne.size() == 0 && deck.OneStockTwo.size() == 0 &&
         deck.OneStockThree.size() == 0 && deck.OneStockFour.size() == 0 && deck.OneStockFive.size() == 0)
         {
-            System.out.println("Game is Over.");
+            //System.out.println("Game is Over.");
             infoBoxes("Player 1 is the winner!", "Winner");
             System.exit(0);
         }
         else if (deck.player2Cards.size() == 0 && deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 &&
         deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)
         {
-            System.out.println("Game is Over.");
+            //System.out.println("Game is Over.");
             infoBoxes("Player 2 is the winner!", "Winner");
             System.exit(0);
         }
