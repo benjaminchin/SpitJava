@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.io.File;
-
+import javax.swing.JOptionPane;
 public class GamePanel  extends JPanel
 {
     private JLabel player1 = new JLabel();
@@ -31,7 +31,7 @@ public class GamePanel  extends JPanel
         this.setBackground(Color.GREEN);
         deck.shuffle();
         deck.deal();
-  
+
         img = ImageIO.read(new File("cards.png"));
 
         player1.setBounds(320,10, 72, 96);
@@ -79,7 +79,7 @@ public class GamePanel  extends JPanel
 
         repaintCards();
         if(canPlay() == false)
-                drawCard();
+            drawCard();
     }
 
     public void repaintCards()
@@ -288,7 +288,7 @@ public class GamePanel  extends JPanel
         {
             drawCard();
         }
-    
+
         roundIsOver();
     }
 
@@ -563,14 +563,14 @@ public class GamePanel  extends JPanel
     public void drawCard()
     {
         if(!((deck.OneStockOne.size() == 0 && deck.OneStockTwo.size() == 0 && deck.OneStockThree.size() == 0 && deck.OneStockFour.size() == 0 && deck.OneStockFive.size() == 0) ||
-           (deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)))
-           while(canPlay()==false)
-           {
-               if(deck.player1Cards.size() > 0)
-                   deck.LeftSpit.add(0, deck.player1Cards.remove(0));
-               if(deck.player2Cards.size() > 0)
-                   deck.RightSpit.add(0, deck.player2Cards.remove(0));
-               repaintCards();
+            (deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)))
+            while(canPlay()==false)
+            {
+                if(deck.player1Cards.size() > 0)
+                    deck.LeftSpit.add(0, deck.player1Cards.remove(0));
+                if(deck.player2Cards.size() > 0)
+                    deck.RightSpit.add(0, deck.player2Cards.remove(0));
+                repaintCards();
             }
     }
 
@@ -597,7 +597,7 @@ public class GamePanel  extends JPanel
             repaintCards();
             if(canPlay() == false)
                 drawCard();
-            System.out.println("Round is Over - Player1 WINS!");
+            infoBoxes("Round is Over - Player1 WINS!", "Round End");
             System.out.println("New Round");
         }
         else if(deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && 
@@ -621,16 +621,31 @@ public class GamePanel  extends JPanel
             repaintCards();
             if(canPlay() == false)
                 drawCard();
-            System.out.println("Round is Over - Player2 WINS!");
+            infoBoxes("Round is Over - Player2 WINS!", "Round End");
             System.out.println("New Round");
         }
     }
 
+    public static void infoBoxes(String infoMessage, String titleBar)
+    {
+        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, 
+        JOptionPane.INFORMATION_MESSAGE);
+    }
+
     public boolean gameIsOver()
     {
-        if (deck.player1Cards.size() == 0 || deck.player2Cards.size() == 0)
+        if (deck.player1Cards.size() == 0 && deck.OneStockOne.size() == 0 && deck.OneStockTwo.size() == 0 &&
+        deck.OneStockThree.size() == 0 && deck.OneStockFour.size() == 0 && deck.OneStockFive.size() == 0)
         {
             System.out.println("Game is Over.");
+            infoBoxes("Player 1 is the winner!", "Winner");
+            return true;
+        }
+        else if (deck.player2Cards.size() == 0 && deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 &&
+        deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)
+        {
+            System.out.println("Game is Over.");
+            infoBoxes("Player 2 is the winner!", "Winner");
             return true;
         }
         return false;
