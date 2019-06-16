@@ -31,7 +31,7 @@ public class GamePanel  extends JPanel
         this.setBackground(Color.GREEN);
         deck.shuffle();
         deck.deal();
-
+  
         img = ImageIO.read(new File("cards.png"));
 
         player1.setBounds(320,10, 72, 96);
@@ -78,6 +78,8 @@ public class GamePanel  extends JPanel
         this.setFocusTraversalKeysEnabled(true);
 
         repaintCards();
+        if(canPlay() == false)
+                drawCard();
     }
 
     public void repaintCards()
@@ -593,6 +595,8 @@ public class GamePanel  extends JPanel
             }
             deck.deal();
             repaintCards();
+            if(canPlay() == false)
+                drawCard();
             System.out.println("Round is Over - Player1 WINS!");
             System.out.println("New Round");
         }
@@ -615,6 +619,8 @@ public class GamePanel  extends JPanel
             }
             deck.deal();
             repaintCards();
+            if(canPlay() == false)
+                drawCard();
             System.out.println("Round is Over - Player2 WINS!");
             System.out.println("New Round");
         }
