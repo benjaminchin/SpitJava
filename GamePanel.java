@@ -596,6 +596,7 @@ public class GamePanel  extends JPanel
                     if(deck.player2Cards.size() > 0)
                         deck.RightSpit.add(0, deck.player2Cards.remove(0));
                     repaintCards();
+                    infoBoxes("Card drawn", "Update");
                     //System.out.println("Card drawn.");//Testing
                 }
             }
