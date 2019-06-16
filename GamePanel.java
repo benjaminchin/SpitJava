@@ -27,7 +27,7 @@ public class GamePanel  extends JPanel
 
     private Deck deck = new Deck();
     private BufferedImage img;
-    public GamePanel() throws IOException
+    public GamePanel() throws IOException //Ben C, Revanth S
     {
         this.setBackground(Color.GREEN);
         deck.shuffle();
@@ -83,7 +83,7 @@ public class GamePanel  extends JPanel
             drawCard();
     }
 
-    public void repaintCards()
+    public void repaintCards() //Ben C
     {
         if(deck.OneStockOne.size() > 0)
         {    
@@ -173,7 +173,7 @@ public class GamePanel  extends JPanel
             rightSpit.setIcon(null);
     }
     //Player 1 moves
-    public void p1OneToLeft()
+    public void p1OneToLeft() //Ben C, Revanth S
     {
 
         if(deck.OneStockOne.size() > 0 && (deck.OneStockOne.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
@@ -191,7 +191,7 @@ public class GamePanel  extends JPanel
         roundIsOver();//Checks for round over, restarts round if so
     }
 
-    public void p1OneToRight()
+    public void p1OneToRight() //Ben C, Revanth S
     {
 
         if(deck.OneStockOne.size() > 0 && (deck.OneStockOne.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
@@ -209,7 +209,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p1TwoToLeft()
+    public void p1TwoToLeft() //Ben C, Revanth S
     {
 
         if(deck.OneStockTwo.size() > 0 && (deck.OneStockTwo.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
@@ -227,7 +227,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p1TwoToRight()
+    public void p1TwoToRight() //Ben C, Revanth S
     {
 
         if(deck.OneStockTwo.size() > 0 && (deck.OneStockTwo.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
@@ -245,7 +245,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p1ThreeToLeft()
+    public void p1ThreeToLeft() //Ben C, Revanth S
     {
 
         if(deck.OneStockThree.size() > 0 && (deck.OneStockThree.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
@@ -263,7 +263,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p1ThreeToRight()
+    public void p1ThreeToRight() //Ben C, Revanth S
     {
 
         if(deck.OneStockThree.size() > 0 && (deck.OneStockThree.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
@@ -281,7 +281,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p1FourToLeft()
+    public void p1FourToLeft() //Ben C, Revanth S
     {
 
         if(deck.OneStockFour.size() > 0 && (deck.OneStockFour.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
@@ -299,7 +299,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p1FourToRight()
+    public void p1FourToRight() //Ben C, Revanth S
     {
 
         if(deck.OneStockFour.size() > 0 && (deck.OneStockFour.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
@@ -317,7 +317,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p1FiveToLeft()
+    public void p1FiveToLeft() //Ben C, Revanth S
     {
 
         if(deck.OneStockFive.size() > 0 && (deck.OneStockFive.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
@@ -335,7 +335,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p1FiveToRight()
+    public void p1FiveToRight() //Ben C, Revanth S
     {
 
         if(deck.OneStockFive.size() > 0 && (deck.OneStockFive.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
@@ -354,7 +354,7 @@ public class GamePanel  extends JPanel
     }
 
     //Player 2 moves
-    public void p2OneToLeft()
+    public void p2OneToLeft() //Ben C, Revanth S
     {
 
         if(deck.TwoStockOne.size() > 0 && (deck.TwoStockOne.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
@@ -372,7 +372,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p2OneToRight()
+    public void p2OneToRight() //Ben C, Revanth S
     {
 
         if(deck.TwoStockOne.size() > 0 && (deck.TwoStockOne.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
@@ -390,7 +390,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p2TwoToLeft()
+    public void p2TwoToLeft() //Ben C, Revanth S
     {
 
         if(deck.TwoStockTwo.size() > 0 && (deck.TwoStockTwo.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
@@ -408,7 +408,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p2TwoToRight()
+    public void p2TwoToRight() //Ben C, Revanth S
     {
 
         if(deck.TwoStockTwo.size() > 0 && (deck.TwoStockTwo.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
@@ -426,7 +426,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p2ThreeToLeft()
+    public void p2ThreeToLeft() //Ben C, Revanth S
     {
 
         if(deck.TwoStockThree.size() > 0 && (deck.TwoStockThree.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
@@ -444,7 +444,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p2ThreeToRight()
+    public void p2ThreeToRight() //Ben C, Revanth S
     {
 
         if(deck.TwoStockThree.size() > 0 && (deck.TwoStockThree.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
@@ -462,7 +462,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p2FourToLeft()
+    public void p2FourToLeft() //Ben C, Revanth S
     {
 
         if(deck.TwoStockFour.size() > 0 && (deck.TwoStockFour.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
@@ -480,7 +480,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p2FourToRight()
+    public void p2FourToRight() //Ben C, Revanth S
     {
 
         if(deck.TwoStockFour.size() > 0 && (deck.TwoStockFour.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
@@ -498,7 +498,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p2FiveToLeft()
+    public void p2FiveToLeft() //Ben C, Revanth S
     {
 
         if(deck.TwoStockFive.size() > 0 && (deck.TwoStockFive.get(0).getRank()-1 == deck.LeftSpit.get(0).getRank() ||
@@ -516,7 +516,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public void p2FiveToRight()
+    public void p2FiveToRight() //Ben C, Revanth S
     {
 
         if(deck.TwoStockFive.size() > 0 &&(deck.TwoStockFive.get(0).getRank()-1 == deck.RightSpit.get(0).getRank() ||
@@ -534,7 +534,7 @@ public class GamePanel  extends JPanel
         roundIsOver();
     }
 
-    public boolean canPlay()
+    public boolean canPlay() // Dhruv G, Ben C
     {
         if(deck.OneStockOne.size() > 0)
             if(((deck.OneStockOne.get(0).getRank() - 1) == deck.LeftSpit.get(0).getRank()) || ((deck.OneStockOne.get(0).getRank() + 1) == deck.LeftSpit.get(0).getRank()) ||
@@ -580,7 +580,7 @@ public class GamePanel  extends JPanel
         return false;
     }
 
-    public void drawCard()
+    public void drawCard() //Revanth S, Ben C
     {
         if(!((deck.OneStockOne.size() == 0 && deck.OneStockTwo.size() == 0 && deck.OneStockThree.size() == 0 && deck.OneStockFour.size() == 0 && deck.OneStockFive.size() == 0) ||
             (deck.TwoStockOne.size() == 0 && deck.TwoStockTwo.size() == 0 && deck.TwoStockThree.size() == 0 && deck.TwoStockFour.size() == 0 && deck.TwoStockFive.size() == 0)))
@@ -613,7 +613,7 @@ public class GamePanel  extends JPanel
         }
     }
 
-    public void roundIsOver()
+    public void roundIsOver() //Revanth S, Ben Chin, Dhruv G
     {
         if ((deck.OneStockOne.size() == 0 && deck.OneStockTwo.size() == 0 && deck.OneStockThree.size() == 0 && 
             deck.OneStockFour.size() == 0 && deck.OneStockFive.size() == 0))
@@ -660,7 +660,7 @@ public class GamePanel  extends JPanel
         
     }
     
-    public void setUpRound()
+    public void setUpRound() //Ben C
     {
         for(Card c : deck.OneStockOne)
             deck.player1Cards.add(c);
@@ -705,12 +705,12 @@ public class GamePanel  extends JPanel
         if(canPlay() == false)
                 drawCard();
     }
-    public static void infoBoxes(String infoMessage, String titleBar)
+    public static void infoBoxes(String infoMessage, String titleBar) //Dhruv G
     {
         JOptionPane.showMessageDialog(null, infoMessage, titleBar, JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public void gameIsOver()
+    public void gameIsOver() //Revanth S, Dhruv G
     {
         if (deck.player1Cards.size() == 0 && deck.OneStockOne.size() == 0 && deck.OneStockTwo.size() == 0 &&
         deck.OneStockThree.size() == 0 && deck.OneStockFour.size() == 0 && deck.OneStockFive.size() == 0)
