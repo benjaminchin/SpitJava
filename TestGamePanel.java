@@ -1,3 +1,4 @@
+//test class
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.image.BufferedImage;

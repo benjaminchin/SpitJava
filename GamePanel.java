@@ -1,3 +1,5 @@
+
+// authors: Ben C, Revanth S, Dhruv G
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
